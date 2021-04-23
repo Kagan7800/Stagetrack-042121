@@ -120,13 +120,19 @@ class Meeting extends Component<MeetingProps> {
 
     console.log(this.props.videos );
     const videos = filter(this.props.videos)
-    return videos.map(video => this.video(video))
+    if(videos.length > 1) {
+      return videos.slice(1).map(video => this.video(video))
+    }
+    
   }
 
   get videosFirst () {
     // const videos = filter(this.props.videos, { active: false })
     const videos = filter(this.props.videos)
-    return this.video(videos[0])
+    if(videos.length > 0) {
+      return this.video(videos[0])
+    }
+    
   }
 
   get userVideo () {
@@ -380,7 +386,7 @@ class Meeting extends Component<MeetingProps> {
   video (video: VideoState) {
     return (
       <IonCol
-        size={Meeting.videoColumnSize}
+        style={{  overflow: scroll ,  width: '50%' ,display: 'block', float: 'left' ,border: '8px solid green' ,padding: 0}}
         key={video.id}>
         <VideoBlock
           ratio="square"
@@ -525,7 +531,7 @@ class Meeting extends Component<MeetingProps> {
               </header>
           <div id="contentContainer">
           <aside id="nav_side">
-            <div id="mySidepanel" className="sidepanel" style={{width: '250px'}}>
+            <div id="mySidepanel" className="sidepanel" style={{width: '0'}}>
                 <a  className="closebtn" >×</a>
               
                 <a href="#">For Kids</a>
