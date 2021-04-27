@@ -10840,3 +10840,8 @@ div.epicRiffTrackLineSingleNew::first-letter {
   justify-content: space-between;
   padding: 0 20%;
 }
+
+
+a:not([href]):not([class]) {
+  color: #fff;
+}

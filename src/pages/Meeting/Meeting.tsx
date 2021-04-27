@@ -386,7 +386,7 @@ class Meeting extends Component<MeetingProps> {
   video (video: VideoState) {
     return (
       <IonCol
-        style={{  overflow: scroll ,  width: '50%' ,display: 'block', float: 'left' ,border: '8px solid green' ,padding: 0}}
+        style={{  overflow: 'scroll' ,  width: '50%' ,display: 'block', float: 'left' ,border: '8px solid green' ,padding: 0}}
         key={video.id}>
         <VideoBlock
           ratio="square"
@@ -525,30 +525,13 @@ class Meeting extends Component<MeetingProps> {
                      
                   </div>
 
-                 
-
-
               </header>
           <div id="contentContainer">
           <aside id="nav_side">
-            <div id="mySidepanel" className="sidepanel" style={{width: '0'}}>
-                <a  className="closebtn" >×</a>
+            <div id="mySidepanel" className="sidepanel" style={{width: '200px'}}>
               
-                <a href="#">For Kids</a>
-           
-                <a href="#" >Admin</a>
-                <a href="#" >Notes</a>
-                <a href="#" >Resource Library</a>
-                <a href="#" >Song Library</a>
-                <a href="#" >Band Profile</a>
-                <a href="epicRiffContest.html">Contest</a>
-                <a href="bandLogin.html">Band</a>
-                <a href="actorLogin.html">Actor</a>
-                <a href="register.html">Register</a>
-                <a href="vid website.7z" download="">Files</a>
-                <a href="splashPage.html">Splash</a>
-                <a href="vendorShowcase.html">Vendor</a>
-                <a href="store.html">Store</a>
+            {this.menu('top')} 
+                
             </div>
               
     
@@ -574,38 +557,24 @@ class Meeting extends Component<MeetingProps> {
                     <div className="newMainContentLeft">
                         {this.videosFirst}
                     </div>
-                    <div className="newMainContentMiddleX8">
-                    <IonGrid>
-                      <IonRow>
+                    <div style={{width: '800px' , height: "600px"}} className="newMainContentMiddleX8">
+                    
                         {this.activeVideoBlock}
                         <ActiveVideoSkeleton visibility={this.activeVideoSkeletonVisibility} />
-                      </IonRow>
-                      <IonRow>
-                        
-                      </IonRow>
-                    </IonGrid>
+                      
                     </div>
 
                     <div className="newMainContentRightX8">
                         {this.videos}
-                     </div>
-
-                    
+                     </div>  
                 </div>
-            </div>
-                    
+            </div>      
         </div>
-
     </main>
-
-
-
           </div>
-             
-
           </div>
               
-               {this.menu('top')} 
+              
               {this.menu('bottom')}
             </div>
           </Page>

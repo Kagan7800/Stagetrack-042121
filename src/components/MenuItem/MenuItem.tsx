@@ -26,6 +26,7 @@ type MenuItemName = 'invite' |
 export interface MenuItemProps {
   name: MenuItemName
   active: boolean
+  text: string
   visibility: boolean
   handleClick: (event: MouseEvent) => void
 }
@@ -54,11 +55,15 @@ export default class MenuItem extends Component<MenuItemProps> {
   render () {
     return this.props.visibility &&
       <div
-        className={styles.menuItem}
+        
         onClick={this.props.handleClick}>
+       <a>
+       {this.props.text}
         <IonIcon
           className={this.iconClass}
           icon={this.icon} />
+      </a>   
+        
       </div>
   }
 }
