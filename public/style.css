@@ -23,6 +23,38 @@
   display: block;
 }
 
+.contentSubContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+.chura{
+  display: contents;
+}
+.container_banner{
+  /* width: 25%;
+  height: 100%; */
+}
+.container_images1{
+/* height: 100;
+flex: 1; */
+/* height: 100%; */
+width: 40%;
+background-color: red;
+
+}
+.container_images2{
+/* height: 100%; */
+width: 40%;
+background-color: yellow;
+}
+.container_images3{
+/* height: 100%; */
+width: 40%;
+background-color: green;
+}
 .navDelete {
   position: absolute;
   right: 70px;
@@ -72,9 +104,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    height: 100vh;    
-    justify-content: space-between;
+    min-width: 100vw;
+    min-height: 100vh;    
+    /* justify-content: space-between; */
     margin: 0;
     box-sizing: border-box;
   /*  border: 10px solid #0A2977; */
@@ -180,8 +212,8 @@ header {
   /* Style the button that is used to open the sidepanel */
 #contentContainer {
   display: flex;
-  flex-direction: row;
-  overflow: hidden;
+  flex-direction: column;
+  /* overflow: hidden; */
   width: 100%;
   height: 100%;
   
