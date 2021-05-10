@@ -157,7 +157,7 @@ class Meeting extends Component<MeetingProps> {
   }
 
   get inviteText () {
-    const url = `http://${process.env.REACT_APP_HOST}`
+    const url = `https://${process.env.REACT_APP_HOST}`
     const { id } = this.props
     return `Hi there,\nYou can join the meeting from ${url}/join?id=${id}`
   }

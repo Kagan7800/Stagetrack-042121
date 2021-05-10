@@ -36,7 +36,7 @@ class HostCreate extends Component<HostCreateProps> {
   }
 
   copyCredentials () {
-    const appUrl = `http://${process.env.REACT_APP_HOST}`
+    const appUrl = `https://${process.env.REACT_APP_HOST}`
     const { name, username, password } = this.props
     const credentials = `Hi ${name},\nYou can start a meeting from ${appUrl}/start using the following credentials:\nUsername: ${username}\nPassword: ${password}`
     copyToClipboard(credentials)

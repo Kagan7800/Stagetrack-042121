@@ -8,7 +8,7 @@ export default class PeerService {
   private static options = {
     host: process.env.REACT_APP_HOST,
     path: '/peer',
-    secure: false,
+    secure: true,
   };
 
   private client: Peer;

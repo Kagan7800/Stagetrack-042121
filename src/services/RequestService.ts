@@ -14,7 +14,7 @@ export default class RequestService {
   private getClient (callback: GetClientCallback) {
     this.appStorage.getAccessToken(accessToken => {
       const client = axios.create({
-        baseURL: `http://${process.env.REACT_APP_API_HOST}`,
+        baseURL: `https://${process.env.REACT_APP_API_HOST}`,
         headers: { Authorization: `Bearer ${accessToken}` }
       })
       callback(client)

@@ -4,7 +4,7 @@ export default class SocketService {
   protected static client: Client
 
   static connect (): void {
-    const endpoint = `http://${process.env.REACT_APP_API_HOST}/socket`
+    const endpoint = `https://${process.env.REACT_APP_API_HOST}/socket`
     SocketService.client = new Client(endpoint)
   }
 
