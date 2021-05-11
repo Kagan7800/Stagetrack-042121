@@ -6,7 +6,7 @@ import AlertService from './AlertService'
 
 export default class PeerService {
   private static options = {
-    host: process.env.REACT_APP_HOST,
+    host: process.env.REACT_APP_API_HOST,
     path: '/peer',
     secure: true,
   };
