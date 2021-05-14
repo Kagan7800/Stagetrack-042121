@@ -24,7 +24,7 @@ export default class WhiteboardCanvasService {
     return WhiteboardCanvasService.canvas
   }
 
-  setDimensions (width: number, height: number) {
+  setDimensions (width: any, height: any) {
     WhiteboardCanvasService.canvas.setDimensions({ width, height })
   }
 
