@@ -384,14 +384,19 @@ class Meeting extends Component<MeetingProps> {
     );
   }
 
+  // video(video: VideoState) {
+  //   return (
+  //     <IonCol size={Meeting.videoColumnSize} key={video.id}>
+  //       <VideoBlock ratio='square' video={video} handleClick={this.handleVideoBlockClick} />
+  //     </IonCol>
+  //   );
+  // }
+
   video(video: VideoState) {
     return (
-      <IonCol size={Meeting.videoColumnSize} key={video.id}>
         <VideoBlock ratio='square' video={video} handleClick={this.handleVideoBlockClick} />
-      </IonCol>
     );
   }
-
   socketUnsubscribe() {
     const { id } = this.props;
     socket.raiseHand.unsubscribe(id);
@@ -518,6 +523,15 @@ class Meeting extends Component<MeetingProps> {
                   getFirstVideo={this.videosFirst}
                   activeVideo={this.activeVideoBlock}
                   activeVideoSkeletonVisibility={this.activeVideoSkeletonVisibility}
+                  canInviteMember={this.canInviteMember}
+                  canRaiseHand={this.canRaiseHand}
+                  canEndMeeting={this.canEndMeeting}
+                  canVideoMute={this.canVideoMute}
+                  canAudioMute={this.canAudioMute}
+                  canScreenShare={this.canScreenShare}
+                  canWhiteboardEnable={this.canWhiteboardEnable}
+                  canMemberRemove={this.activeVideo?.memberRemove}
+                  inviteText={this.inviteText}
                   handleRaiseHandClick={this.handleMenuRaiseHandClick}
                   handleEndMeetingClick={this.handleMenuEndMeetingClick}
                   handleVideoClick={this.handleMenuVideoClick}
@@ -525,10 +539,9 @@ class Meeting extends Component<MeetingProps> {
                   handleScreenShareClick={this.handleMenuScreenShareClick}
                   handleWhiteboardClick={this.handleMenuWhiteboardClick}
                   handleMemberRemoveClick={this.handleMenuMemberRemoveClick}
-                  handleToggleChange={this.handleMenuToggleChange}
                 />
-                {this.menu('top')}
-                {this.menu('bottom')}
+                {/* {this.menu('top')}
+                {this.menu('bottom')} */}
               </div>
             </div>
 
