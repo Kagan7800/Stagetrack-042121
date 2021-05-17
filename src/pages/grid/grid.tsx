@@ -179,13 +179,13 @@ function Grid(props) {
                   <div className='x18Middle'>
                     <div className='newMainContentMiddleX13'>
                       <div className='newMainContentRightInner'>
-                        <div className='newMainContentRightInnerMenu'>
+                        {/* <div className='newMainContentRightInnerMenu'>
                           <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
                             <div></div>
                             <div></div>
                             <div></div>
                           </div>
-                        </div>
+                        </div> */}
                         <div className='newMainContentRightInnerTextarea'>
                           <div className='newMainContentTextarea'>{activeVideo}</div>
                         </div>
@@ -236,13 +236,13 @@ function Grid(props) {
                   <div className='x18Middle'>
                     <div className='newMainContentMiddleX13'>
                       <div className='newMainContentRightInner'>
-                        <div className='newMainContentRightInnerMenu'>
+                        {/* <div className='newMainContentRightInnerMenu'>
                           <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
                             <div></div>
                             <div></div>
                             <div></div>
                           </div>
-                        </div>
+                        </div> */}
                         <div className='newMainContentRightInnerTextarea'>
                           <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                         </div>
@@ -292,13 +292,13 @@ function Grid(props) {
                   <div className='x18Middle'>
                     <div className='newMainContentMiddleX13'>
                       <div className='newMainContentRightInner'>
-                        <div className='newMainContentRightInnerMenu'>
+                        {/* <div className='newMainContentRightInnerMenu'>
                           <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
                             <div></div>
                             <div></div>
                             <div></div>
                           </div>
-                        </div>
+                        </div> */}
                         <div className='newMainContentRightInnerTextarea'>
                           <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                         </div>
@@ -331,7 +331,8 @@ function Grid(props) {
                   <div className='newMainContentHeaderBg23'>
                     <h3 className='banner_title'>{title} </h3>
                   </div>
-                  <div className='changeNewBorderColor vidCapture23_23'>{videos[22]}</div>
+                        <div className='chan
+                  geNewBorderColor vidCapture23_23'>{videos[22]}</div>
                 </div>
                 <div className='x21Lower'>
                   <div className='x18Right'>
@@ -347,13 +348,13 @@ function Grid(props) {
                   <div className='x18Middle'>
                     <div className='newMainContentMiddleX13'>
                       <div className='newMainContentRightInner'>
-                        <div className='newMainContentRightInnerMenu'>
+                        {/* <div className='newMainContentRightInnerMenu'>
                           <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
                             <div></div>
                             <div></div>
                             <div></div>
                           </div>
-                        </div>
+                        </div> */}
                         <div className='newMainContentRightInnerTextarea'>
                           <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                         </div>
@@ -401,13 +402,13 @@ function Grid(props) {
                   <div className='x18Middle'>
                     <div className='newMainContentMiddleX13'>
                       <div className='newMainContentRightInner'>
-                        <div className='newMainContentRightInnerMenu'>
+                        {/* <div className='newMainContentRightInnerMenu'>
                           <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
                             <div></div>
                             <div></div>
                             <div></div>
                           </div>
-                        </div>
+                        </div> */}
                         <div className='newMainContentRightInnerTextarea'>
                           <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                         </div>
@@ -452,13 +453,13 @@ function Grid(props) {
                   <div className='x18Middle'>
                     <div className='newMainContentMiddleX13'>
                       <div className='newMainContentRightInner'>
-                        <div className='newMainContentRightInnerMenu'>
+                        {/* <div className='newMainContentRightInnerMenu'>
                           <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
                             <div></div>
                             <div></div>
                             <div></div>
                           </div>
-                        </div>
+                        </div> */}
                         <div className='newMainContentRightInnerTextarea'>
                           <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                         </div>
@@ -509,13 +510,13 @@ function Grid(props) {
                     <div className='x18Middle'>
                       <div className='newMainContentMiddleX13'>
                         <div className='newMainContentRightInner'>
-                          <div className='newMainContentRightInnerMenu'>
+                          {/* <div className='newMainContentRightInnerMenu'>
                             <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
                               <div></div>
                               <div></div>
                               <div></div>
                             </div>
-                          </div>
+                          </div> */}
                           <div className='newMainContentRightInnerTextarea'>
                             <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                           </div>
@@ -566,13 +567,13 @@ function Grid(props) {
                     <div className='x18Middle'>
                       <div className='newMainContentMiddleX13'>
                         <div className='newMainContentRightInner'>
-                          <div className='newMainContentRightInnerMenu'>
+                          {/* <div className='newMainContentRightInnerMenu'>
                             <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
                               <div></div>
                               <div></div>
                               <div></div>
                             </div>
-                          </div>
+                          </div> */}
                           <div className='newMainContentRightInnerTextarea'>
                             <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                           </div>
@@ -622,13 +623,13 @@ function Grid(props) {
                     <div className='x18Middle'>
                       <div className='newMainContentMiddleX13'>
                         <div className='newMainContentRightInner'>
-                          <div className='newMainContentRightInnerMenu'>
+                          {/* <div className='newMainContentRightInnerMenu'>
                             <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
                               <div></div>
                               <div></div>
                               <div></div>
                             </div>
-                          </div>
+                          </div> */}
                           <div className='newMainContentRightInnerTextarea'>
                             <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                           </div>
@@ -671,13 +672,13 @@ function Grid(props) {
                           <div className='x13Middle'>
                             <div className='newMainContentMiddleX13'>
                               <div className='newMainContentRightInner'>
-                                <div className='newMainContentRightInnerMenu'>
+                                {/* <div className='newMainContentRightInnerMenu'>
                                   <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
                                     <div></div>
                                     <div></div>
                                     <div></div>
                                   </div>
-                                </div>
+                                </div> */}
                                 <div className='newMainContentRightInnerTextarea'>
                                   <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                                 </div>
@@ -691,13 +692,13 @@ function Grid(props) {
                               values >= 12 ? 'newMainContentMiddleX11' : values > 1 ? `newMainContentMiddleX${values}` : 'newMainContentRight'
                             }`}>
                             <div className='newMainContentRightInner'>
-                              <div className='newMainContentRightInnerMenu'>
+                              {/* <div className='newMainContentRightInnerMenu'>
                                 <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
                                   <div></div>
                                   <div></div>
                                   <div></div>
                                 </div>
-                              </div>
+                              </div> */}
                               <div className='newMainContentRightInnerTextarea'>
                                 <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                               </div>
@@ -717,13 +718,13 @@ function Grid(props) {
                       <div className={`newMainContentLeft${values > 1 ? `X${values}` : ''}`}>{handleLeftImages().map((item) => item)}</div>
                       <div className={`${values > 1 ? `newMainContentMiddleX${values}` : 'newMainContentRight'}`}>
                         <div className='newMainContentRightInner'>
-                          <div className='newMainContentRightInnerMenu'>
+                          {/* <div className='newMainContentRightInnerMenu'>
                             <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
                               <div></div>
                               <div></div>
                               <div></div>
                             </div>
-                          </div>
+                          </div> */}
                           {/* {activeVideoSkeletonVisibility && ( */}
                           <div id='newMainContentRightInnerTextarea' className='newMainContentRightInnerTextarea'>
                             {activeVideo}

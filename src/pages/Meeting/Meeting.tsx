@@ -173,7 +173,7 @@ class Meeting extends Component<MeetingProps> {
   get inviteText() {
     const url = `https://${process.env.REACT_APP_HOST}`;
     const { id } = this.props;
-    return `Hi there,\nYou can join the meeting from ${url}/join?id=${id}`;
+    return `Hi there,\n Jump into Stagetrack Studio - ${url}/join?id=${id}`;
   }
 
   handleStreamStop() {
@@ -393,9 +393,7 @@ class Meeting extends Component<MeetingProps> {
   // }
 
   video(video: VideoState) {
-    return (
-        <VideoBlock ratio='square' video={video} handleClick={this.handleVideoBlockClick} />
-    );
+    return <VideoBlock ratio='square' video={video} handleClick={this.handleVideoBlockClick} />;
   }
   socketUnsubscribe() {
     const { id } = this.props;

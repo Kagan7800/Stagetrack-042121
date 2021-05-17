@@ -4829,6 +4829,7 @@ main {
 
 .newMainContentRight {
   width: 73%;
+  padding:10px;
   height: 100%;
   background-color: #fbfcd1;
   /*  transform: skewX(-2deg); */
@@ -5095,8 +5096,8 @@ main {
 }
 
 .newMainContentRightInner {
-  width: 95%;
-  height: 95%;
+  width: 100%;
+  height: 100%;
   background-color: #e3dddd;
   border-left: 8px solid #1745b9;
   border-top: 8px solid #1745b9;
