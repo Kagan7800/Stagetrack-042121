@@ -4,7 +4,7 @@ $squareVideoBorder: 2px;
 .videoBlock {
   position: relative;
   background: var(--ion-color-dark);
-  
+
   &.full {
     width: 100%;
     height: 100%;
@@ -12,14 +12,14 @@ $squareVideoBorder: 2px;
     border: $fullVideoBorder solid var(--ion-color-primary);
 
     &.mobile {
-      padding-bottom: calc((100vw / (16/9)) - (2 * #{$fullVideoBorder}));
+      // padding-bottom: calc((100vw / (16/9)) - (2 * #{$fullVideoBorder}));
     }
   }
 
   &.square {
     width: 100%;
     height: 100%;
-    // padding-bottom: 100%; 
+    // padding-bottom: 100%;
     // border: $squareVideoBorder solid #000;
   }
 

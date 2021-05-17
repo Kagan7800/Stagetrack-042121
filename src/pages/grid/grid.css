@@ -1825,10 +1825,16 @@ main {
   display: flex;
 }
 .banner_title {
-  font-size: 36px;
-  font-family: 'Ruluko';
-  color: #1745b9;
-  padding-top: 15px;
+  height: 30%;
+  object-fit: cover;
+  margin-top: 3.4%;
+  margin-left: 22%;
+}
+.banner_title1 {
+  height: 60%;
+  object-fit: cover;
+  margin-top: 2.4%;
+  margin-left: 22%;
 }
 .newMainContentHeaderLogo {
   width: 100%;

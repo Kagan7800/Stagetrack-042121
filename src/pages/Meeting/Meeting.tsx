@@ -510,11 +510,6 @@ class Meeting extends Component<MeetingProps> {
           <Page invert={false} container='full'>
             <div className={this.className}>
               <div id='container'>
-                <header>
-                  <div id='logoDiv'>
-                    <IonImg style={{ width: '230px', margin: '15px 0 0 48px' }} src='/assets/logo.png' />
-                  </div>
-                </header>
                 <GridContainer
                   values={this.props.videos.length}
                   videos={this.videos}

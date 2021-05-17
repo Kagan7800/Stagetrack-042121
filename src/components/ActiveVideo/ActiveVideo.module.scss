@@ -3,7 +3,9 @@
   height: 100%;
 
   &.mobile {
-    height: calc((100vw / (16/9)));
+    // height: calc((100vw / (16/9)));
+
+    height: 100%;
   }
 
   .videoBlock {

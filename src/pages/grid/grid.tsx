@@ -35,7 +35,8 @@ function Grid(props) {
   var values = values || 1;
   const [borderColor, setBorderColor] = useState('blue');
   const [openNav, setOpenNav] = useState(false);
-  const [title, setTitle] = useState('Music Fun with your Little One');
+  // flag for the title change in banner
+  const [title, setTitle] = useState(true);
 
   const handleOnOpenNav = () => {
     setOpenNav(!openNav);
@@ -103,32 +104,18 @@ function Grid(props) {
                 <IonIcon style={{ marginRight: 20, marginLeft: 10 }} icon={handRightOutline} />
                 Raise hand
               </div>
-              {/* <div onClick={handleEndMeetingClick}>
-                {' '}
-                <IonIcon style={{ marginRight: 20, marginLeft: 10 }} icon={handRightOutline} />
-                End meeting
-              </div> */}
-              {/* <div onClick={handleVideoClick}>
-                {' '}/
-                <IonIcon style={{ marginRight: 20, marginLeft: 10 }} icon={handRightOutline} />
-                Video Enable
-              </div> */}
               <div className={`menuItemSidebar${canAudioMute ? 'active' : ''}`} onClick={handleAudioClick}>
-                {' '}
                 <IonIcon style={{ marginRight: 20, marginLeft: 10 }} icon={micOutline} />
                 Audio enable
               </div>
               <div className={`menuItemSidebar${canScreenShare ? 'active' : ''}`} onClick={handleScreenShareClick}>
-                {' '}
                 <IonIcon style={{ marginRight: 20, marginLeft: 10 }} icon={laptopOutline} /> Screen share
               </div>
               <div className={`menuItemSidebar${canWhiteboardEnable ? 'active' : ''}`} onClick={handleWhiteboardClick}>
-                {' '}
                 <IonIcon style={{ marginRight: 20, marginLeft: 10 }} icon={easelOutline} />
                 White Board
               </div>
               <div className={`menuItemSidebar${canMemberRemove ? 'active' : ''}`} onClick={handleMemberRemoveClick}>
-                {' '}
                 <IonIcon style={{ marginRight: 20, marginLeft: 10 }} icon={personRemoveOutline} />
                 Remove person
               </div>
@@ -331,8 +318,11 @@ function Grid(props) {
                   <div className='newMainContentHeaderBg23'>
                     <h3 className='banner_title'>{title} </h3>
                   </div>
-                        <div className='chan
-                  geNewBorderColor vidCapture23_23'>{videos[22]}</div>
+                  <div
+                    className='chan
+                  geNewBorderColor vidCapture23_23'>
+                    {videos[22]}
+                  </div>
                 </div>
                 <div className='x21Lower'>
                   <div className='x18Right'>
@@ -712,7 +702,11 @@ function Grid(props) {
                 ) : (
                   <React.Fragment>
                     <div className='newMainContentHeaderBg'>
-                      {/* <h3 className='banner_title'>{title} </h3> */}
+                      {title ? (
+                        <img className='banner_title' src='./assets/bannerText.png' />
+                      ) : (
+                        <img className='banner_title1' src='./assets/bannerText1.png' />
+                      )}
                     </div>
                     <div className='newMainContentMain'>
                       <div className={`newMainContentLeft${values > 1 ? `X${values}` : ''}`}>{handleLeftImages().map((item) => item)}</div>
