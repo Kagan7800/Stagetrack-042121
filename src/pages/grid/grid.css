@@ -1629,8 +1629,8 @@ main {
 
 .newMainContentHeaderBg {
   width: 95%;
-  height: 15%;
-  background-image: url('../../assets/Rectangle3398e.png');
+  height: 20%;
+  background-image: url('../../assets/banner.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1641,8 +1641,8 @@ main {
 
 .newMainContentHeaderBgX11 {
   width: 112%;
-  height: 15%;
-  background-image: url('../../assets/Rectangle3398e.png');
+  height: 20%;
+  background-image: url('../../assets/banner.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1652,8 +1652,8 @@ main {
 
 .newMainContentHeaderBgX12 {
   width: 99%;
-  height: 15%;
-  background-image: url('../../assets/Rectangle3398e.png');
+  height: 20%;
+  background-image: url('../../assets/banner.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1665,7 +1665,7 @@ main {
 .newMainContentHeaderBgX18 {
   width: 99%;
   height: 100%;
-  background-image: url('../../assets/Rectangle3398e.png');
+  background-image: url('../../assets/banner.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1676,8 +1676,8 @@ main {
 
 .newMainContentHeaderBg21 {
   width: 99%;
-  height: 15%;
-  background-image: url('../../assets/Rectangle3398e.png');
+  height: 20%;
+  background-image: url('../../assets/banner.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1697,7 +1697,7 @@ main {
 .newMainContentHeaderBg22 {
   width: 88%;
   height: 100%;
-  background-image: url('../../assets/Rectangle3398e.png');
+  background-image: url('../../assets/banner.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1709,7 +1709,7 @@ main {
 .newMainContentHeaderBg23 {
   width: 77.5%;
   height: 100%;
-  background-image: url('../../assets/Rectangle3398e.png');
+  background-image: url('../../assets/banner.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1721,7 +1721,7 @@ main {
 .newMainContentHeaderBg24 {
   width: 67%;
   height: 100%;
-  background-image: url('../../assets/Rectangle3398e.png');
+  background-image: url('../../assets/banner.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1733,7 +1733,7 @@ main {
 .newMainContentHeaderBg25 {
   width: 56%;
   height: 100%;
-  background-image: url('../../assets/Rectangle3398e.png');
+  background-image: url('../../assets/banner.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1745,7 +1745,7 @@ main {
 .newMainContentHeaderBg26 {
   width: 46%;
   height: 100%;
-  background-image: url('../../assets/Rectangle3398e.png');
+  background-image: url('../../assets/banner.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -4829,7 +4829,7 @@ main {
 
 .newMainContentRight {
   width: 73%;
-  padding:10px;
+  padding: 10px;
   height: 100%;
   background-color: #fbfcd1;
   /*  transform: skewX(-2deg); */

@@ -712,7 +712,7 @@ function Grid(props) {
                 ) : (
                   <React.Fragment>
                     <div className='newMainContentHeaderBg'>
-                      <h3 className='banner_title'>{title} </h3>
+                      {/* <h3 className='banner_title'>{title} </h3> */}
                     </div>
                     <div className='newMainContentMain'>
                       <div className={`newMainContentLeft${values > 1 ? `X${values}` : ''}`}>{handleLeftImages().map((item) => item)}</div>
