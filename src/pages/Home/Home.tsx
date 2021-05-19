@@ -25,26 +25,6 @@ class Home extends Component<HomeProps> {
 
   render() {
     return (
-      // <IonPage>
-      //   <IonContent>
-      //     <Page
-      //       invert={false}
-      //       container="small">
-      //       <IonGrid>
-      //         <IonRow>
-      //           <IonCol>
-      //             <Button
-      //               text="Start a Meeting"
-      //               handleClick={this.handleStartClick} />
-      //             <Button
-      //               text="Join a Meeting"
-      //               handleClick={this.handleJoinClick} />
-      //           </IonCol>
-      //         </IonRow>
-      //       </IonGrid>
-      //     </Page>
-      //   </IonContent>
-      // </IonPage>
       <div className={styles.container}>
         <div className={styles.subContainer}>
           <div className={styles.bannerContainer}>
@@ -60,7 +40,7 @@ class Home extends Component<HomeProps> {
                 </div>
               </div>
               <div className={styles.btnContainer}>
-                <Start/>
+                <Start />
                 <div className={styles.MFLO}>What is Music Fun with your Little One?</div>
               </div>
             </div>

@@ -21,7 +21,6 @@ class Start extends Component<StartProps> {
     this.handleStartClick = this.handleStartClick.bind(this);
     this.handleLoginFormrender = this.handleLoginFormrender.bind(this);
     this.handleLoginScreenConvert = this.handleLoginScreenConvert.bind(this);
-
   }
 
   handleInputChange(event: ChangeEvent) {
@@ -61,15 +60,20 @@ class Start extends Component<StartProps> {
       return (
         <div className={styles.STaccessContainer}>
           <div className={styles.STaccess1}>Studio Access</div>
-          <div className={styles.inputContainer}>
-            <input name='username' type='text' value={this.props.username} placeholder='Username' onChange={this.handleInputChange} />
-            <input name='password' type='password' value={this.props.password} placeholder='Password' onChange={this.handleInputChange} />
-            <p className={styles.forgotPassword}>Forgot Password</p>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+            <div className={styles.inputContainer}>
+              <input name='username' type='text' value={this.props.username} placeholder='Username' onChange={this.handleInputChange} />
+              <input name='password' type='password' value={this.props.password} placeholder='Password' onChange={this.handleInputChange} />
+            </div>
             <div onClick={this.handleStartClick}>
-              <img style={{ cursor: 'pointer' }} src='./assets/loginbtn.png' alt='' />
+              <img style={{ cursor: 'pointer', marginTop: 20 }} src='./assets/loginbtn.png' alt='' />
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <p className={styles.forgotPassword}>Forgot Password</p>
+              <div className={styles.Register}>Register </div>
+              <div className={styles.Register_sub_text}>as New User</div>
             </div>
           </div>
-          <div className={styles.Register}>Register as New User</div>
         </div>
       );
     } else {
@@ -81,38 +85,7 @@ class Start extends Component<StartProps> {
     }
   }
   render() {
-    return (
-      // <IonPage>
-      //   <IonContent>
-      //     <Page
-      //       invert={false}
-      //       container="small">
-      //       <IonGrid>
-      //         <IonRow>
-      //           <IonCol>
-      //             <Input
-      //               name="username"
-      //               type="text"
-      //               value={this.props.username}
-      //               placeholder="Username"
-      //               handleChange={this.handleInputChange} />
-      //             <Input
-      //               name="password"
-      //               type="password"
-      //               value={this.props.password}
-      //               placeholder="Password"
-      //               handleChange={this.handleInputChange} />
-      //             <Button
-      //               text="Start Meeting"
-      //               handleClick={this.handleStartClick} />
-      //           </IonCol>
-      //         </IonRow>
-      //       </IonGrid>
-      //     </Page>
-      //   </IonContent>
-      // </IonPage>
-      <>{this.handleLoginFormrender()}</>
-    );
+    return <>{this.handleLoginFormrender()}</>;
   }
 }
 
