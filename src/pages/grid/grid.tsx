@@ -158,7 +158,7 @@ function Grid(props) {
                   <div className={`menuItemSidebarlower ${canVideoMute ? 'active' : ''}`} onClick={handleVideoClick}>
                     Pause Session
                   </div>
-                  <div className={`menuItemSidebarlower ${canEndMeeting ? 'active' : ''}`} onClick={handleInviteMemberClick}>
+                  <div className={`menuItemSidebarlower ${canEndMeeting ? 'active' : ''}`} onClick={handleEndMeetingClick}>
                     End Session
                   </div>
                 </div>
