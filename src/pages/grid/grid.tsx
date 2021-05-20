@@ -35,18 +35,25 @@ function Grid(props) {
   var values = values || 1;
   const [borderColor, setBorderColor] = useState('blue');
   const [openNav, setOpenNav] = useState(false);
+  const [open2nav, set2Nav] = useState(false);
   // flag for the title change in banner
   const [title, setTitle] = useState(true);
 
   const handleOnOpenNav = () => {
     setOpenNav(!openNav);
   };
+  const handleOnTodaysColor = () => {
+    set2Nav(true);
+  };
+  const handleOn2NavBackbtn = () => {
+    set2Nav(false);
+  };
 
   const handleLeftImages = () => {
     let elements = [<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${1}`}>{getFirstVideo}</div>];
     for (let i = 1; i <= values; i++) {
       if (i === 4) {
-        elements.push(<div className={`changeNewBorderColor vidCapture${values}_${2}`}>{videos[i - 2]}</div>);
+        elements.push(<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${2}`}>{videos[i - 2]}</div>);
       }
     }
     return elements;
@@ -78,9 +85,8 @@ function Grid(props) {
   };
 
   const handleOnColorChange = (event) => {
-    const { name } = event.target;
-    console.log(name);
-    setBorderColor(name);
+    const { id } = event.target;
+    setBorderColor(id);
   };
   const handleInviteMemberClick = () => {
     if (!canInviteMember) return;
@@ -95,9 +101,69 @@ function Grid(props) {
     <div id='container'>
       <div id='contentContainer'>
         <aside id='nav_side'>
-          {openNav ? (
-            <div id='mySidepanel' style={{ color: 'white' }} className='sidepanel'>
-              <a className='closebtn' onClick={handleOnOpenNav}>
+          {openNav && !open2nav ? (
+            <div id='mySidepanel' style={{ color: 'white', padding: 20 }} className='sidepanel'>
+              <div
+                style={{
+                  height: '100%',
+                  border: '1px solid #FFFFFF',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}>
+                <a className='closebtn' onClick={handleOnOpenNav}>
+                  &times;
+                </a>
+                <div className='upperContainer'>
+                  <div className={`menuItemSidebar `} onClick={''}>
+                    Chat
+                  </div>
+                  <hr className='horizontal' />
+
+                  <div className={`menuItemSidebar `} onClick={''}>
+                    Display File
+                  </div>
+                  <hr className='horizontal' />
+
+                  <div className={`menuItemSidebar `} onClick={''}>
+                    Display Video
+                  </div>
+                  <hr className='horizontal' />
+
+                  <div className={`menuItemSidebar ${canRaiseHand ? 'active' : ''}`} onClick={handleRaiseHandClick}>
+                    Raise hand
+                  </div>
+                  <hr className='horizontal' />
+
+                  <div className={`menuItemSidebar ${canScreenShare ? 'active' : ''}`} onClick={handleScreenShareClick}>
+                    Share Screen
+                  </div>
+                  <hr className='horizontal' />
+                  <div className={`menuItemSidebar ${canWhiteboardEnable ? 'active' : ''}`} onClick={handleWhiteboardClick}>
+                    White Board
+                  </div>
+                  <hr className='horizontal' />
+                  <div className={`menuItemSidebar active`} onClick={handleOnTodaysColor}>
+                    Today's Colors
+                  </div>
+                  <hr className='horizontal' />
+
+                  <div className={`menuItemSidebar active`} onClick={handleInviteMemberClick}>
+                    Invite Guests
+                  </div>
+                </div>
+                <div className='lowerContainer'>
+                  <hr className='HRdivider' />
+                  <div className={`menuItemSidebarlower ${canVideoMute ? 'active' : ''}`} onClick={handleVideoClick}>
+                    Pause Session
+                  </div>
+                  <div className={`menuItemSidebarlower ${canEndMeeting ? 'active' : ''}`} onClick={handleInviteMemberClick}>
+                    End Session
+                  </div>
+                </div>
+              </div>
+              {/* <a className='closebtn' onClick={handleOnOpenNav}>
                 &times;
               </a>
               <div className={`menuItemSidebar${canRaiseHand ? 'active' : ''}`} onClick={handleRaiseHandClick}>
@@ -129,6 +195,36 @@ function Grid(props) {
                 <button name='aqua' onClick={handleOnColorChange} id='newCaptureAqua'></button>
                 <button name='red' onClick={handleOnColorChange} id='newCaptureRed'></button>
                 <button name='orange' onClick={handleOnColorChange} id='newCaptureOrange'></button>
+              </div> */}
+            </div>
+          ) : openNav ? (
+            <div id='mySidepanel' style={{ color: 'white', padding: 20 }} className='sidepanel'>
+              <div
+                style={{
+                  height: '100%',
+                  border: '1px solid #FFFFFF',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}>
+                <a className='backbtn' onClick={handleOn2NavBackbtn}>
+                  <img
+                    src='./assets/backArrow.png'
+                    style={{
+                      transform: 'scaleX(-1)',
+                    }}
+                    height={20}
+                    width={20}
+                    alt=''
+                  />
+                </a>
+                <div id='newCaptureBorderColorsContainer'>
+                  <div id='green' style={{ border: '5px solid #82ED93', width: '80%' }} onClick={handleOnColorChange}></div>
+                  <div id='aqua' style={{ border: '5px solid #4EF2DE', width: '80%' }} onClick={handleOnColorChange}></div>
+                  <div id='red' style={{ border: '5px solid #F71C1C', width: '80%' }} onClick={handleOnColorChange}></div>
+                  <div id='orange' style={{ border: '5px solid #F29B1A', width: '80%' }} onClick={handleOnColorChange}></div>
+                </div>
               </div>
             </div>
           ) : (
@@ -202,7 +298,7 @@ function Grid(props) {
               <div id='newMainContentAreaX25'>
                 <div className='x22Header'>
                   <div className='changeNewBorderColor vidCapture22_22'>{videos[21]}</div>
-                  <div className='newMainContentHeaderBg25'>
+                  <div className={title ? 'newMainContentHeaderBg25' : 'newMainContentHeaderBgZ25'}>
                     <h3 className='banner_title'>{title} </h3>
                   </div>
                   <div className='changeNewBorderColor vidCapture25_25'>{videos[24]}</div>
@@ -259,7 +355,7 @@ function Grid(props) {
               <div id='newMainContentAreaX24'>
                 <div className='x22Header'>
                   <div className='changeNewBorderColor vidCapture22_22'>{videos[21]}</div>
-                  <div className='newMainContentHeaderBg24'>
+                  <div className={title ? 'newMainContentHeaderBg24' : 'newMainContentHeaderBgZ24'}>
                     <h3 className='banner_title'>{title} </h3>
                   </div>
                   <div className='changeNewBorderColor vidCapture24_24'>{videos[23]}</div>
@@ -315,7 +411,7 @@ function Grid(props) {
               <div id='newMainContentAreaX23'>
                 <div className='x22Header'>
                   <div className='changeNewBorderColor vidCapture22_22'>{videos[21]}</div>
-                  <div className='newMainContentHeaderBg23'>
+                  <div className={title ? 'newMainContentHeaderBg23' : 'newMainContentHeaderBgZ23'}>
                     <h3 className='banner_title'>{title} </h3>
                   </div>
                   <div
@@ -374,7 +470,7 @@ function Grid(props) {
               <div id='newMainContentAreaX22'>
                 <div className='x22Header'>
                   <div className='changeNewBorderColor vidCapture22_22'>{videos[22]}</div>
-                  <div className='newMainContentHeaderBg22'>
+                  <div className={title ? 'newMainContentHeaderBg22' : 'newMainContentHeaderBgZ22'}>
                     <h3 className='banner_title'>{title} </h3>
                   </div>
                 </div>
@@ -426,7 +522,7 @@ function Grid(props) {
               </div>
             ) : values === 21 ? (
               <div id='newMainContentAreaX21'>
-                <div className='newMainContentHeaderBg21'>
+                <div className={title ? 'newMainContentHeaderBg21' : 'newMainContentHeaderBgZ21'}>
                   <h3 className='banner_title'>{title} </h3>
                 </div>
                 <div className='x21Lower'>
@@ -492,7 +588,7 @@ function Grid(props) {
                 </div>
                 <div className='x11Right18'>
                   <div className='x18Upper'>
-                    <div className='newMainContentHeaderBgX18'>
+                    <div className={title ? 'newMainContentHeaderBgX18' : 'newMainContentHeaderBgZX18'}>
                       <h3 className='banner_title'>{title} </h3>
                     </div>
                   </div>
@@ -549,7 +645,7 @@ function Grid(props) {
                 </div>
                 <div className='x11Right18'>
                   <div className='x18Upper'>
-                    <div className='newMainContentHeaderBgX18'>
+                    <div className={title ? 'newMainContentHeaderBgX18' : 'newMainContentHeaderBgZX18'}>
                       <h3 className='banner_title'>{title} </h3>
                     </div>
                   </div>
@@ -605,7 +701,7 @@ function Grid(props) {
                 </div>
                 <div className='x11Right18'>
                   <div className='x18Upper'>
-                    <div className='newMainContentHeaderBgX18'>
+                    <div className={title ? 'newMainContentHeaderBgX18' : 'newMainContentHeaderBgZX18'}>
                       <h3 className='banner_title'>{title} </h3>
                     </div>
                   </div>
@@ -651,7 +747,7 @@ function Grid(props) {
                 {values >= 11 ? (
                   <React.Fragment>
                     <div className={'x11Left'}>
-                      <div className='newMainContentHeaderBgX12'>
+                      <div className={title ? 'newMainContentHeaderBgX12' : 'newMainContentHeaderBgZX12'}>
                         <h3 className='banner_title'>{title} </h3>
                       </div>
                       <div className={'newMainContentMain'}>
@@ -701,12 +797,12 @@ function Grid(props) {
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
-                    <div className='newMainContentHeaderBg'>
-                      {title ? (
+                    <div className={title ? 'newMainContentHeaderBg' : 'newMainContentHeaderBgZ'}>
+                      {/* {title ? (
                         <img className='banner_title' src='./assets/bannerText.png' />
                       ) : (
-                        <img className='banner_title1' src='./assets/bannerText1.png' />
-                      )}
+                        <img className='banner_title1' src='./assets/bannerLogo.png' />
+                      )} */}
                     </div>
                     <div className='newMainContentMain'>
                       <div className={`newMainContentLeft${values > 1 ? `X${values}` : ''}`}>{handleLeftImages().map((item) => item)}</div>

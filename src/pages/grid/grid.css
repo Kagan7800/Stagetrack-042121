@@ -109,22 +109,75 @@ header {
   color: #f1f1f1;
 }
 .menuItemSidebar {
+  opacity: 0.5;
+  font-family: Risque;
+  font-weight: normal;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 16px;
+  font-style: italic;
   display: flex;
   align-items: center;
-  /* font-size: 1.5em; */
-  color: #ffffff;
-  opacity: 0.5;
+  text-align: center;
+  color: #f8fa90;
 }
+.menuItemSidebarlower {
+  opacity: 0.5;
+  width: 50%;
+  font-family: Risque;
+  font-weight: normal;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 16px;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #f8fa90;
+}
+
 .active {
   opacity: 1;
+}
+.horizontal {
+  color: #f8fa90;
+  width: 40%;
+  background-color: #f8fa90;
+}
+.upperContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+.lowerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 25%;
+}
+.HRdivider {
+  color: #f8fa90;
+  width: 80%;
+  background-color: #f8fa90;
 }
 /* Position and style the close button (top right corner) */
 .sidepanel .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
+  top: 5px;
+  right: 15px;
   font-size: 36px;
   margin-left: 50px;
+  cursor: pointer;
+}
+.sidepanel .backbtn {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  font-size: 36px;
   cursor: pointer;
 }
 .sidepanel > div {
@@ -1294,12 +1347,20 @@ main {
 }
 
 #newCaptureBorderColorsContainer {
-  position: absolute;
+  /* position: absolute;
   right: 0;
   display: flex;
   justify-content: space-evenly;
   bottom: 10px;
+  width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
   width: 100%;
+  height: 20%;
+
 }
 
 #newCaptureBorderColorsContainer button {
@@ -1629,8 +1690,19 @@ main {
 
 .newMainContentHeaderBg {
   width: 95%;
-  height: 20%;
-  background-image: url('../../assets/banner.png');
+  height: 25%;
+  background-image: url('../../assets/bannerText.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 2px 0 10px 0;
+  display: flex;
+  justify-content: center;
+}
+.newMainContentHeaderBgZ {
+  width: 95%;
+  height: 25%;
+  background-image: url('../../assets/bannerlogo.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1642,7 +1714,17 @@ main {
 .newMainContentHeaderBgX11 {
   width: 112%;
   height: 20%;
-  background-image: url('../../assets/banner.png');
+  background-image: url('../../assets/bannerText.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 2px 0 10px 10px;
+  display: flex;
+}
+.newMainContentHeaderBgZX11 {
+  width: 112%;
+  height: 20%;
+  background-image: url('../../assets/bannerlogo.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1653,7 +1735,19 @@ main {
 .newMainContentHeaderBgX12 {
   width: 99%;
   height: 20%;
-  background-image: url('../../assets/banner.png');
+  background-image: url('../../assets/bannerText.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 2px 0 10px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.newMainContentHeaderBgZX12 {
+  width: 99%;
+  height: 20%;
+  background-image: url('../../assets/bannerlogo.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1665,7 +1759,18 @@ main {
 .newMainContentHeaderBgX18 {
   width: 99%;
   height: 100%;
-  background-image: url('../../assets/banner.png');
+  background-image: url('../../assets/bannerText.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 2px 0 10px 10px;
+  display: flex;
+  justify-content: center;
+}
+.newMainContentHeaderBgZX18 {
+  width: 99%;
+  height: 100%;
+  background-image: url('../../assets/bannerlogo.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1677,7 +1782,18 @@ main {
 .newMainContentHeaderBg21 {
   width: 99%;
   height: 20%;
-  background-image: url('../../assets/banner.png');
+  background-image: url('../../assets/bannerText.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 2px 0 10px 0;
+  display: flex;
+  justify-content: center;
+}
+.newMainContentHeaderBgZ21 {
+  width: 99%;
+  height: 20%;
+  background-image: url('../../assets/bannerlogo.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1697,7 +1813,7 @@ main {
 .newMainContentHeaderBg22 {
   width: 88%;
   height: 100%;
-  background-image: url('../../assets/banner.png');
+  background-image: url('../../assets/bannerText.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1709,7 +1825,7 @@ main {
 .newMainContentHeaderBg23 {
   width: 77.5%;
   height: 100%;
-  background-image: url('../../assets/banner.png');
+  background-image: url('../../assets/bannerText.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1721,7 +1837,7 @@ main {
 .newMainContentHeaderBg24 {
   width: 67%;
   height: 100%;
-  background-image: url('../../assets/banner.png');
+  background-image: url('../../assets/bannerText.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1733,7 +1849,7 @@ main {
 .newMainContentHeaderBg25 {
   width: 56%;
   height: 100%;
-  background-image: url('../../assets/banner.png');
+  background-image: url('../../assets/bannerText.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1745,7 +1861,7 @@ main {
 .newMainContentHeaderBg26 {
   width: 46%;
   height: 100%;
-  background-image: url('../../assets/banner.png');
+  background-image: url('../../assets/bannerText.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
