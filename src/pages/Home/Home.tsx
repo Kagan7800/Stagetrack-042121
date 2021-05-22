@@ -81,7 +81,7 @@ class Home extends Component<HomeProps> {
                 <img src='./assets/lower4.png' width='47%' height='80%' alt='' />
               </div>
               <div className={styles.lowerSubContainer}>
-                <img src='./assets/lower4.png' width='47%' height='80%' alt='' />
+                <img src='./assets/lower5.png' width='47%' height='80%' alt='' />
                 <div className={styles.textContainer}>
                   <div className={styles.highlightedtxt}>Who can join class?</div>
                   <div className={styles.text}>
@@ -94,10 +94,10 @@ class Home extends Component<HomeProps> {
                   <div className={styles.highlightedtxt}>Why enroll in the 8 week interactive program?</div>
                   <div className={styles.text}>Introduce music, have fun and try new and creative ways to interact with your little ... </div>
                 </div>
-                <img src='./assets/lower4.png' width='47%' height='80%' alt='' />
+                <img src='./assets/lower6.png' width='47%' height='80%' alt='' />
               </div>
               <div className={styles.lowerSubContainer}>
-                <img src='./assets/lower4.png' width='47%' height='80%' alt='' />
+                <img src='./assets/lower7.png' width='47%' height='80%' alt='' />
                 <div className={styles.textContainer}>
                   <div className={styles.highlightedtxt}>Who can join class?</div>
                   <div className={styles.text}>Music Fun with your Little One is an 8 week interactive program:</div>

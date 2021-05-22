@@ -36,7 +36,6 @@ export interface MeetingState {
   calls: MediaConnection[]
   whiteboardDrawings: MeetingWhiteboardDrawingsState
   whiteboardEnabled: boolean
-  menuExpanded: MenuExpandedState
 }
 
 export interface MeetingActions {
@@ -57,9 +56,7 @@ export interface MeetingActions {
   pushVideo: (video: VideoState) => AnyAction
   pushCall: (call: MediaConnection) => AnyAction
   pushWhiteboardDrawing: (whiteboardDrawing: MeetingWhiteboardDrawingState) => AnyAction
-  pushMenuExpanded: (menuExpanded: MenuPosition) => AnyAction
   pullVideo: (connectionId: string) => AnyAction
-  pullMenuExpanded: (menuExpanded: MenuPosition) => AnyAction
   reset: () => AnyAction
 }
 
@@ -72,7 +69,6 @@ const meeting: MeetingState = {
   calls: [],
   whiteboardDrawings: [],
   whiteboardEnabled: false,
-  menuExpanded: ['top', 'bottom']
 }
 
 export const actions: MeetingActions = {
@@ -133,15 +129,11 @@ export const actions: MeetingActions = {
   pushWhiteboardDrawing (whiteboardDrawing) {
     return { type: 'PUSH_MEETING_WHITEBOARD_DRAWING', whiteboardDrawing }
   },
-  pushMenuExpanded (menuExpanded) {
-    return { type: 'PUSH_MEETING_MENU_EXPANDED', menuExpanded }
-  },
+
   pullVideo (connectionId) {
     return { type: 'PULL_MEETING_VIDEO', connectionId }
   },
-  pullMenuExpanded (menuExpanded) {
-    return { type: 'PULL_MEETING_MENU_EXPANDED', menuExpanded }
-  },
+
   reset () {
     return { type: 'RESET_MEETING' }
   }
@@ -237,9 +229,7 @@ export function reducers (state = meeting, action: any) {
       if (!isExists) meeting.whiteboardDrawings.push(whiteboardDrawing)
       return cloneDeep(meeting)
     }
-    case 'PUSH_MEETING_MENU_EXPANDED':
-      meeting.menuExpanded.push(action.menuExpanded)
-      return cloneDeep(meeting)
+   
     case 'PULL_MEETING_VIDEO': {
       const { connectionId: id } = action
       const isExists = some(meeting.videos, { id })
@@ -248,14 +238,11 @@ export function reducers (state = meeting, action: any) {
       }
       return cloneDeep(meeting)
     }
-    case 'PULL_MEETING_MENU_EXPANDED':
-      pull(meeting.menuExpanded, action.menuExpanded)
-      return cloneDeep(meeting)
+  
     case 'RESET_MEETING': {
       meeting.id = ''
       meeting.connectionId = ''
       meeting.videos = []
-      meeting.menuExpanded = ['top', 'bottom']
       return cloneDeep(meeting)
     }
     default:

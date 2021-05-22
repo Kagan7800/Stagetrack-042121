@@ -163,39 +163,6 @@ function Grid(props) {
                   </div>
                 </div>
               </div>
-              {/* <a className='closebtn' onClick={handleOnOpenNav}>
-                &times;
-              </a>
-              <div className={`menuItemSidebar${canRaiseHand ? 'active' : ''}`} onClick={handleRaiseHandClick}>
-                <IonIcon style={{ marginRight: 20, marginLeft: 10 }} icon={handRightOutline} />
-                Raise hand
-              </div>
-              <div className={`menuItemSidebar${canAudioMute ? 'active' : ''}`} onClick={handleAudioClick}>
-                <IonIcon style={{ marginRight: 20, marginLeft: 10 }} icon={micOutline} />
-                Audio enable
-              </div>
-              <div className={`menuItemSidebar${canScreenShare ? 'active' : ''}`} onClick={handleScreenShareClick}>
-                <IonIcon style={{ marginRight: 20, marginLeft: 10 }} icon={laptopOutline} /> Screen share
-              </div>
-              <div className={`menuItemSidebar${canWhiteboardEnable ? 'active' : ''}`} onClick={handleWhiteboardClick}>
-                <IonIcon style={{ marginRight: 20, marginLeft: 10 }} icon={easelOutline} />
-                White Board
-              </div>
-              <div className={`menuItemSidebar${canMemberRemove ? 'active' : ''}`} onClick={handleMemberRemoveClick}>
-                <IonIcon style={{ marginRight: 20, marginLeft: 10 }} icon={personRemoveOutline} />
-                Remove person
-              </div>
-              <div id='session'>
-                <IonImg onClick={canEndMeeting ? handleEndMeetingClick : ''} className='session' src='/assets/sessionLeave.png' />
-                <IonImg onClick={canVideoMute ? handleVideoClick : handleVideoClick} className='session' src='/assets/sessionPause.png' />
-                <IonImg onClick={handleInviteMemberClick} className='session' src='/assets/sessionStart.png' />
-              </div>
-              <div id='newCaptureBorderColorsContainer'>
-                <button name='green' onClick={handleOnColorChange} id='newCaptureGreen'></button>
-                <button name='aqua' onClick={handleOnColorChange} id='newCaptureAqua'></button>
-                <button name='red' onClick={handleOnColorChange} id='newCaptureRed'></button>
-                <button name='orange' onClick={handleOnColorChange} id='newCaptureOrange'></button>
-              </div> */}
             </div>
           ) : openNav ? (
             <div id='mySidepanel' style={{ color: 'white', padding: 20 }} className='sidepanel'>
@@ -240,7 +207,7 @@ function Grid(props) {
                 <div className='x22Header'>
                   <div className='changeNewBorderColor vidCapture22_22'>{videos[21]}</div>
                   <div className='newMainContentHeaderBg26'>
-                    <h3 className='banner_title'>{title} </h3>
+                    {/* <h3 className='banner_title'>{title} </h3> */}
                   </div>
                   <div className='changeNewBorderColor vidCapture26_26'>Balcony Seats</div>
                   <div className='changeNewBorderColor vidCapture25_25'>{videos[24]}</div>
@@ -262,13 +229,6 @@ function Grid(props) {
                   <div className='x18Middle'>
                     <div className='newMainContentMiddleX13'>
                       <div className='newMainContentRightInner'>
-                        {/* <div className='newMainContentRightInnerMenu'>
-                          <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                          </div>
-                        </div> */}
                         <div className='newMainContentRightInnerTextarea'>
                           <div className='newMainContentTextarea'>{activeVideo}</div>
                         </div>
@@ -299,7 +259,7 @@ function Grid(props) {
                 <div className='x22Header'>
                   <div className='changeNewBorderColor vidCapture22_22'>{videos[21]}</div>
                   <div className={title ? 'newMainContentHeaderBg25' : 'newMainContentHeaderBgZ25'}>
-                    <h3 className='banner_title'>{title} </h3>
+                    {/* <h3 className='banner_title'>{title} </h3> */}
                   </div>
                   <div className='changeNewBorderColor vidCapture25_25'>{videos[24]}</div>
                   <div className='changeNewBorderColor vidCapture24_24'>{videos[23]}</div>
@@ -319,13 +279,6 @@ function Grid(props) {
                   <div className='x18Middle'>
                     <div className='newMainContentMiddleX13'>
                       <div className='newMainContentRightInner'>
-                        {/* <div className='newMainContentRightInnerMenu'>
-                          <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                          </div>
-                        </div> */}
                         <div className='newMainContentRightInnerTextarea'>
                           <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                         </div>
@@ -356,7 +309,7 @@ function Grid(props) {
                 <div className='x22Header'>
                   <div className='changeNewBorderColor vidCapture22_22'>{videos[21]}</div>
                   <div className={title ? 'newMainContentHeaderBg24' : 'newMainContentHeaderBgZ24'}>
-                    <h3 className='banner_title'>{title} </h3>
+                    {/* <h3 className='banner_title'>{title} </h3> */}
                   </div>
                   <div className='changeNewBorderColor vidCapture24_24'>{videos[23]}</div>
                   <div className='changeNewBorderColor vidCapture23_23'>{videos[22]}</div>
@@ -375,13 +328,6 @@ function Grid(props) {
                   <div className='x18Middle'>
                     <div className='newMainContentMiddleX13'>
                       <div className='newMainContentRightInner'>
-                        {/* <div className='newMainContentRightInnerMenu'>
-                          <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                          </div>
-                        </div> */}
                         <div className='newMainContentRightInnerTextarea'>
                           <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                         </div>
@@ -412,7 +358,7 @@ function Grid(props) {
                 <div className='x22Header'>
                   <div className='changeNewBorderColor vidCapture22_22'>{videos[21]}</div>
                   <div className={title ? 'newMainContentHeaderBg23' : 'newMainContentHeaderBgZ23'}>
-                    <h3 className='banner_title'>{title} </h3>
+                    {/* <h3 className='banner_title'>{title} </h3> */}
                   </div>
                   <div
                     className='chan
@@ -434,13 +380,6 @@ function Grid(props) {
                   <div className='x18Middle'>
                     <div className='newMainContentMiddleX13'>
                       <div className='newMainContentRightInner'>
-                        {/* <div className='newMainContentRightInnerMenu'>
-                          <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                          </div>
-                        </div> */}
                         <div className='newMainContentRightInnerTextarea'>
                           <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                         </div>
@@ -471,7 +410,7 @@ function Grid(props) {
                 <div className='x22Header'>
                   <div className='changeNewBorderColor vidCapture22_22'>{videos[22]}</div>
                   <div className={title ? 'newMainContentHeaderBg22' : 'newMainContentHeaderBgZ22'}>
-                    <h3 className='banner_title'>{title} </h3>
+                    {/* <h3 className='banner_title'>{title} </h3> */}
                   </div>
                 </div>
                 <div className='x21Lower'>
@@ -488,13 +427,6 @@ function Grid(props) {
                   <div className='x18Middle'>
                     <div className='newMainContentMiddleX13'>
                       <div className='newMainContentRightInner'>
-                        {/* <div className='newMainContentRightInnerMenu'>
-                          <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                          </div>
-                        </div> */}
                         <div className='newMainContentRightInnerTextarea'>
                           <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                         </div>
@@ -523,7 +455,7 @@ function Grid(props) {
             ) : values === 21 ? (
               <div id='newMainContentAreaX21'>
                 <div className={title ? 'newMainContentHeaderBg21' : 'newMainContentHeaderBgZ21'}>
-                  <h3 className='banner_title'>{title} </h3>
+                  {/* <h3 className='banner_title'>{title} </h3> */}
                 </div>
                 <div className='x21Lower'>
                   <div className='x18Right'>
@@ -539,13 +471,6 @@ function Grid(props) {
                   <div className='x18Middle'>
                     <div className='newMainContentMiddleX13'>
                       <div className='newMainContentRightInner'>
-                        {/* <div className='newMainContentRightInnerMenu'>
-                          <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                          </div>
-                        </div> */}
                         <div className='newMainContentRightInnerTextarea'>
                           <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                         </div>
@@ -589,20 +514,13 @@ function Grid(props) {
                 <div className='x11Right18'>
                   <div className='x18Upper'>
                     <div className={title ? 'newMainContentHeaderBgX18' : 'newMainContentHeaderBgZX18'}>
-                      <h3 className='banner_title'>{title} </h3>
+                      {/* <h3 className='banner_title'>{title} </h3> */}
                     </div>
                   </div>
                   <div className='x18Lower'>
                     <div className='x18Middle'>
                       <div className='newMainContentMiddleX13'>
                         <div className='newMainContentRightInner'>
-                          {/* <div className='newMainContentRightInnerMenu'>
-                            <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
-                              <div></div>
-                              <div></div>
-                              <div></div>
-                            </div>
-                          </div> */}
                           <div className='newMainContentRightInnerTextarea'>
                             <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                           </div>
@@ -646,20 +564,13 @@ function Grid(props) {
                 <div className='x11Right18'>
                   <div className='x18Upper'>
                     <div className={title ? 'newMainContentHeaderBgX18' : 'newMainContentHeaderBgZX18'}>
-                      <h3 className='banner_title'>{title} </h3>
+                      {/* <h3 className='banner_title'>{title} </h3> */}
                     </div>
                   </div>
                   <div className='x18Lower'>
                     <div className='x18Middle'>
                       <div className='newMainContentMiddleX13'>
                         <div className='newMainContentRightInner'>
-                          {/* <div className='newMainContentRightInnerMenu'>
-                            <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
-                              <div></div>
-                              <div></div>
-                              <div></div>
-                            </div>
-                          </div> */}
                           <div className='newMainContentRightInnerTextarea'>
                             <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                           </div>
@@ -702,20 +613,13 @@ function Grid(props) {
                 <div className='x11Right18'>
                   <div className='x18Upper'>
                     <div className={title ? 'newMainContentHeaderBgX18' : 'newMainContentHeaderBgZX18'}>
-                      <h3 className='banner_title'>{title} </h3>
+                      {/* <h3 className='banner_title'>{title} </h3> */}
                     </div>
                   </div>
                   <div className='x18Lower'>
                     <div className='x18Middle'>
                       <div className='newMainContentMiddleX13'>
                         <div className='newMainContentRightInner'>
-                          {/* <div className='newMainContentRightInnerMenu'>
-                            <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
-                              <div></div>
-                              <div></div>
-                              <div></div>
-                            </div>
-                          </div> */}
                           <div className='newMainContentRightInnerTextarea'>
                             <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                           </div>
@@ -748,7 +652,7 @@ function Grid(props) {
                   <React.Fragment>
                     <div className={'x11Left'}>
                       <div className={title ? 'newMainContentHeaderBgX12' : 'newMainContentHeaderBgZX12'}>
-                        <h3 className='banner_title'>{title} </h3>
+                        {/* <h3 className='banner_title'>{title} </h3> */}
                       </div>
                       <div className={'newMainContentMain'}>
                         <div className={`newMainContentLeft${values >= 12 ? 'X11' : values > 1 ? `X${values}` : ''}`}>
@@ -758,13 +662,6 @@ function Grid(props) {
                           <div className='x13Middle'>
                             <div className='newMainContentMiddleX13'>
                               <div className='newMainContentRightInner'>
-                                {/* <div className='newMainContentRightInnerMenu'>
-                                  <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                  </div>
-                                </div> */}
                                 <div className='newMainContentRightInnerTextarea'>
                                   <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                                 </div>
@@ -778,13 +675,6 @@ function Grid(props) {
                               values >= 12 ? 'newMainContentMiddleX11' : values > 1 ? `newMainContentMiddleX${values}` : 'newMainContentRight'
                             }`}>
                             <div className='newMainContentRightInner'>
-                              {/* <div className='newMainContentRightInnerMenu'>
-                                <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
-                                  <div></div>
-                                  <div></div>
-                                  <div></div>
-                                </div>
-                              </div> */}
                               <div className='newMainContentRightInnerTextarea'>
                                 <div className='newMainContentRightInnerTextarea'>{activeVideo}</div>
                               </div>
@@ -798,28 +688,14 @@ function Grid(props) {
                 ) : (
                   <React.Fragment>
                     <div className={title ? 'newMainContentHeaderBg' : 'newMainContentHeaderBgZ'}>
-                      {/* {title ? (
-                        <img className='banner_title' src='./assets/bannerText.png' />
-                      ) : (
-                        <img className='banner_title1' src='./assets/bannerLogo.png' />
-                      )} */}
                     </div>
                     <div className='newMainContentMain'>
                       <div className={`newMainContentLeft${values > 1 ? `X${values}` : ''}`}>{handleLeftImages().map((item) => item)}</div>
                       <div className={`${values > 1 ? `newMainContentMiddleX${values}` : 'newMainContentRight'}`}>
                         <div className='newMainContentRightInner'>
-                          {/* <div className='newMainContentRightInnerMenu'>
-                            <div onClick={handleOnOpenNav} className='newMainContentRightInnerMenuContainer'>
-                              <div></div>
-                              <div></div>
-                              <div></div>
-                            </div>
-                          </div> */}
-                          {/* {activeVideoSkeletonVisibility && ( */}
                           <div id='newMainContentRightInnerTextarea' className='newMainContentRightInnerTextarea'>
                             {activeVideo}
                           </div>
-                          {/* )} */}
                         </div>
                       </div>
                       <div className={`newMainContentRightX${values}`}>{handleRightImages().map((item) => item)}</div>

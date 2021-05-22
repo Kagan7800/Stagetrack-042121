@@ -75,25 +75,24 @@ class Meeting extends Component<MeetingProps> {
     this.handleMenuScreenShareClick = this.handleMenuScreenShareClick.bind(this);
     this.handleMenuWhiteboardClick = this.handleMenuWhiteboardClick.bind(this);
     this.handleMenuMemberRemoveClick = this.handleMenuMemberRemoveClick.bind(this);
-    this.handleMenuToggleChange = this.handleMenuToggleChange.bind(this);
     this.handleVideoBlockClick = this.handleVideoBlockClick.bind(this);
     this.handleWhiteboardCanvasClearClick = this.handleWhiteboardCanvasClearClick.bind(this);
     this.handleWhiteboardDrawingAdd = this.handleWhiteboardDrawingAdd.bind(this);
   }
 
-  isMenuExpanded(position: MenuPosition) {
-    const { menuExpanded } = this.props;
-    return includes(menuExpanded, position);
-  }
+  // isMenuExpanded(position: MenuPosition) {
+  //   const { menuExpanded } = this.props;
+  //   return includes(menuExpanded, position);
+  // }
 
-  get canMenuTopSpace() {
-    return this.activeVideo && this.isMenuExpanded('top');
-  }
+  // get canMenuTopSpace() {
+  //   return this.activeVideo && this.isMenuExpanded('top');
+  // }
 
   get className() {
     const mobileClass = isPlatform('mobile') && styles.mobile;
-    const menuTopSpaceClass = this.canMenuTopSpace && styles.menuTopSpace;
-    return `${styles.meeting} ${mobileClass} ${menuTopSpaceClass}`;
+    // const menuTopSpaceClass = this.canMenuTopSpace && styles.menuTopSpace;
+    return `${styles.meeting} ${mobileClass} ${styles.menuTopSpace}`;
   }
 
   get activeVideo() {
@@ -251,12 +250,12 @@ class Meeting extends Component<MeetingProps> {
     }
   }
 
-  handleMenuToggleChange(position: MenuPosition) {
-    const isMenuExpanded = this.isMenuExpanded(position);
-    const { pullMenuExpanded, pushMenuExpanded } = this.props;
-    const action = isMenuExpanded ? pullMenuExpanded : pushMenuExpanded;
-    action(position);
-  }
+  // handleMenuToggleChange(position: MenuPosition) {
+  //   const isMenuExpanded = this.isMenuExpanded(position);
+  //   const { pullMenuExpanded, pushMenuExpanded } = this.props;
+  //   const action = isMenuExpanded ? pullMenuExpanded : pushMenuExpanded;
+  //   action(position);
+  // }
 
   handleVideoBlockClick(video: VideoState) {
     this.props.replaceVideoActive(video.id, true);
@@ -356,33 +355,33 @@ class Meeting extends Component<MeetingProps> {
     });
   }
 
-  menu(position: MenuPosition) {
-    return (
-      this.activeVideo && (
-        <Menu
-          position={position}
-          canInviteMember={this.canInviteMember}
-          canRaiseHand={this.canRaiseHand}
-          canEndMeeting={this.canEndMeeting}
-          canVideoMute={this.canVideoMute}
-          canAudioMute={this.canAudioMute}
-          canScreenShare={this.canScreenShare}
-          canWhiteboardEnable={this.canWhiteboardEnable}
-          canMemberRemove={this.activeVideo.memberRemove}
-          inviteText={this.inviteText}
-          isExpanded={this.isMenuExpanded(position)}
-          handleRaiseHandClick={this.handleMenuRaiseHandClick}
-          handleEndMeetingClick={this.handleMenuEndMeetingClick}
-          handleVideoClick={this.handleMenuVideoClick}
-          handleAudioClick={this.handleMenuAudioClick}
-          handleScreenShareClick={this.handleMenuScreenShareClick}
-          handleWhiteboardClick={this.handleMenuWhiteboardClick}
-          handleMemberRemoveClick={this.handleMenuMemberRemoveClick}
-          handleToggleChange={this.handleMenuToggleChange}
-        />
-      )
-    );
-  }
+  // menu(position: MenuPosition) {
+  //   return (
+  //     this.activeVideo && (
+  //       <Menu
+  //         position={position}
+  //         canInviteMember={this.canInviteMember}
+  //         canRaiseHand={this.canRaiseHand}
+  //         canEndMeeting={this.canEndMeeting}
+  //         canVideoMute={this.canVideoMute}
+  //         canAudioMute={this.canAudioMute}
+  //         canScreenShare={this.canScreenShare}
+  //         canWhiteboardEnable={this.canWhiteboardEnable}
+  //         canMemberRemove={this.activeVideo.memberRemove}
+  //         inviteText={this.inviteText}
+  //         isExpanded={this.isMenuExpanded(position)}
+  //         handleRaiseHandClick={this.handleMenuRaiseHandClick}
+  //         handleEndMeetingClick={this.handleMenuEndMeetingClick}
+  //         handleVideoClick={this.handleMenuVideoClick}
+  //         handleAudioClick={this.handleMenuAudioClick}
+  //         handleScreenShareClick={this.handleMenuScreenShareClick}
+  //         handleWhiteboardClick={this.handleMenuWhiteboardClick}
+  //         handleMemberRemoveClick={this.handleMenuMemberRemoveClick}
+  //         // handleToggleChange={this.handleMenuToggleChange}
+  //       />
+  //     )
+  //   );
+  // }
 
   // video(video: VideoState) {
   //   return (
