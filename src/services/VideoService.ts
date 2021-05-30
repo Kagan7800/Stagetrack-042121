@@ -1,42 +1,33 @@
-import { some } from 'lodash'
-import { nanoid } from 'nanoid'
-import store from '../store'
-import MeetingService from './MeetingService'
-import StreamTrackService from './StreamTrackService'
-import MeetingRepository from '../repositories/MeetingRepository'
-import {
-  actions as meetingActions,
-  selectors as meetingSelectors,
-  VideoState,
-  VideoStateKind
-} from '../pages/Meeting/Meeting.state'
+import { some } from 'lodash';
+import { nanoid } from 'nanoid';
+import store from '../store';
+import MeetingService from './MeetingService';
+import StreamTrackService from './StreamTrackService';
+import MeetingRepository from '../repositories/MeetingRepository';
+import { actions as meetingActions, selectors as meetingSelectors, VideoState, VideoStateKind } from '../pages/Meeting/Meeting.state';
 
-type createVideoCallback = (video: VideoState) => void
+type createVideoCallback = (video: VideoState) => void;
 
 export default class VideoService {
-  protected meetingService: MeetingService
+  protected meetingService: MeetingService;
 
-  private streamTrackService: StreamTrackService
+  private streamTrackService: StreamTrackService;
 
-  private meetingRepository: MeetingRepository
+  private meetingRepository: MeetingRepository;
 
-  constructor () {
-    this.meetingService = new MeetingService()
-    this.streamTrackService = new StreamTrackService()
-    this.meetingRepository = new MeetingRepository()
+  constructor() {
+    this.meetingService = new MeetingService();
+    this.streamTrackService = new StreamTrackService();
+    this.meetingRepository = new MeetingRepository();
   }
 
-  hasVideo (connectionId: string): boolean {
-    const { videos } = meetingSelectors(store.getState())
-    return some(videos, { id: connectionId })
+  hasVideo(connectionId: string): boolean {
+    const { videos } = meetingSelectors(store.getState());
+    return some(videos, { id: connectionId });
   }
 
-  private createVideo (
-    connectionId: string,
-    stream: MediaStream,
-    kind: VideoStateKind,
-    callback: createVideoCallback): void {
-    const muted = this.meetingService.isUserMeeting(connectionId)
+  private createVideo(connectionId: string, stream: MediaStream, kind: VideoStateKind, callback: createVideoCallback): void {
+    const muted = this.meetingService.isUserMeeting(connectionId);
     const video = {
       id: connectionId,
       stream,
@@ -47,39 +38,59 @@ export default class VideoService {
       muted,
       streamMuted: {
         video: false,
-        audio: false
+        audio: false,
       },
-      renderId: nanoid()
-    }
-    callback(video)
+      renderId: nanoid(),
+    };
+    callback(video);
   }
 
-  createMediaVideo (
-    connectionId: string,
-    stream: MediaStream,
-    callback: createVideoCallback): void {
-    this.createVideo(connectionId, stream, 'media', callback)
+  createMediaVideo(connectionId: string, stream: MediaStream, kind: VideoStateKind, callback: createVideoCallback): void {
+    this.createVideo(connectionId, stream, kind, callback);
   }
+  // createMediaVideo(connectionId: string, stream: MediaStream, callback: createVideoCallback): void {
+  //   this.createVideo(connectionId, stream, "media", callback);
+  // }
 
-  pushVideo (video: VideoState): void {
-    store.dispatch(meetingActions.pushVideo(video))
+  pushVideo(video: VideoState): void {
+    store.dispatch(meetingActions.pushVideo(video));
     setTimeout(() => {
-      store.dispatch(meetingActions.updateVideoRenderId(video.id))
-    }, 300)
+      store.dispatch(meetingActions.updateVideoRenderId(video.id));
+    }, 300);
+  }
+  pushScreenVideo(video: VideoState): void {
+    store.dispatch(meetingActions.pushScreenVideo(video));
+    // setTimeout(() => {
+    //   store.dispatch(meetingActions.updateVideoRenderId(video.id));
+    // }, 300);
+  }
+  pullScreenVideo(): void {
+    store.dispatch(meetingActions.pullScreenVideo());
+    // setTimeout(() => {
+    //   store.dispatch(meetingActions.updateVideoRenderId(video.id));
+    // }, 300);
   }
 
-  pullVideo (connectionId: string): void {
-    store.dispatch(meetingActions.pullVideo(connectionId))
+  pullVideo(connectionId: string): void {
+    store.dispatch(meetingActions.pullVideo(connectionId));
   }
 
-  stopUserVideo () {
-    const userVideo = this.meetingRepository.getUserVideo()
-    if (userVideo) this.streamTrackService.stop(userVideo.stream)
+  stopUserVideo() {
+    const userVideo = this.meetingRepository.getUserVideo();
+    if (userVideo) this.streamTrackService.stop(userVideo.stream);
   }
+  // add video kind and stream instead of replace
+  // replaceUserStream(stream: MediaStream, kind: VideoStateKind) {
+  //   console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> from replaceUserStream', stream.getTracks());
 
-  replaceUserStream (stream: MediaStream, kind: VideoStateKind) {
-    const { connectionId } = meetingSelectors(store.getState())
-    store.dispatch(meetingActions.replaceVideoKind(connectionId, kind))
-    store.dispatch(meetingActions.replaceVideoStream(connectionId, stream))
+  //   const { connectionId } = meetingSelectors(store.getState());
+  //   store.dispatch(meetingActions.replaceVideoKind(connectionId, kind));
+  //   store.dispatch(meetingActions.replaceVideoStream(connectionId, stream));
+  // }
+
+  AddUserScreenToStream(stream: MediaStream, kind: VideoStateKind) {
+    //   const { connectionId } = meetingSelectors(store.getState());
+    // store.dispatch(meetingActions.replaceVideoKind(connectionId, kind));
+    // store.dispatch(meetingActions.replaceVideoStream(connectionId, stream));
   }
 }

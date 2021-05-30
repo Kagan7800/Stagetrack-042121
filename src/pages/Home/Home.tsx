@@ -32,19 +32,22 @@ class Home extends Component<HomeProps> {
           </div>
           <div className={styles.contentContainer}>
             <div className={styles.subContentContainer}>
-              <div className={styles.mainContainer}>
-                <div className={styles.mainSubContainer}>
-                  <div className={styles.mainSubContainer1}>
-                    <img src='./assets/kidpic.png' height='100%' alt='' />
+              <div className={styles.subContentContainerBelow}>
+                <div className={styles.mainContainer}>
+                  <div className={styles.mainSubContainer}>
+                    <div className={styles.mainSubContainer1}>
+                      <img src='./assets/kidpic.png' height='100%' alt='' />
+                    </div>
                   </div>
                 </div>
+                <div className={styles.titleTxt}>Meet up with friends & family from anywhere, share our spectecular music journey. </div>
               </div>
+
               <div className={styles.btnContainer}>
                 <Start />
                 <div className={styles.MFLO}>What is Music Fun with your Little One?</div>
               </div>
             </div>
-            <div className={styles.titleTxt}>Meet up with friends & family from anywhere, share our spectecular music journey </div>
             <div className={styles.lowerContainer}>
               <div className={styles.lowerSubContainer}>
                 <img src='./assets/lower1.png' width='47%' height='80%' alt='' />

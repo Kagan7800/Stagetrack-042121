@@ -5,9 +5,6 @@ import { RouteComponentProps, withRouter } from 'react-router';
 import routes from '../../routes';
 import Request from './Start.request';
 import { actions, selectors, StartState, StartActions } from './Start.state';
-// import Page from '../../components/Page/Page';
-// import Input from '../../components/Input/Input';
-// import Button from '../../components/Button/Button';
 import styles from './start.module.scss';
 interface StartProps extends StartState, StartActions, RouteComponentProps {}
 
@@ -20,7 +17,7 @@ class Start extends Component<StartProps> {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleStartClick = this.handleStartClick.bind(this);
     this.handleLoginFormrender = this.handleLoginFormrender.bind(this);
-    this.handleLoginScreenConvert = this.handleLoginScreenConvert.bind(this);
+    this.handleReplaceLoginScreenWithStartScreen = this.handleReplaceLoginScreenWithStartScreen.bind(this);
   }
 
   handleInputChange(event: ChangeEvent) {
@@ -44,7 +41,7 @@ class Start extends Component<StartProps> {
       this.props.history.push(routes.meeting.path);
     });
   }
-  handleLoginScreenConvert() {
+  handleReplaceLoginScreenWithStartScreen() {
     this.props.replaceApploginScreen();
   }
   clearForm() {
@@ -76,8 +73,11 @@ class Start extends Component<StartProps> {
       );
     } else {
       return (
-        <div onClick={this.handleLoginScreenConvert} className={styles.STaccess}>
-          Studio Access
+        <div onClick={this.handleReplaceLoginScreenWithStartScreen} className={styles.STaccess}>
+          <div className={styles.arrow_container}>
+            <div className={styles.arrow_down}></div>
+          </div>
+          <div className={styles.STaccessText}>Studio Access</div>
         </div>
       );
     }

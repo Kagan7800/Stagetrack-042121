@@ -2,7 +2,7 @@ import { IonCol, IonContent, IonGrid, IonImg, IonPage, IonRow, isPlatform } from
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
-import { every, filter, find, forEach, includes } from 'lodash';
+import { every, filter, find, forEach, includes, some } from 'lodash';
 import { MediaConnection } from 'peerjs';
 import { IEvent } from 'fabric/fabric-impl';
 import routes from '../../routes';
@@ -30,6 +30,8 @@ import VideoBlock from '../../components/VideoBlock/VideoBlock';
 import ActiveVideoSkeleton from '../../components/ActiveVideoSkeleton/ActiveVideoSkeleton';
 import styles from './Meeting.module.scss';
 import GridContainer from '../grid/grid';
+import { actions as meetingActions, selectors as meetingSelectors, VideoStateKind } from './Meeting.state';
+import store from '../../store';
 
 interface MeetingProps extends MeetingState, MeetingActions, RouteComponentProps {}
 
@@ -80,22 +82,13 @@ class Meeting extends Component<MeetingProps> {
     this.handleWhiteboardDrawingAdd = this.handleWhiteboardDrawingAdd.bind(this);
   }
 
-  // isMenuExpanded(position: MenuPosition) {
-  //   const { menuExpanded } = this.props;
-  //   return includes(menuExpanded, position);
-  // }
-
-  // get canMenuTopSpace() {
-  //   return this.activeVideo && this.isMenuExpanded('top');
-  // }
-
   get className() {
     const mobileClass = isPlatform('mobile') && styles.mobile;
-    // const menuTopSpaceClass = this.canMenuTopSpace && styles.menuTopSpace;
     return `${styles.meeting} ${mobileClass} ${styles.menuTopSpace}`;
   }
 
   get activeVideo() {
+    console.log(this.props.videos);
     return find(this.props.videos, 'active');
   }
 
@@ -107,7 +100,7 @@ class Meeting extends Component<MeetingProps> {
     return (
       this.activeVideo && (
         <ActiveVideo
-          video={this.activeVideo}
+          video={this.ScreenVideos ? this.ScreenVideos : this.activeVideo}
           whiteboardDrawings={this.props.whiteboardDrawings}
           whiteboardEnabled={this.props.whiteboardEnabled}
           handleWhiteboardCanvasClearClick={this.handleWhiteboardCanvasClearClick}
@@ -127,9 +120,12 @@ class Meeting extends Component<MeetingProps> {
   }
 
   get videos() {
-    console.log(this.props.videos);
-    const videos = filter(this.props.videos, { active: false });
+    const videos = filter(this.props.videos, { active: false, kind: 'media' });
     return videos.map((video) => this.video(video));
+  }
+  get ScreenVideos() {
+    const videos = find(this.props.videos, { kind: 'screen' });
+    return videos;
   }
 
   get userVideo() {
@@ -177,6 +173,7 @@ class Meeting extends Component<MeetingProps> {
 
   handleStreamStop() {
     const screenStream = this.meetingService.getScreenStream();
+    console.log('>>>>>> phuda >>>>>>>>', screenStream);
     const tracks = screenStream.getTracks();
     forEach(tracks, (track) => {
       track.onended = () => this.switchUserStreamToMedia();
@@ -185,22 +182,29 @@ class Meeting extends Component<MeetingProps> {
 
   switchUserStreamToMedia() {
     this.mediaService.getStream(this.props.history, () => {
-      const mediaStream = this.meetingService.getMediaStream();
-      this.videoService.replaceUserStream(mediaStream, 'media');
-      this.rtpSenderService.replaceStream(mediaStream);
+      // const mediaStream = this.meetingService.getMediaStream();
+      // this.videoService.replaceUserStream(mediaStream, 'media');
+      // this.rtpSenderService.replaceStream(mediaStream);
       const screenStream = this.meetingService.getScreenStream();
       this.streamTrackService.stop(screenStream);
+      this.videoService.pullScreenVideo();
     });
   }
 
   switchUserStreamToScreen() {
     this.screenCaptureService.getStream(() => {
       const screenStream = this.meetingService.getScreenStream();
-      this.videoService.replaceUserStream(screenStream, 'screen');
-      this.rtpSenderService.replaceStream(screenStream);
+      const { connectionId } = meetingSelectors(store.getState());
+      this.videoService.createMediaVideo(connectionId, screenStream, 'screen', (localVideo) => {
+        this.videoService.pushScreenVideo(localVideo);
+      });
+      // console.log(this.ScreenVideos);
+
+      // this.videoService.replaceUserStream(screenStream, 'screen'); // TODO : add stream instead of replacing stream
+      // this.rtpSenderService.replaceStream(screenStream); // TODO : add stream instead of replacing stream
       this.handleStreamStop();
-      const mediaStream = this.meetingService.getMediaStream();
-      this.streamTrackService.stop(mediaStream);
+      // const mediaStream = this.meetingService.getMediaStream();
+      // this.streamTrackService.stop(mediaStream);
     });
   }
 
@@ -249,13 +253,6 @@ class Meeting extends Component<MeetingProps> {
       socket.memberRemove.publish(id, this.activeVideo.id);
     }
   }
-
-  // handleMenuToggleChange(position: MenuPosition) {
-  //   const isMenuExpanded = this.isMenuExpanded(position);
-  //   const { pullMenuExpanded, pushMenuExpanded } = this.props;
-  //   const action = isMenuExpanded ? pullMenuExpanded : pushMenuExpanded;
-  //   action(position);
-  // }
 
   handleVideoBlockClick(video: VideoState) {
     this.props.replaceVideoActive(video.id, true);
@@ -355,42 +352,6 @@ class Meeting extends Component<MeetingProps> {
     });
   }
 
-  // menu(position: MenuPosition) {
-  //   return (
-  //     this.activeVideo && (
-  //       <Menu
-  //         position={position}
-  //         canInviteMember={this.canInviteMember}
-  //         canRaiseHand={this.canRaiseHand}
-  //         canEndMeeting={this.canEndMeeting}
-  //         canVideoMute={this.canVideoMute}
-  //         canAudioMute={this.canAudioMute}
-  //         canScreenShare={this.canScreenShare}
-  //         canWhiteboardEnable={this.canWhiteboardEnable}
-  //         canMemberRemove={this.activeVideo.memberRemove}
-  //         inviteText={this.inviteText}
-  //         isExpanded={this.isMenuExpanded(position)}
-  //         handleRaiseHandClick={this.handleMenuRaiseHandClick}
-  //         handleEndMeetingClick={this.handleMenuEndMeetingClick}
-  //         handleVideoClick={this.handleMenuVideoClick}
-  //         handleAudioClick={this.handleMenuAudioClick}
-  //         handleScreenShareClick={this.handleMenuScreenShareClick}
-  //         handleWhiteboardClick={this.handleMenuWhiteboardClick}
-  //         handleMemberRemoveClick={this.handleMenuMemberRemoveClick}
-  //         // handleToggleChange={this.handleMenuToggleChange}
-  //       />
-  //     )
-  //   );
-  // }
-
-  // video(video: VideoState) {
-  //   return (
-  //     <IonCol size={Meeting.videoColumnSize} key={video.id}>
-  //       <VideoBlock ratio='square' video={video} handleClick={this.handleVideoBlockClick} />
-  //     </IonCol>
-  //   );
-  // }
-
   video(video: VideoState) {
     return <VideoBlock ratio='square' video={video} handleClick={this.handleVideoBlockClick} />;
   }
@@ -432,16 +393,16 @@ class Meeting extends Component<MeetingProps> {
       this.props.history.push(routes.home.path);
     });
   }
-
+  // creating user video from media stream object passed from mediaService.getStream function
   handleUserStream(localConnectionId: string, localStream: MediaStream) {
-    this.videoService.createMediaVideo(localConnectionId, localStream, (localVideo) => {
+    this.videoService.createMediaVideo(localConnectionId, localStream, 'media', (localVideo) => {
       this.videoService.pushVideo(localVideo);
     });
   }
 
   handleCallStreaming(call: MediaConnection) {
     this.peerService.onCalling(call, (remoteConnectionId, remoteStream) => {
-      this.videoService.createMediaVideo(remoteConnectionId, remoteStream, (remoteVideo) => {
+      this.videoService.createMediaVideo(remoteConnectionId, remoteStream, 'media', (remoteVideo) => {
         this.videoService.pushVideo(remoteVideo);
       });
     });
@@ -474,9 +435,9 @@ class Meeting extends Component<MeetingProps> {
     this.peerService.onOpen((localConnectionId) => {
       this.meetingService.setId(localConnectionId, (meetingId) => {
         if (meetingId) {
-          this.handleRemoteRaiseHand(meetingId);
-          this.handleRemoteMemberRemove(meetingId);
-          this.handleDisconnect();
+          // this.handleRemoteRaiseHand(meetingId);
+          // this.handleRemoteMemberRemove(meetingId);
+          // this.handleDisconnect();
           this.mediaService.getStream(history, (localStream) => {
             this.handleUserStream(localConnectionId, localStream);
             this.handleReceiveCall(meetingId, localStream);
@@ -510,7 +471,7 @@ class Meeting extends Component<MeetingProps> {
             <div className={this.className}>
               <div id='container'>
                 <GridContainer
-                  values={this.props.videos.length}
+                  values={this.props.videos.filter((video) => video.kind === 'media').length}
                   videos={this.videos}
                   getFirstVideo={this.videosFirst}
                   activeVideo={this.activeVideoBlock}
@@ -532,25 +493,8 @@ class Meeting extends Component<MeetingProps> {
                   handleWhiteboardClick={this.handleMenuWhiteboardClick}
                   handleMemberRemoveClick={this.handleMenuMemberRemoveClick}
                 />
-                {/* {this.menu('top')}
-                {this.menu('bottom')} */}
               </div>
             </div>
-
-            {/* <div className={this.className}>
-              <IonGrid>
-                <IonRow>
-                  {this.activeVideoBlock}
-                  <ActiveVideoSkeleton visibility={this.activeVideoSkeletonVisibility} />
-                </IonRow>
-                <IonRow>
-                  {this.videos}
-                  {console.log(this.videos)}
-                </IonRow>
-              </IonGrid>
-              {this.menu('top')}
-              {this.menu('bottom')}
-            </div> */}
           </Page>
         </IonContent>
       </IonPage>
