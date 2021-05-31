@@ -169,7 +169,7 @@ class Meeting extends Component<MeetingProps> {
 
   get inviteText() {
     if (process.env.NODE_ENV === 'development') {
-      const url = `https://192.168.100.55:3000`;
+      const url = `https://192.168.191.205:3000`;
       const { id } = this.props;
       return `${url}/join?id=${id}`;
     } else {
@@ -226,28 +226,13 @@ class Meeting extends Component<MeetingProps> {
   }
 
   switchUserStreamToScreen() {
-    const calls = this.meetingService.getCalls();
     this.screenCaptureService.getStream(() => {
       const localConnectionId = this.meetingService.getConnectionId();
-
       const screenStream = this.meetingService.getScreenStream();
       this.videoService.createMediaVideo(localConnectionId, screenStream, 'screen', (localVideo) => {
         this.videoService.pushScreenVideo(localVideo);
       });
       this.handleStreamStop();
-      const meetingId = this.meetingService.getMeetingId();
-      if (this.meetingService.isHostMeeting(localConnectionId)) {
-        this.peerService.call(meetingId, screenStream, (call) => {
-          this.meetingService.pushCall(call);
-          console.log('>>>>>>>>>>>>>>>>', calls);
-
-          this.peerService.onCalling(call, (remoteConnectionId, remoteStream) => {
-            this.videoService.createMediaVideo(remoteConnectionId, remoteStream, 'screen', (remoteVideo) => {
-              this.videoService.pushVideo(remoteVideo);
-            });
-          });
-        });
-      }
     });
     // this.screenCaptureService.getStream(() => {
     //   const screenStream = this.meetingService.getScreenStream();

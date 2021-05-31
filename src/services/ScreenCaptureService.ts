@@ -5,7 +5,9 @@ import MediaService from './MediaService';
 
 export default class ScreenCaptureService {
   private contraints = {
-    video: true,
+    video: {
+      cursor: "always"
+    },
     audio: false,
   };
 

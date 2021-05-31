@@ -19,7 +19,8 @@ export default class Video extends Component<VideoProps, VideoLocalState> {
     this.setSource = this.setSource.bind(this)
   }
 
-  get className () {
+  get className() {
+    console.log(this.props.video);
     const isScreen = (this.props.video.kind === 'screen')
     const filpClass = !isScreen && styles.horizontalFlip
     return `${styles.video} ${filpClass}`
