@@ -6,7 +6,7 @@ import { IonImg, isPlatform, IonIcon } from '@ionic/react';
 import copyToClipboard from 'copy-to-clipboard';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import AlertService from '../../services/AlertService';
-import { personAddOutline, handRightOutline, videocamOutline, micOutline, laptopOutline, easelOutline, personRemoveOutline } from 'ionicons/icons';
+// import { personAddOutline, handRightOutline, videocamOutline, micOutline, laptopOutline, easelOutline, personRemoveOutline } from 'ionicons/icons';
 
 function Grid(props) {
   var {

@@ -88,7 +88,9 @@ class Meeting extends Component<MeetingProps> {
   }
 
   get activeVideo() {
-    console.log(this.props.videos);
+    if (this.ScreenVideos) {
+      return find(this.props.videos, { kind: 'screen' });
+    }
     return find(this.props.videos, 'active');
   }
 
@@ -97,10 +99,11 @@ class Meeting extends Component<MeetingProps> {
   }
 
   get activeVideoBlock() {
+    console.log(this.props.videos);
     return (
       this.activeVideo && (
         <ActiveVideo
-          video={this.ScreenVideos ? this.ScreenVideos : this.activeVideo}
+          video={this.activeVideo}
           whiteboardDrawings={this.props.whiteboardDrawings}
           whiteboardEnabled={this.props.whiteboardEnabled}
           handleWhiteboardCanvasClearClick={this.handleWhiteboardCanvasClearClick}
@@ -118,7 +121,6 @@ class Meeting extends Component<MeetingProps> {
       return this.video(videos[0]);
     }
   }
-
   get videos() {
     const videos = filter(this.props.videos, { active: false, kind: 'media' });
     return videos.map((video) => this.video(video));
@@ -166,46 +168,95 @@ class Meeting extends Component<MeetingProps> {
   }
 
   get inviteText() {
-    const url = `https://${process.env.REACT_APP_HOST}`;
-    const { id } = this.props;
-    return `Hi there,\n Jump into Stagetrack Studio - ${url}/join?id=${id}`;
+    if (process.env.NODE_ENV === 'development') {
+      const url = `https://192.168.100.55:3000`;
+      const { id } = this.props;
+      return `${url}/join?id=${id}`;
+    } else {
+      const url = `https://${process.env.REACT_APP_HOST}`;
+      const { id } = this.props;
+      return `Hi there,\n Jump into Stagetrack Studio - ${url}/join?id=${id}`;
+    }
   }
 
   handleStreamStop() {
     const screenStream = this.meetingService.getScreenStream();
-    console.log('>>>>>> phuda >>>>>>>>', screenStream);
     const tracks = screenStream.getTracks();
     forEach(tracks, (track) => {
       track.onended = () => this.switchUserStreamToMedia();
     });
   }
 
+  // switchUserStreamToMedia() {
+  //   this.mediaService.getStream(this.props.history, () => {
+  //     const mediaStream = this.meetingService.getMediaStream();
+  //     this.videoService.replaceUserStream(mediaStream, 'media');
+  //     this.rtpSenderService.replaceStream(mediaStream);
+  //     const screenStream = this.meetingService.getScreenStream();
+  //     this.streamTrackService.stop(screenStream);
+  //     // this.videoService.pullScreenVideo();
+  //   });
+  // }
+
+  // switchUserStreamToScreen() {
+  //   this.screenCaptureService.getStream(() => {
+  //     const screenStream = this.meetingService.getScreenStream();
+  //     // const { connectionId } = meetingSelectors(store.getState());
+  //     // this.videoService.createMediaVideo(connectionId, screenStream, 'screen', (localVideo) => {
+  //     //   this.videoService.pushScreenVideo(localVideo);
+  //     // });
+  //     // console.log(this.ScreenVideos);
+
+  //     this.videoService.replaceUserStream(screenStream, 'screen'); // TODO : add stream instead of replacing stream
+  //     this.rtpSenderService.replaceStream(screenStream); // TODO : add stream instead of replacing stream
+  //     this.handleStreamStop();
+  //     const mediaStream = this.meetingService.getMediaStream();
+  //     this.streamTrackService.stop(mediaStream);
+  //   });
+  // }
+
   switchUserStreamToMedia() {
     this.mediaService.getStream(this.props.history, () => {
-      // const mediaStream = this.meetingService.getMediaStream();
-      // this.videoService.replaceUserStream(mediaStream, 'media');
-      // this.rtpSenderService.replaceStream(mediaStream);
+      const mediaStream = this.meetingService.getMediaStream();
+      this.videoService.replaceUserStream(mediaStream, 'media');
+      this.rtpSenderService.replaceStream(mediaStream);
       const screenStream = this.meetingService.getScreenStream();
       this.streamTrackService.stop(screenStream);
-      this.videoService.pullScreenVideo();
     });
   }
 
   switchUserStreamToScreen() {
+    const calls = this.meetingService.getCalls();
     this.screenCaptureService.getStream(() => {
+      const localConnectionId = this.meetingService.getConnectionId();
+
       const screenStream = this.meetingService.getScreenStream();
-      const { connectionId } = meetingSelectors(store.getState());
-      this.videoService.createMediaVideo(connectionId, screenStream, 'screen', (localVideo) => {
+      this.videoService.createMediaVideo(localConnectionId, screenStream, 'screen', (localVideo) => {
         this.videoService.pushScreenVideo(localVideo);
       });
-      // console.log(this.ScreenVideos);
-
-      // this.videoService.replaceUserStream(screenStream, 'screen'); // TODO : add stream instead of replacing stream
-      // this.rtpSenderService.replaceStream(screenStream); // TODO : add stream instead of replacing stream
       this.handleStreamStop();
-      // const mediaStream = this.meetingService.getMediaStream();
-      // this.streamTrackService.stop(mediaStream);
+      const meetingId = this.meetingService.getMeetingId();
+      if (this.meetingService.isHostMeeting(localConnectionId)) {
+        this.peerService.call(meetingId, screenStream, (call) => {
+          this.meetingService.pushCall(call);
+          console.log('>>>>>>>>>>>>>>>>', calls);
+
+          this.peerService.onCalling(call, (remoteConnectionId, remoteStream) => {
+            this.videoService.createMediaVideo(remoteConnectionId, remoteStream, 'screen', (remoteVideo) => {
+              this.videoService.pushVideo(remoteVideo);
+            });
+          });
+        });
+      }
     });
+    // this.screenCaptureService.getStream(() => {
+    //   const screenStream = this.meetingService.getScreenStream();
+    //   this.videoService.replaceUserStream(screenStream, 'screen');
+    //   this.rtpSenderService.replaceStream(screenStream);
+    //   this.handleStreamStop();
+    //   const mediaStream = this.meetingService.getMediaStream();
+    //   this.streamTrackService.stop(mediaStream);
+    // });
   }
 
   handleMenuRaiseHandClick() {
@@ -435,9 +486,9 @@ class Meeting extends Component<MeetingProps> {
     this.peerService.onOpen((localConnectionId) => {
       this.meetingService.setId(localConnectionId, (meetingId) => {
         if (meetingId) {
-          // this.handleRemoteRaiseHand(meetingId);
-          // this.handleRemoteMemberRemove(meetingId);
-          // this.handleDisconnect();
+          this.handleRemoteRaiseHand(meetingId);
+          this.handleRemoteMemberRemove(meetingId);
+          this.handleDisconnect();
           this.mediaService.getStream(history, (localStream) => {
             this.handleUserStream(localConnectionId, localStream);
             this.handleReceiveCall(meetingId, localStream);
@@ -471,7 +522,7 @@ class Meeting extends Component<MeetingProps> {
             <div className={this.className}>
               <div id='container'>
                 <GridContainer
-                  values={this.props.videos.filter((video) => video.kind === 'media').length}
+                  values={this.props.videos.filter(video => video.kind ==="media").length}
                   videos={this.videos}
                   getFirstVideo={this.videosFirst}
                   activeVideo={this.activeVideoBlock}
@@ -487,7 +538,7 @@ class Meeting extends Component<MeetingProps> {
                   inviteText={this.inviteText}
                   handleRaiseHandClick={this.handleMenuRaiseHandClick}
                   handleEndMeetingClick={this.handleMenuEndMeetingClick}
-                  handleVideoClick={this.handleMenuVideoClick}
+                  handleVideoClick={this.handleVideoBlockClick}
                   handleAudioClick={this.handleMenuAudioClick}
                   handleScreenShareClick={this.handleMenuScreenShareClick}
                   handleWhiteboardClick={this.handleMenuWhiteboardClick}

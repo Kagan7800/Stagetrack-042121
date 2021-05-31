@@ -48,27 +48,13 @@ export default class VideoService {
   createMediaVideo(connectionId: string, stream: MediaStream, kind: VideoStateKind, callback: createVideoCallback): void {
     this.createVideo(connectionId, stream, kind, callback);
   }
-  // createMediaVideo(connectionId: string, stream: MediaStream, callback: createVideoCallback): void {
-  //   this.createVideo(connectionId, stream, "media", callback);
-  // }
+ 
 
   pushVideo(video: VideoState): void {
     store.dispatch(meetingActions.pushVideo(video));
     setTimeout(() => {
       store.dispatch(meetingActions.updateVideoRenderId(video.id));
     }, 300);
-  }
-  pushScreenVideo(video: VideoState): void {
-    store.dispatch(meetingActions.pushScreenVideo(video));
-    // setTimeout(() => {
-    //   store.dispatch(meetingActions.updateVideoRenderId(video.id));
-    // }, 300);
-  }
-  pullScreenVideo(): void {
-    store.dispatch(meetingActions.pullScreenVideo());
-    // setTimeout(() => {
-    //   store.dispatch(meetingActions.updateVideoRenderId(video.id));
-    // }, 300);
   }
 
   pullVideo(connectionId: string): void {
@@ -80,17 +66,19 @@ export default class VideoService {
     if (userVideo) this.streamTrackService.stop(userVideo.stream);
   }
   // add video kind and stream instead of replace
-  // replaceUserStream(stream: MediaStream, kind: VideoStateKind) {
-  //   console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> from replaceUserStream', stream.getTracks());
-
-  //   const { connectionId } = meetingSelectors(store.getState());
-  //   store.dispatch(meetingActions.replaceVideoKind(connectionId, kind));
-  //   store.dispatch(meetingActions.replaceVideoStream(connectionId, stream));
-  // }
-
-  AddUserScreenToStream(stream: MediaStream, kind: VideoStateKind) {
-    //   const { connectionId } = meetingSelectors(store.getState());
-    // store.dispatch(meetingActions.replaceVideoKind(connectionId, kind));
-    // store.dispatch(meetingActions.replaceVideoStream(connectionId, stream));
+  replaceUserStream(stream: MediaStream, kind: VideoStateKind) {
+    const { connectionId } = meetingSelectors(store.getState());
+    store.dispatch(meetingActions.replaceVideoKind(connectionId, kind));
+    store.dispatch(meetingActions.replaceVideoStream(connectionId, stream));
   }
+  
+
+  // added by me 
+  pushScreenVideo(video:VideoState):void {
+    store.dispatch(meetingActions.pushVideoScreen(video));
+    // setTimeout(() => {
+    //   store.dispatch(meetingActions.updateVideoRenderId(video.id));
+    // }, 300);
+  }
+
 }

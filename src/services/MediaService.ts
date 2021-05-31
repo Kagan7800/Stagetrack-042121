@@ -39,7 +39,7 @@ export default class MediaService {
 
   async getAudioStream(callback: (audioStream: MediaStream) => void): Promise<void> {
     try {
-      const constraints = { audio: true, video: true };
+      const constraints = { audio: true, video: false };
       const audioStream: MediaStream = await navigator.mediaDevices.getUserMedia(constraints);
       callback(audioStream);
     } catch (error) {

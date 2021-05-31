@@ -6,7 +6,7 @@ import MediaService from './MediaService';
 export default class ScreenCaptureService {
   private contraints = {
     video: true,
-    audio: true,
+    audio: false,
   };
 
   private meetingService: MeetingService;
@@ -49,12 +49,11 @@ export default class ScreenCaptureService {
   async getStream(callback: (screenStream: MediaStream) => void): Promise<void> {
     try {
       const screenStream: MediaStream = await navigator.mediaDevices.getDisplayMedia(this.contraints);
-      await this.attachAudioTracks(screenStream);
+      // await this.attachAudioTracks(screenStream);
       this.meetingService.setScreenStream(screenStream);
       callback(screenStream);
     } catch (error) {
       this.handleDisplayMediaError(error);
     }
-  }
+    }
 }
-
