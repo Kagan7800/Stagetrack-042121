@@ -46,15 +46,15 @@ export default class MediaService {
       AlertService.push("Device doesn't support audio capture");
     }
   }
-  // async getAudioAndVideoStream(callback: (audioStream: MediaStream) => void): Promise<void> {
-  //   try {
-  //     const constraints = { audio: true, video: true };
-  //     const audioStream: MediaStream = await navigator.mediaDevices.getUserMedia(constraints);
-  //     callback(audioStream);
-  //   } catch (error) {
-  //     AlertService.push("Device doesn't support audio capture");
-  //   }
-  // }
+  async getAudioAndVideoStream(callback: (audioStream: MediaStream) => void): Promise<void> {
+    try {
+      const constraints = { audio: true, video: true };
+      const audioVideoStream: MediaStream = await navigator.mediaDevices.getUserMedia(constraints);
+      callback(audioVideoStream);
+    } catch (error) {
+      AlertService.push("Device doesn't support audio capture");
+    }
+  }
   toggleVideoMute(stream: MediaStream) {
     const track = first(stream.getVideoTracks());
     if (track) track.enabled = !track.enabled;

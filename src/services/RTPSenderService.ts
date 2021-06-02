@@ -32,6 +32,7 @@ export default class RTPSenderService {
       const videoSender = find(senders, ({ track }) => (track?.kind === 'video'))
       const audioTrack = find(tracks, ({ kind }) => (kind === 'audio'))
       const videoTrack = find(tracks, ({ kind }) => (kind === 'video'))
+
       if (audioSender && audioTrack) audioSender.replaceTrack(audioTrack)
       if (videoSender && videoTrack) videoSender.replaceTrack(videoTrack)
     })

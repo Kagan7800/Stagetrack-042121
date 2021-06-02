@@ -5,9 +5,7 @@ import MediaService from './MediaService';
 
 export default class ScreenCaptureService {
   private contraints = {
-    video: {
-      cursor: "always"
-    },
+    video: true,
     audio: false,
   };
 
@@ -39,23 +37,23 @@ export default class ScreenCaptureService {
     });
   }
 
-  // private async attachAudioAndVideoTracks(screenStream: MediaStream) {
-  //   await this.mediaService.getAudioAndVideoStream((audioStream) => {
-  //     const audioTracks = audioStream.getAudioTracks();
-  //     forEach(audioTracks, (track) => screenStream.addTrack(track));
-  //     const VideoTracks = audioStream.getVideoTracks();
-  //     forEach(VideoTracks, (track) => screenStream.addTrack(track));
-  //   });
-  // }
+  private async attachAudioAndVideoTracks(screenStream: MediaStream) {
+    await this.mediaService.getAudioAndVideoStream((audioVideoStream) => {
+      const audioTracks = audioVideoStream.getAudioTracks();
+      forEach(audioTracks, (track) => screenStream.addTrack(track));
+      const VideoTracks = audioVideoStream.getVideoTracks();
+      forEach(VideoTracks, (track) => screenStream.addTrack(track));
+    });
+  }
 
   async getStream(callback: (screenStream: MediaStream) => void): Promise<void> {
     try {
       const screenStream: MediaStream = await navigator.mediaDevices.getDisplayMedia(this.contraints);
-      // await this.attachAudioTracks(screenStream);
+      await this.attachAudioAndVideoTracks(screenStream);
       this.meetingService.setScreenStream(screenStream);
       callback(screenStream);
     } catch (error) {
       this.handleDisplayMediaError(error);
     }
-    }
+  }
 }

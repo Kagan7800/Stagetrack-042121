@@ -2,7 +2,7 @@ import { IonCol, IonContent, IonGrid, IonImg, IonPage, IonRow, isPlatform } from
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
-import { every, filter, find, forEach, includes, some } from 'lodash';
+import { every, filter, find, forEach, includes, some, cloneDeep } from 'lodash';
 import { MediaConnection } from 'peerjs';
 import { IEvent } from 'fabric/fabric-impl';
 import routes from '../../routes';
@@ -32,6 +32,7 @@ import styles from './Meeting.module.scss';
 import GridContainer from '../grid/grid';
 import { actions as meetingActions, selectors as meetingSelectors, VideoStateKind } from './Meeting.state';
 import store from '../../store';
+const clone = require('rfdc')();
 
 interface MeetingProps extends MeetingState, MeetingActions, RouteComponentProps {}
 
@@ -88,8 +89,25 @@ class Meeting extends Component<MeetingProps> {
   }
 
   get activeVideo() {
+    console.log('from active video to check media streams >>>>', this.props.videos[0]?.stream.getTracks());
     if (this.ScreenVideos) {
-      return find(this.props.videos, { kind: 'screen' });
+      const video = this.ScreenVideos;
+      // console.log('>>>>>>>>>>>>>>>>>>>', video.stream.getTracks());
+      // const screenStream = this.meetingService.getScreenStream()
+      // const connectionId = this.meetingService.getConnectionId();
+      // this.videoService.createMediaVideo(connectionId, screenStream, 'screen', (remoteVideo) => {
+      //   // this.videoService.pushVideo(remoteVideo);
+      //   console.log(remoteVideo.stream.getTracks());
+      // });
+      // console.log(video.stream.getTracks());
+      // console.log(video?.stream.getVideoTracks());
+      // if (video) {
+      //   const track = video.stream.getVideoTracks().find((track) => track.label.includes('Integrated'));
+      //   var videoClone = { ...video };
+      //   track && videoClone.stream.removeTrack(track);
+
+      //   return videoClone;
+      // }
     }
     return find(this.props.videos, 'active');
   }
@@ -99,7 +117,6 @@ class Meeting extends Component<MeetingProps> {
   }
 
   get activeVideoBlock() {
-    console.log(this.props.videos);
     return (
       this.activeVideo && (
         <ActiveVideo
@@ -118,6 +135,15 @@ class Meeting extends Component<MeetingProps> {
   get videosFirst() {
     const videos = filter(this.props.videos);
     if (videos.length > 0) {
+      if (this.ScreenVideos) {
+        const types = ['screen', 'window', 'web-contents'];
+        var videoClone = { ...videos[0], stream: videos[0].stream.clone() };
+        const track = videoClone.stream.getVideoTracks().find((track: any) => types.some((i) => track.label.includes(i)));
+        if (track) {
+          videoClone.stream.removeTrack(track);
+        }
+        return this.video(videoClone);
+      }
       return this.video(videos[0]);
     }
   }
@@ -169,7 +195,7 @@ class Meeting extends Component<MeetingProps> {
 
   get inviteText() {
     if (process.env.NODE_ENV === 'development') {
-      const url = `https://192.168.191.205:3000`;
+      const url = `https://192.168.100.55:3000`;
       const { id } = this.props;
       return `${url}/join?id=${id}`;
     } else {
@@ -226,22 +252,22 @@ class Meeting extends Component<MeetingProps> {
   }
 
   switchUserStreamToScreen() {
-    this.screenCaptureService.getStream(() => {
-      const localConnectionId = this.meetingService.getConnectionId();
-      const screenStream = this.meetingService.getScreenStream();
-      this.videoService.createMediaVideo(localConnectionId, screenStream, 'screen', (localVideo) => {
-        this.videoService.pushScreenVideo(localVideo);
-      });
-      this.handleStreamStop();
-    });
     // this.screenCaptureService.getStream(() => {
+    //   const localConnectionId = this.meetingService.getConnectionId();
     //   const screenStream = this.meetingService.getScreenStream();
-    //   this.videoService.replaceUserStream(screenStream, 'screen');
-    //   this.rtpSenderService.replaceStream(screenStream);
+    //   this.videoService.createMediaVideo(localConnectionId, screenStream, 'screen', (localVideo) => {
+    //     this.videoService.pushScreenVideo(localVideo);
+    //   });
     //   this.handleStreamStop();
-    //   const mediaStream = this.meetingService.getMediaStream();
-    //   this.streamTrackService.stop(mediaStream);
     // });
+    this.screenCaptureService.getStream(() => {
+      const screenStream = this.meetingService.getScreenStream();
+      this.videoService.replaceUserStream(screenStream, 'screen');
+      this.rtpSenderService.replaceStream(screenStream);
+      this.handleStreamStop();
+      const mediaStream = this.meetingService.getMediaStream();
+      this.streamTrackService.stop(mediaStream);
+    });
   }
 
   handleMenuRaiseHandClick() {
@@ -389,6 +415,8 @@ class Meeting extends Component<MeetingProps> {
   }
 
   video(video: VideoState) {
+    // console.log('from video section >>>>>>>', video.stream.getTracks());
+
     return <VideoBlock ratio='square' video={video} handleClick={this.handleVideoBlockClick} />;
   }
   socketUnsubscribe() {
@@ -445,6 +473,7 @@ class Meeting extends Component<MeetingProps> {
   }
 
   handleReceiveCall(meetingId: string, localStream: MediaStream) {
+    // console.log("from other user" , localStream.getTracks());
     this.peerService.onReceiveCall((call) => {
       this.meetingService.pushCall(call);
       const { peer: connectionId } = call;
@@ -507,7 +536,7 @@ class Meeting extends Component<MeetingProps> {
             <div className={this.className}>
               <div id='container'>
                 <GridContainer
-                  values={this.props.videos.filter(video => video.kind ==="media").length}
+                  values={this.props.videos.length}
                   videos={this.videos}
                   getFirstVideo={this.videosFirst}
                   activeVideo={this.activeVideoBlock}
