@@ -30,19 +30,19 @@ export default class ScreenCaptureService {
     if (suppressMessage) AlertService.push(suppressMessage);
   }
 
-  private async attachAudioTracks(screenStream: MediaStream) {
-    await this.mediaService.getAudioStream((audioStream) => {
-      const audioTracks = audioStream.getAudioTracks();
-      forEach(audioTracks, (track) => screenStream.addTrack(track));
-    });
-  }
+  // private async attachAudioTracks(screenStream: MediaStream) {
+  //   await this.mediaService.getAudioStream((audioStream) => {
+  //     const audioTracks = audioStream.getAudioTracks();
+  //     forEach(audioTracks, (track) => screenStream.addTrack(track));
+  //   });
+  // }
 
   private async attachAudioAndVideoTracks(screenStream: MediaStream) {
     await this.mediaService.getAudioAndVideoStream((audioVideoStream) => {
-      const audioTracks = audioVideoStream.getAudioTracks();
-      forEach(audioTracks, (track) => screenStream.addTrack(track));
       const VideoTracks = audioVideoStream.getVideoTracks();
       forEach(VideoTracks, (track) => screenStream.addTrack(track));
+      const audioTracks = audioVideoStream.getAudioTracks();
+      forEach(audioTracks, (track) => screenStream.addTrack(track));
     });
   }
 

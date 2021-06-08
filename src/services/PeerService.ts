@@ -1,14 +1,15 @@
-import Peer, { MediaConnection } from 'peerjs'
-import { History } from 'history'
-import { includes } from 'lodash'
-import routes from '../routes'
-import AlertService from './AlertService'
+import Peer, { MediaConnection } from 'peerjs';
+import { History } from 'history';
+import { includes } from 'lodash';
+import routes from '../routes';
+import AlertService from './AlertService';
 
 export default class PeerService {
   private static options = {
     host: process.env.REACT_APP_API_HOST,
     path: '/peer',
     secure: true,
+    debug: 3,
   };
 
   private client: Peer;
@@ -89,5 +90,11 @@ export default class PeerService {
 
   onDisconnect(callback: () => void): void {
     this.client.on('close', () => callback());
+  }
+  onConnectionLost(callback: () => void): void {
+    this.client.on('iceconnectionstatechange', () => {
+      console.log('disconnected');
+      callback();
+    });
   }
 }

@@ -81,12 +81,11 @@ header {
 .sidepanel {
   width: 250px;
   height: 100%;
-  position: relative;
+  position: fixed;
   float: left;
-  z-index: 1;
+  z-index: 999;
   background-color: black;
   overflow-x: hidden;
-  padding-top: 60px;
   transition: 0.5s;
   color: white;
   display: flex;
@@ -112,14 +111,33 @@ header {
   opacity: 0.5;
   font-family: Risque;
   font-weight: normal;
-  padding: 10px;
+  padding: 7px;
   font-size: 18px;
   line-height: 16px;
   font-style: italic;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   text-align: center;
   color: #f8fa90;
+}
+.Collapsible {
+  /* opacity: 0.5; */
+  font-family: Risque;
+  font-weight: normal;
+  padding: 7px;
+  font-size: 18px;
+  line-height: 16px;
+  font-style: italic;
+  /* display: flex;
+  align-items: center;
+  text-align: center; */
+  text-align: center;
+  color: #f8fa90;
+}
+.Collapsible__contentInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .menuItemSidebarlower {
   opacity: 0.5;
@@ -144,13 +162,30 @@ header {
   width: 40%;
   background-color: #f8fa90;
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 .upperContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
   padding-bottom: 20px;
   padding-top: 30px;
+  height: 100%;
+  overflow: auto;
 }
 .lowerContainer {
   display: flex;
@@ -171,13 +206,16 @@ header {
   right: 15px;
   font-size: 36px;
   margin-left: 50px;
+
   cursor: pointer;
 }
 .sidepanel .backbtn {
-  position: absolute;
-  top: 5px;
-  left: 0px;
-  font-size: 36px;
+  /* position: absolute; */
+  /* top: 5px; */
+  /* left: 50%; */
+  /* font-size: 36px; */
+  width: 100%;
+  text-align: center;
   cursor: pointer;
 }
 .sidepanel > div {
@@ -1347,20 +1385,12 @@ main {
 }
 
 #newCaptureBorderColorsContainer {
-  /* position: absolute;
-  right: 0;
-  display: flex;
-  justify-content: space-evenly;
-  bottom: 10px;
-  width: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 20px;
   width: 100%;
-  height: 20%;
-
 }
 
 #newCaptureBorderColorsContainer button {
@@ -5511,4 +5541,45 @@ main {
 
 .newMainContentCaptureWrapperXOnsideSmallFourDiff:last-child {
   margin-bottom: 1.2%;
+}
+.container_FM {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .mainTop {
+    display: none;
+  }
+  .container_FM {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    overflow: auto;
+    align-items: center;
+  }
+  .videoCaptureConatainer {
+  }
+  .MiddleSection {
+    /* height: 100%; */
+    width: 100%;
+  }
+  .middleSectionInnerContainer {
+    width: 100%;
+    height: 500px;
+    background-color: #e3dddd;
+    border: 8px solid #1745b9;
+    display: flex;
+    align-items: center;
+  }
+  .videoCaptureConatainer {
+    width: 100%;
+    display: flex;
+    row-gap: 20px;
+    flex-wrap: wrap;
+  }
+  .videoCapture {
+    height: 120px;
+    width: 120px;
+    margin: 10px;
+  }
 }

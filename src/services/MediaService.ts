@@ -48,9 +48,19 @@ export default class MediaService {
   }
   async getAudioAndVideoStream(callback: (audioStream: MediaStream) => void): Promise<void> {
     try {
-      const constraints = { audio: true, video: true };
-      const audioVideoStream: MediaStream = await navigator.mediaDevices.getUserMedia(constraints);
-      callback(audioVideoStream);
+      // const constraints = { audio: true, video: true };
+      // const audioVideoStream: MediaStream = await navigator.mediaDevices.getUserMedia(constraints);
+      // callback(audioVideoStream);
+      try {
+        const { getUserMedia } = navigator.mediaDevices;
+        const constraints = { video: true, audio: true };
+        const localStream: MediaStream = await getUserMedia(constraints);
+        this.meetingService.setMediaStream(localStream);
+        callback(localStream);
+      } catch (error) {
+        AlertService.push("Device doesn't support WebRTC");
+        //  history.push(routes.home.path);
+      }
     } catch (error) {
       AlertService.push("Device doesn't support audio capture");
     }

@@ -7,7 +7,7 @@ import copyToClipboard from 'copy-to-clipboard';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import AlertService from '../../services/AlertService';
 // import { personAddOutline, handRightOutline, videocamOutline, micOutline, laptopOutline, easelOutline, personRemoveOutline } from 'ionicons/icons';
-
+import Accordion from '../../components/Accordion/Accordion';
 function Grid(props) {
   var {
     values,
@@ -26,6 +26,7 @@ function Grid(props) {
     handleRaiseHandClick,
     handleEndMeetingClick,
     handleVideoClick,
+    handleMenuVideoClick,
     handleAudioClick,
     handleScreenShareClick,
     handleWhiteboardClick,
@@ -55,6 +56,13 @@ function Grid(props) {
       if (i === 4) {
         elements.push(<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${2}`}>{videos[i - 2]}</div>);
       }
+    }
+    return elements;
+  };
+  const handleImagesForMobile = () => {
+    let elements = [<div className={`changeNewBorderColor ${borderColor} videoCapture`}>{getFirstVideo}</div>];
+    for (let i = 1; i <= values; i++) {
+      elements.push(<div className='videoCapture'>{videos[i - 2]}</div>);
     }
     return elements;
   };
@@ -115,47 +123,60 @@ function Grid(props) {
                 <a className='closebtn' onClick={handleOnOpenNav}>
                   &times;
                 </a>
+
                 <div className='upperContainer'>
-                  <div className={`menuItemSidebar `} onClick={''}>
-                    Chat
-                  </div>
-                  <hr className='horizontal' />
-
-                  <div className={`menuItemSidebar `} onClick={''}>
-                    Display File
-                  </div>
-                  <hr className='horizontal' />
-
-                  <div className={`menuItemSidebar `} onClick={''}>
-                    Display Video
-                  </div>
-                  <hr className='horizontal' />
-
                   <div className={`menuItemSidebar ${canRaiseHand ? 'active' : ''}`} onClick={handleRaiseHandClick}>
                     Raise hand
                   </div>
                   <hr className='horizontal' />
 
-                  <div className={`menuItemSidebar ${canScreenShare ? 'active' : ''}`} onClick={handleScreenShareClick}>
-                    Share Screen
-                  </div>
-                  <hr className='horizontal' />
-                  <div className={`menuItemSidebar ${canWhiteboardEnable ? 'active' : ''}`} onClick={handleWhiteboardClick}>
-                    White Board
-                  </div>
-                  <hr className='horizontal' />
-                  <div className={`menuItemSidebar active`} onClick={handleOnTodaysColor}>
-                    Today's Colors
+                  <div className={`menuItemSidebar active`} onClick={handleMemberRemoveClick}>
+                    Mute Audio
                   </div>
                   <hr className='horizontal' />
 
                   <div className={`menuItemSidebar active`} onClick={handleInviteMemberClick}>
                     Invite Guests
                   </div>
+                  <hr className='horizontal' />
+                  <div className={`menuItemSidebar active`} onClick={handleOnTodaysColor}>
+                    Today's Colors
+                  </div>
+                  <hr className='horizontal' />
+                  <div className={`menuItemSidebar ${canAudioMute ? 'active' : ''}`} onClick={handleMemberRemoveClick}>
+                    Remove Member
+                  </div>
+                  <hr className='horizontal' />
+                  <Accordion>
+                    <div className={`menuItemSidebar `} onClick={''}>
+                      Chat
+                    </div>
+                    <hr className='horizontal' />
+
+                    <div className={`menuItemSidebar `} onClick={''}>
+                      Display File
+                    </div>
+                    <hr className='horizontal' />
+
+                    <div className={`menuItemSidebar `} onClick={''}>
+                      Display Video
+                    </div>
+                    <hr className='horizontal' />
+
+                    <div className={`menuItemSidebar ${canScreenShare ? 'active' : ''}`} onClick={handleScreenShareClick}>
+                      Share Screen
+                    </div>
+                    <hr className='horizontal' />
+                    <div className={`menuItemSidebar ${canWhiteboardEnable ? 'active' : ''}`} onClick={handleWhiteboardClick}>
+                      White Board
+                    </div>
+                    <hr className='horizontal' />
+                  </Accordion>
                 </div>
+
                 <div className='lowerContainer'>
                   <hr className='HRdivider' />
-                  <div className={`menuItemSidebarlower ${canVideoMute ? 'active' : ''}`} onClick={handleVideoClick}>
+                  <div className={`menuItemSidebarlower ${canVideoMute ? 'active' : ''}`} onClick={handleMenuVideoClick}>
                     Pause Session
                   </div>
                   <div className={`menuItemSidebarlower ${canEndMeeting ? 'active' : ''}`} onClick={handleEndMeetingClick}>
@@ -172,7 +193,7 @@ function Grid(props) {
                   border: '1px solid #FFFFFF',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
+                  // justifyContent: 'space-between',
                   alignItems: 'center',
                 }}>
                 <a className='backbtn' onClick={handleOn2NavBackbtn}>
@@ -180,17 +201,20 @@ function Grid(props) {
                     src='./assets/backArrow.png'
                     style={{
                       transform: 'scaleX(-1)',
+                      margin: '20px 0px',
                     }}
-                    height={20}
-                    width={20}
+                    height={40}
+                    width={40}
                     alt=''
                   />
                 </a>
+                <img width={150} src='/assets/today_color_text.png' style={{ marginRight: 10 }} alt='' />
+
                 <div id='newCaptureBorderColorsContainer'>
-                  <div id='green' style={{ border: '5px solid #82ED93', width: '80%' }} onClick={handleOnColorChange}></div>
-                  <div id='aqua' style={{ border: '5px solid #4EF2DE', width: '80%' }} onClick={handleOnColorChange}></div>
-                  <div id='red' style={{ border: '5px solid #F71C1C', width: '80%' }} onClick={handleOnColorChange}></div>
-                  <div id='orange' style={{ border: '5px solid #F29B1A', width: '80%' }} onClick={handleOnColorChange}></div>
+                  <hr id='green' style={{ border: '5px solid #82ED93', width: '80%' }} onClick={handleOnColorChange}></hr>
+                  <hr id='aqua' style={{ border: '5px solid #4EF2DE', width: '80%' }} onClick={handleOnColorChange}></hr>
+                  <hr id='red' style={{ border: '5px solid #F71C1C', width: '80%' }} onClick={handleOnColorChange}></hr>
+                  <hr id='orange' style={{ border: '5px solid #F29B1A', width: '80%' }} onClick={handleOnColorChange}></hr>
                 </div>
               </div>
             </div>
@@ -206,9 +230,7 @@ function Grid(props) {
               <div id='newMainContentAreaX26'>
                 <div className='x22Header'>
                   <div className='changeNewBorderColor vidCapture22_22'>{videos[21]}</div>
-                  <div className='newMainContentHeaderBg26'>
-                    {/* <h3 className='banner_title'>{title} </h3> */}
-                  </div>
+                  <div className='newMainContentHeaderBg26'>{/* <h3 className='banner_title'>{title} </h3> */}</div>
                   <div className='changeNewBorderColor vidCapture26_26'>Balcony Seats</div>
                   <div className='changeNewBorderColor vidCapture25_25'>{videos[24]}</div>
                   <div className='changeNewBorderColor vidCapture24_24'>{videos[23]}</div>
@@ -687,8 +709,7 @@ function Grid(props) {
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
-                    <div className={title ? 'newMainContentHeaderBg' : 'newMainContentHeaderBgZ'}>
-                    </div>
+                    <div className={title ? 'newMainContentHeaderBg' : 'newMainContentHeaderBgZ'}></div>
                     <div className='newMainContentMain'>
                       <div className={`newMainContentLeft${values > 1 ? `X${values}` : ''}`}>{handleLeftImages().map((item) => item)}</div>
                       <div className={`${values > 1 ? `newMainContentMiddleX${values}` : 'newMainContentRight'}`}>
@@ -704,6 +725,19 @@ function Grid(props) {
                 )}
               </div>
             )}
+          </div>
+          <div className='container_FM'>
+            <div style={{ width: '90%' }}>
+              <div style={{ marginBottom: '10px' }}>
+                <img height='50' width='100%' src={title ? '/assets/bannerText.png' : '/assets/bannerlogo.png'} alt='' />
+              </div>
+              <div style={{ marginBottom: '10px' }} className='MiddleSection'>
+                <div className='middleSectionInnerContainer'>{activeVideo}</div>
+              </div>
+              <div style={{ marginBottom: '10px' }} className='videoCaptureConatainer'>
+                {handleImagesForMobile().map((item) => item)}
+              </div>
+            </div>
           </div>
         </main>
       </div>

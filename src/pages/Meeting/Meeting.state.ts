@@ -422,7 +422,7 @@ export const actions: MeetingActions = {
     return { type: 'PUSH_MEETING_VIDEO', video };
   },
   pushVideoScreen(video) {
-    return{type:"PUSH_MEETING_VIDEO_SCREEN",video}
+    return { type: 'PUSH_MEETING_VIDEO_SCREEN', video };
   },
   pushCall(call) {
     return { type: 'PUSH_MEETING_CALL', call };
@@ -499,6 +499,7 @@ export function reducers(state = meeting, action: any) {
     case 'REPLACE_MEETING_VIDEO_STREAM_MUTED_VIDEO': {
       const { connectionId: id, muted } = action.payload;
       const video = find(meeting.videos, { id });
+      console.log(video);
       if (video) video.streamMuted.video = muted;
       return cloneDeep(meeting);
     }
@@ -521,8 +522,8 @@ export function reducers(state = meeting, action: any) {
     }
     // added by me
     case 'PUSH_MEETING_VIDEO_SCREEN': {
-      const isExists = some(meeting.videos, { id: action.video.id ,kind:action.video.kind});
-      if(!isExists) meeting.videos.push(action.video);
+      const isExists = some(meeting.videos, { id: action.video.id, kind: action.video.kind });
+      if (!isExists) meeting.videos.push(action.video);
       return cloneDeep(meeting);
     }
     case 'PUSH_MEETING_CALL': {
