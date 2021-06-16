@@ -5,7 +5,7 @@ import VideoBlock, { VideoBlockHandleClick } from '../VideoBlock/VideoBlock';
 import Whiteboard, { WhiteboardDrawingAddHandle } from '../Whiteboard/Whiteboard';
 import styles from './ActiveVideo.module.scss';
 interface ActiveVideoProps {
-  video: VideoState;
+  video?: VideoState;
   whiteboardDrawings: MeetingWhiteboardDrawingsState;
   whiteboardEnabled: boolean;
   handleWhiteboardCanvasClearClick: () => void;
@@ -26,29 +26,32 @@ export default class ActiveVideo extends Component<ActiveVideoProps> {
 
   get videoBlock() {
     return (
-      <div className={this.videoBlockClassName} style={{ height: '100%' }}>
-        <VideoBlock ratio='full' video={this.props.video} handleClick={this.props.handleVideoBlockClick} />
-      </div>
-    );
-  }
-
-  get whiteboard() {
-    return (
-      this.props.whiteboardEnabled && (
-        <Whiteboard
-          drawings={this.props.whiteboardDrawings}
-          handleCanvasClearClick={this.props.handleWhiteboardCanvasClearClick}
-          handleDrawingAdd={this.props.handleWhiteboardDrawingAdd}
-        />
+      this.props.video && (
+        <div className={this.videoBlockClassName} style={{ height: '100%' }}>
+          <VideoBlock ratio='full' video={this.props.video} handleClick={this.props.handleVideoBlockClick} />
+        </div>
       )
     );
   }
 
+  get whiteboard() {
+    // console.log('this is from active videoblock ', this.props.whiteboardEnabled);
+    return (
+      // this.props.whiteboardEnabled && (
+      <Whiteboard
+        drawings={this.props.whiteboardDrawings}
+        handleCanvasClearClick={this.props.handleWhiteboardCanvasClearClick}
+        handleDrawingAdd={this.props.handleWhiteboardDrawingAdd}
+      />
+    );
+    // );
+  }
+
   render() {
     return (
-      <IonCol className={this.className} >
-        {this.whiteboard}
+      <IonCol className={this.className}>
         {this.videoBlock}
+        {this.whiteboard}
       </IonCol>
     );
   }

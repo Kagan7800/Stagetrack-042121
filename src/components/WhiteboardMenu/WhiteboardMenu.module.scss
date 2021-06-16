@@ -3,11 +3,11 @@
 .whiteboardMenu {
   @include whiteboardMenu;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   position: absolute;
-  top: 0;
+  // top: 0;
   bottom: 0;
-  left: 5px;
+  left: 30%;
   margin: auto;
   height: fit-content;
 }

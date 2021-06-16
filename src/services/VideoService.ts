@@ -28,13 +28,27 @@ export default class VideoService {
 
   private createVideo(connectionId: string, stream: MediaStream, kind: VideoStateKind, callback: createVideoCallback): void {
     const muted = this.meetingService.isUserMeeting(connectionId);
+    // const video = {
+    //   id: connectionId,
+    //   stream,
+    //   kind,
+    //   raiseHand: false,
+    //   memberRemove: this.meetingService.canMemberRemove(connectionId),
+    //   active: this.meetingService.isHostMeeting(connectionId),
+    //   muted,
+    //   streamMuted: {
+    //     video: false,
+    //     audio: false,
+    //   },
+    //   renderId: nanoid(),
+    // };
     const video = {
       id: connectionId,
       stream,
       kind,
       raiseHand: false,
       memberRemove: this.meetingService.canMemberRemove(connectionId),
-      active: this.meetingService.isHostMeeting(connectionId),
+      active: false,
       muted,
       streamMuted: {
         video: false,
@@ -48,7 +62,6 @@ export default class VideoService {
   createMediaVideo(connectionId: string, stream: MediaStream, kind: VideoStateKind, callback: createVideoCallback): void {
     this.createVideo(connectionId, stream, kind, callback);
   }
- 
 
   pushVideo(video: VideoState): void {
     store.dispatch(meetingActions.pushVideo(video));
@@ -71,14 +84,4 @@ export default class VideoService {
     store.dispatch(meetingActions.replaceVideoKind(connectionId, kind));
     store.dispatch(meetingActions.replaceVideoStream(connectionId, stream));
   }
-  
-
-  // added by me 
-  pushScreenVideo(video:VideoState):void {
-    store.dispatch(meetingActions.pushVideoScreen(video));
-    // setTimeout(() => {
-    //   store.dispatch(meetingActions.updateVideoRenderId(video.id));
-    // }, 300);
-  }
-
 }

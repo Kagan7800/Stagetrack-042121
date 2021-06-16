@@ -5,18 +5,19 @@ export default class SocketService {
 
   static connect (): void {
     const endpoint = `https://${process.env.REACT_APP_API_HOST}/socket`
-    SocketService.client = new Client(endpoint)
+    this.client = new Client(endpoint)
   }
 
   static subscribe (channel: string, callback: (payload: any) => void): void {
-    SocketService.client.subscribe(channel, payload => callback(payload))
+    this.client.subscribe(channel, payload => callback(payload))
   }
 
   static unsubscribe (channel: string): void {
-    SocketService.client.unsubscribe(channel)
+    this.client.unsubscribe(channel)
   }
 
   static publish (channel: string, payload: any): void {
-    SocketService.client.publish(channel, payload)
+    this.client.publish(channel, payload)
   }
 }
+ 

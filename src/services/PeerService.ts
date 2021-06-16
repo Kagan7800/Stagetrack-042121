@@ -9,7 +9,6 @@ export default class PeerService {
     host: process.env.REACT_APP_API_HOST,
     path: '/peer',
     secure: true,
-    debug: 3,
   };
 
   private client: Peer;
@@ -90,11 +89,5 @@ export default class PeerService {
 
   onDisconnect(callback: () => void): void {
     this.client.on('close', () => callback());
-  }
-  onConnectionLost(callback: () => void): void {
-    this.client.on('iceconnectionstatechange', () => {
-      console.log('disconnected');
-      callback();
-    });
   }
 }

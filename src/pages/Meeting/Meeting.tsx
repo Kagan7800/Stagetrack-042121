@@ -30,6 +30,7 @@ import styles from './Meeting.module.scss';
 import GridContainer from '../grid/grid';
 import { actions as meetingActions, selectors as meetingSelectors, VideoStateKind } from './Meeting.state';
 import store from '../../store';
+import { truncate } from 'fs';
 
 interface MeetingProps extends MeetingState, MeetingActions, RouteComponentProps {}
 
@@ -78,7 +79,15 @@ class Meeting extends Component<MeetingProps> {
     this.handleVideoBlockClick = this.handleVideoBlockClick.bind(this);
     this.handleWhiteboardCanvasClearClick = this.handleWhiteboardCanvasClearClick.bind(this);
     this.handleWhiteboardDrawingAdd = this.handleWhiteboardDrawingAdd.bind(this);
-    this.handleOnConnectionLost = this.handleOnConnectionLost.bind(this);
+    this.handleRemoteRemoveRaiseHand = this.handleRemoteRemoveRaiseHand.bind(this);
+    this.handleMenuRemoveRaiseHand = this.handleMenuRemoveRaiseHand.bind(this);
+    this.handleRemoveRaiseHandforAdmin = this.handleRemoveRaiseHandforAdmin.bind(this);
+    this.handleMenuRemoveRaiseHandForAdmin = this.handleMenuRemoveRaiseHandForAdmin.bind(this);
+    this.handleAdminCheck = this.handleAdminCheck.bind(this);
+    this.handleMuteforAdmin = this.handleMuteforAdmin.bind(this);
+    this.handleMenuMuteforAdmin = this.handleMenuMuteforAdmin.bind(this);
+    this.handleActiveVideoBlockforAdmin = this.handleActiveVideoBlockforAdmin.bind(this);
+    // this.handleOnConnectionLost = this.handleOnConnectionLost.bind(this);
   }
 
   get className() {
@@ -87,6 +96,7 @@ class Meeting extends Component<MeetingProps> {
   }
 
   get activeVideo() {
+    // console.log('active Videos >>>>>>>>>', find(this.props.videos, 'active'));
     return find(this.props.videos, 'active');
   }
 
@@ -96,16 +106,16 @@ class Meeting extends Component<MeetingProps> {
 
   get activeVideoBlock() {
     return (
-      this.activeVideo && (
-        <ActiveVideo
-          video={this.activeVideo}
-          whiteboardDrawings={this.props.whiteboardDrawings}
-          whiteboardEnabled={this.props.whiteboardEnabled}
-          handleWhiteboardCanvasClearClick={this.handleWhiteboardCanvasClearClick}
-          handleWhiteboardDrawingAdd={this.handleWhiteboardDrawingAdd}
-          handleVideoBlockClick={this.handleVideoBlockClick}
-        />
-      )
+      // this.activeVideo && (
+      <ActiveVideo
+        video={this.activeVideo}
+        whiteboardDrawings={this.props.whiteboardDrawings}
+        whiteboardEnabled={this.props.whiteboardEnabled}
+        handleWhiteboardCanvasClearClick={this.handleWhiteboardCanvasClearClick}
+        handleWhiteboardDrawingAdd={this.handleWhiteboardDrawingAdd}
+        handleVideoBlockClick={this.handleVideoBlockClick}
+      />
+      // )
     );
   }
 
@@ -113,21 +123,23 @@ class Meeting extends Component<MeetingProps> {
   get videosFirst() {
     const videos = filter(this.props.videos);
     if (videos.length > 0) {
-      if (this.ScreenVideos) {
-        const types = ['screen', 'window', 'web-contents'];
-        let videoClone = { ...videos[0], stream: videos[0].stream.clone() };
-        const track = videoClone.stream.getVideoTracks().find((track: any) => types.some((i) => track.label.includes(i)));
-        if (track) {
-          videoClone.stream.removeTrack(track);
-        }
-        return this.video(videoClone);
-      }
+      // if (this.ScreenVideos) {
+      //   const types = ['screen', 'window', 'web-contents'];
+      //   let videoClone = { ...videos[0], stream: videos[0].stream.clone() };
+      //   const track = videoClone.stream.getVideoTracks().find((track: any) => types.some((i) => track.label.includes(i)));
+      //   if (track) {
+      //     videoClone.stream.removeTrack(track);
+      //   }
+      //   return this.video(videoClone);
+      // }
       return this.video(videos[0]);
     }
   }
 
   get videos() {
-    const videos = filter(this.props.videos, { active: false, kind: 'media' });
+    // const videos = filter(this.props.videos, { active: false, kind: 'media' });
+    const videos = filter(this.props.videos, { kind: 'media' });
+    console.log('this is the console for videos>>>>>>>>>>>>>>>', videos);
     return videos.map((video) => this.video(video));
   }
   get ScreenVideos() {
@@ -184,6 +196,9 @@ class Meeting extends Component<MeetingProps> {
     }
   }
 
+  findUservideo(id: string) {
+    return find(this.props.videos, { id: id });
+  }
   handleStreamStop() {
     const screenStream = this.meetingService.getScreenStream();
     const tracks = screenStream.getTracks();
@@ -219,6 +234,14 @@ class Meeting extends Component<MeetingProps> {
     socket.raiseHand.publish(id, connectionId);
   }
 
+  handleMenuRemoveRaiseHand() {
+    if (this.userVideo?.raiseHand) {
+      const { id, connectionId } = this.props;
+      socket.removeRaiseHand.publish(id, connectionId);
+    }
+    return;
+  }
+
   handleMenuEndMeetingClick() {
     const prompt = 'Are you sure to end meeting?';
     AlertService.push(prompt, () => {
@@ -249,7 +272,6 @@ class Meeting extends Component<MeetingProps> {
     const { id } = this.props;
     const whiteboardEnabled = !this.props.whiteboardEnabled;
     socket.whiteboardEnabled.publish(id, whiteboardEnabled);
-    this.props.replaceWhiteboardEnabled(whiteboardEnabled);
   }
 
   handleMenuMemberRemoveClick() {
@@ -258,9 +280,42 @@ class Meeting extends Component<MeetingProps> {
       socket.memberRemove.publish(id, this.activeVideo.id);
     }
   }
+  handleMenuRemoveRaiseHandForAdmin() {
+    if (this.activeVideo?.raiseHand) {
+      const { id } = this.props;
+      socket.removeRaiseHand.publish(id, this.activeVideo.id);
+    }
+    return;
+  }
+  handleMenuMuteforAdmin() {
+    if (this.activeVideo) {
+      const { id } = this.props;
+      socket.muteUsers.publish(id, this.activeVideo.id);
+    }
+  }
 
+  handleAdminCheck() {
+    const { connectionId } = this.props;
+    const isHostMeeting = this.meetingService.isHostMeeting(connectionId);
+    if (isHostMeeting) {
+      return true;
+    }
+    return false;
+  }
   handleVideoBlockClick(video: VideoState) {
-    this.props.replaceVideoActive(video.id, true);
+    if (this.props.whiteboardEnabled) {
+      this.handleMenuWhiteboardClick();
+    }
+    const { id } = this.props;
+    socket.replaceActiveVideoBlock.publish(id, video?.id);
+    // console.log('>>>>>>>white board state >>>>>>>>>', this.props.whiteboardEnabled);
+  }
+
+  handleActiveVideoBlockforAdmin(meetingId: string) {
+    socket.replaceActiveVideoBlock.subscribe(meetingId, (videoId) => {
+      // console.log(videoId);
+      this.props.replaceVideoActive(videoId, true);
+    });
   }
 
   handleWhiteboardCanvasClearClick() {
@@ -277,9 +332,12 @@ class Meeting extends Component<MeetingProps> {
   handleRemoteRaiseHand(meetingId: string) {
     socket.raiseHand.subscribe(meetingId, (connectionId) => {
       this.props.replaceVideoRaiseHand(connectionId, true);
-      setTimeout(() => {
-        this.props.replaceVideoRaiseHand(connectionId, false);
-      }, Meeting.raiseHandTimeout);
+    });
+  }
+
+  handleRemoteRemoveRaiseHand(meetingId: string) {
+    socket.removeRaiseHand.subscribe(meetingId, (connectionId) => {
+      this.props.replaceVideoRaiseHand(connectionId, false);
     });
   }
 
@@ -287,26 +345,45 @@ class Meeting extends Component<MeetingProps> {
     socket.memberRemove.subscribe(meetingId, (connectionId) => {
       const isUser = this.meetingService.isUserMeeting(connectionId);
       if (isUser) {
-        console.log('this is from if statement from member remove');
         this.peerService.disconnect();
       } else {
-        console.log('this is from else statement from member remove');
-
         this.videoService.pullVideo(connectionId);
         this.meetingRepository.setHostVideoActive();
       }
     });
   }
 
+  handleRemoveRaiseHandforAdmin(meetingId: string) {
+    socket.removeRaiseHand.subscribe(meetingId, (connectionId) => {
+      const isHostMeeting = this.meetingService.isHostMeeting(connectionId);
+      if (isHostMeeting) {
+        this.props.replaceVideoRaiseHand(connectionId, false);
+      }
+    });
+  }
+  // TODO IF USER IS MUTE AND ADMIN MUTE HIM THEN HIS WILL BE UNMUTED THATS AN ERROR
+  handleMuteforAdmin(meetingId: string) {
+    socket.muteUsers.subscribe(meetingId, (connectionId) => {
+      const isHostMeeting = this.meetingService.isHostMeeting(connectionId);
+      if (!isHostMeeting) {
+        const userVideotobeMuted = this.findUservideo(connectionId);
+        // console.log('user mute is :', userVideotobeMuted?.streamMuted.audio);
+        if (userVideotobeMuted) {
+          const enabled = this.mediaService.toggleAudioMute(userVideotobeMuted.stream);
+          !userVideotobeMuted?.streamMuted.audio
+            ? this.props.replaceVideoStreamMutedAudio(userVideotobeMuted.id, !enabled)
+            : this.props.replaceVideoStreamMutedAudio(userVideotobeMuted.id, false);
+        }
+      }
+    });
+  }
+
   handleRemoteDisconnect(meetingId: string) {
-    // console.log(meetingId);
     socket.remoteDisconnect.subscribe(meetingId, (connectionId) => {
       const isHostMeeting = this.meetingService.isHostMeeting(connectionId);
       if (isHostMeeting) {
-        console.log('isHostMeeeting');
         this.exitMeeting();
       } else {
-        console.log('not is host meeting');
         this.videoService.pullVideo(connectionId);
       }
     });
@@ -373,6 +450,7 @@ class Meeting extends Component<MeetingProps> {
   socketUnsubscribe() {
     const { id } = this.props;
     socket.raiseHand.unsubscribe(id);
+    socket.removeRaiseHand.unsubscribe(id);
     socket.conferenceCall.unsubscribe(id);
     socket.rtpTrackReplaced.unsubscribe(id);
     socket.remoteDisconnect.unsubscribe(id);
@@ -384,15 +462,6 @@ class Meeting extends Component<MeetingProps> {
 
   handleDisconnect() {
     this.peerService.onDisconnect(() => {
-      const { id, connectionId } = this.props;
-      socket.remoteDisconnect.publish(id, connectionId);
-      this.exitMeeting();
-    });
-  }
-
-  handleOnConnectionLost() {
-    this.peerService.onConnectionLost(() => {
-      console.log('this is action dispatched on user lost');
       const { id, connectionId } = this.props;
       socket.remoteDisconnect.publish(id, connectionId);
       this.exitMeeting();
@@ -411,12 +480,13 @@ class Meeting extends Component<MeetingProps> {
     this.socketUnsubscribe();
     this.peerService.disconnect();
     this.authService.resetType();
-    this.props.replaceWhiteboardEnabled(false);
+    // this.props.replaceWhiteboardEnabled(true);
     this.props.replaceWhiteboardDrawings([]);
     this.appStorage.removeAccessToken(() => {
       this.props.history.push(routes.home.path);
     });
   }
+
   // creating user video from media stream object passed from mediaService.getStream function
   handleUserStream(localConnectionId: string, localStream: MediaStream) {
     this.videoService.createMediaVideo(localConnectionId, localStream, 'media', (localVideo) => {
@@ -433,10 +503,8 @@ class Meeting extends Component<MeetingProps> {
   }
 
   handleReceiveCall(meetingId: string, localStream: MediaStream) {
-    // console.log('stream on user join >>>>>', localStream.getVideoTracks());
     this.peerService.onReceiveCall((call) => {
       this.meetingService.pushCall(call);
-      // this.handleOnConnectionLost();
       const { peer: connectionId } = call;
       this.peerService.answerCall(call, localStream);
       this.whiteboardDrawingSync(connectionId);
@@ -447,6 +515,10 @@ class Meeting extends Component<MeetingProps> {
   }
 
   joinMeeting(meetingId: string, localConnectionId: string, localStream: MediaStream) {
+    // if (!this.props.whiteboardEnabled && this.handleAdminCheck()) {
+    //   this.handleMenuWhiteboardClick();
+    // }
+
     if (this.meetingService.isMemberMeeting(localConnectionId)) {
       this.peerService.call(meetingId, localStream, (call) => {
         this.meetingService.pushCall(call);
@@ -462,9 +534,13 @@ class Meeting extends Component<MeetingProps> {
       this.meetingService.setId(localConnectionId, (meetingId) => {
         if (meetingId) {
           this.handleRemoteRaiseHand(meetingId);
+          this.handleRemoteRemoveRaiseHand(meetingId);
           this.handleRemoteMemberRemove(meetingId);
+          this.handleRemoveRaiseHandforAdmin(meetingId);
+          this.handleMuteforAdmin(meetingId);
+          this.handleActiveVideoBlockforAdmin(meetingId);
           this.handleDisconnect();
-          this.handleOnConnectionLost();
+          // this.handleOnConnectionLost();
           this.mediaService.getStream(history, (localStream) => {
             this.handleUserStream(localConnectionId, localStream);
             this.handleReceiveCall(meetingId, localStream);
@@ -498,7 +574,7 @@ class Meeting extends Component<MeetingProps> {
             <div className={this.className}>
               <div id='container'>
                 <GridContainer
-                  values={this.props.videos.length}
+                  values={this.videos.length}
                   videos={this.videos}
                   getFirstVideo={this.videosFirst}
                   activeVideo={this.activeVideoBlock}
@@ -520,6 +596,10 @@ class Meeting extends Component<MeetingProps> {
                   handleScreenShareClick={this.handleMenuScreenShareClick}
                   handleWhiteboardClick={this.handleMenuWhiteboardClick}
                   handleMemberRemoveClick={this.handleMenuMemberRemoveClick}
+                  handleRemoveRaiseHand={this.handleMenuRemoveRaiseHand}
+                  handleMenuRemoveRaiseHandForAdmin={this.handleMenuRemoveRaiseHandForAdmin}
+                  handleAdminCheck={this.handleAdminCheck}
+                  handleMenuMuteforAdmin={this.handleMenuMuteforAdmin}
                 />
               </div>
             </div>

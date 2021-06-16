@@ -31,6 +31,10 @@ function Grid(props) {
     handleScreenShareClick,
     handleWhiteboardClick,
     handleMemberRemoveClick,
+    handleRemoveRaiseHand,
+    handleMenuRemoveRaiseHandForAdmin,
+    handleMenuMuteforAdmin,
+    handleAdminCheck,
   } = props;
 
   var values = values || 1;
@@ -49,7 +53,6 @@ function Grid(props) {
   const handleOn2NavBackbtn = () => {
     set2Nav(false);
   };
-
   const handleLeftImages = () => {
     let elements = [<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${1}`}>{getFirstVideo}</div>];
     for (let i = 1; i <= values; i++) {
@@ -74,7 +77,7 @@ function Grid(props) {
       let condition2 = values >= 13 && i >= 13;
 
       if (i === 1 || condition1 || condition2) {
-        // console.log('>>>>>if', i);
+        console.log('>>>>>if', i);
       } else {
         elements.push(<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${i}`}>{videos[i - 2]}</div>);
       }
@@ -123,61 +126,72 @@ function Grid(props) {
                 <a className='closebtn' onClick={handleOnOpenNav}>
                   &times;
                 </a>
-
                 <div className='upperContainer'>
-                  <div className={`menuItemSidebar ${canRaiseHand ? 'active' : ''}`} onClick={handleRaiseHandClick}>
-                    Raise hand
+                  <div className={`menuItemSidebar active  : ''}`} onClick={canRaiseHand ? handleRaiseHandClick : handleRemoveRaiseHand}>
+                    {canRaiseHand ? 'Raise hand' : 'Unraise Hand'}
                   </div>
                   <hr className='horizontal' />
+                  {handleAdminCheck() && (
+                    <>
+                      <div className={`menuItemSidebar active  : ''}`} onClick={handleMenuRemoveRaiseHandForAdmin}>
+                        {'Remove Raised Hand'}
+                      </div>
+                      <hr className='horizontal' />
+                      <div className={`menuItemSidebar active  : ''}`} onClick={handleMenuMuteforAdmin}>
+                        {'Mute Users'}
+                      </div>
+                      <hr className='horizontal' />
+                      <div className={`menuItemSidebar active`} onClick={handleInviteMemberClick}>
+                        Invite Guests
+                      </div>
+                      <hr className='horizontal' />
+                      <div className={`menuItemSidebar ${canMemberRemove ? 'active' : ''}`} onClick={handleMemberRemoveClick}>
+                        Remove Member
+                      </div>
+                      <hr className='horizontal' />
+                      <Accordion>
+                        <div className={`menuItemSidebar `} onClick={''}>
+                          Chat
+                        </div>
+                        <hr className='horizontal' />
 
-                  <div className={`menuItemSidebar active`} onClick={handleMemberRemoveClick}>
+                        <div className={`menuItemSidebar `} onClick={''}>
+                          Display File
+                        </div>
+                        <hr className='horizontal' />
+
+                        <div className={`menuItemSidebar `} onClick={''}>
+                          Display Video
+                        </div>
+                        <hr className='horizontal' />
+
+                        <div className={`menuItemSidebar ${canScreenShare ? 'active' : ''}`} onClick={handleScreenShareClick}>
+                          Share Screen
+                        </div>
+                        <hr className='horizontal' />
+                        <div className={`menuItemSidebar ${canWhiteboardEnable ? 'active' : ''}`} onClick={handleWhiteboardClick}>
+                          White Board
+                        </div>
+                        <hr className='horizontal' />
+                      </Accordion>
+                    </>
+                  )}
+
+                  <div className={`menuItemSidebar ${canAudioMute ? 'active' : ''}`} onClick={handleAudioClick}>
                     Mute Audio
                   </div>
                   <hr className='horizontal' />
 
-                  <div className={`menuItemSidebar active`} onClick={handleInviteMemberClick}>
-                    Invite Guests
-                  </div>
-                  <hr className='horizontal' />
                   <div className={`menuItemSidebar active`} onClick={handleOnTodaysColor}>
                     Today's Colors
                   </div>
                   <hr className='horizontal' />
-                  <div className={`menuItemSidebar ${canAudioMute ? 'active' : ''}`} onClick={handleMemberRemoveClick}>
-                    Remove Member
-                  </div>
-                  <hr className='horizontal' />
-                  <Accordion>
-                    <div className={`menuItemSidebar `} onClick={''}>
-                      Chat
-                    </div>
-                    <hr className='horizontal' />
-
-                    <div className={`menuItemSidebar `} onClick={''}>
-                      Display File
-                    </div>
-                    <hr className='horizontal' />
-
-                    <div className={`menuItemSidebar `} onClick={''}>
-                      Display Video
-                    </div>
-                    <hr className='horizontal' />
-
-                    <div className={`menuItemSidebar ${canScreenShare ? 'active' : ''}`} onClick={handleScreenShareClick}>
-                      Share Screen
-                    </div>
-                    <hr className='horizontal' />
-                    <div className={`menuItemSidebar ${canWhiteboardEnable ? 'active' : ''}`} onClick={handleWhiteboardClick}>
-                      White Board
-                    </div>
-                    <hr className='horizontal' />
-                  </Accordion>
                 </div>
 
                 <div className='lowerContainer'>
                   <hr className='HRdivider' />
-                  <div className={`menuItemSidebarlower ${canVideoMute ? 'active' : ''}`} onClick={handleMenuVideoClick}>
-                    Pause Session
+                  <div className={`menuItemSidebarlower active`} onClick={handleMenuVideoClick}>
+                    {canVideoMute ? ' Pause Session' : 'Unpause Session'}
                   </div>
                   <div className={`menuItemSidebarlower ${canEndMeeting ? 'active' : ''}`} onClick={handleEndMeetingClick}>
                     End Session
