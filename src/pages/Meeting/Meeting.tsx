@@ -123,15 +123,15 @@ class Meeting extends Component<MeetingProps> {
   get videosFirst() {
     const videos = filter(this.props.videos);
     if (videos.length > 0) {
-      // if (this.ScreenVideos) {
-      //   const types = ['screen', 'window', 'web-contents'];
-      //   let videoClone = { ...videos[0], stream: videos[0].stream.clone() };
-      //   const track = videoClone.stream.getVideoTracks().find((track: any) => types.some((i) => track.label.includes(i)));
-      //   if (track) {
-      //     videoClone.stream.removeTrack(track);
-      //   }
-      //   return this.video(videoClone);
-      // }
+      if (this.ScreenVideos) {
+        const types = ['screen', 'window', 'web-contents'];
+        let videoClone = { ...videos[0], stream: videos[0].stream.clone() };
+        const track = videoClone.stream.getVideoTracks().find((track: any) => types.some((i) => track.label.includes(i)));
+        if (track) {
+          videoClone.stream.removeTrack(track);
+        }
+        return this.video(videoClone);
+      }
       return this.video(videos[0]);
     }
   }
