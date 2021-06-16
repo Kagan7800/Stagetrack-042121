@@ -10,9 +10,9 @@ function Accordion({ children }: any) {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly' }}>
           <text>Tools</text>
           {toggle ? (
-            <img src='./assets/backArrow.png' height={20} width={20} style={{ transform: 'rotate(90deg)' }} alt='' />
+            <img src='./assets/backArrow.png' height={15} width={20} style={{ transform: 'rotate(90deg)' }} alt='' />
           ) : (
-            <img src='./assets/backArrow.png' height={20} width={20} alt='' />
+            <img src='./assets/backArrow.png' height={15} width={20} alt='' />
           )}
         </div>
         <hr className='horizontal' />
