@@ -54,32 +54,32 @@ function Grid(props) {
     set2Nav(false);
   };
   const handleLeftImages = () => {
-    let elements = [<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${1}`}>{getFirstVideo}</div>];
-    for (let i = 1; i <= values; i++) {
-      if (i === 4) {
-        elements.push(<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${2}`}>{videos[i - 2]}</div>);
+    let elements = [<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${1}`}>{videos[0]}</div>];
+    for (let i = 1; i < values; i++) {
+      if (i === 3) {
+        elements.push(<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${2}`}>{videos[i]}</div>);
       }
     }
     return elements;
   };
   const handleImagesForMobile = () => {
     let elements = [<div className={`changeNewBorderColor ${borderColor} videoCapture`}>{getFirstVideo}</div>];
-    for (let i = 1; i <= values; i++) {
-      elements.push(<div className='videoCapture'>{videos[i - 2]}</div>);
+    for (let i = 1; i < values; i++) {
+      elements.push(<div className='videoCapture'>{videos[i]}</div>);
     }
     return elements;
   };
 
   const handleRightImages = () => {
+    if (values <= 1) return;
     let elements = [];
-    for (let i = 1; i <= values; i++) {
+    for (let i = 1; i < values; i++) {
       let condition1 = values >= 4 && i == 2;
       let condition2 = values >= 13 && i >= 13;
 
-      if (i === 1 || condition1 || condition2) {
-        console.log('>>>>>if', i);
+      if (condition1 || condition2) {
       } else {
-        elements.push(<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${i}`}>{videos[i - 2]}</div>);
+        elements.push(<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${i + 1}`}>{videos[i]}</div>);
       }
     }
     return elements;
@@ -692,7 +692,7 @@ function Grid(props) {
                       </div>
                       <div className={'newMainContentMain'}>
                         <div className={`newMainContentLeft${values >= 12 ? 'X11' : values > 1 ? `X${values}` : ''}`}>
-                          {handleLeftImages().map((item) => item)}
+                          {handleLeftImages()?.map((item) => item)}
                         </div>
                         {values >= 13 ? (
                           <div className='x13Middle'>
@@ -703,7 +703,7 @@ function Grid(props) {
                                 </div>
                               </div>
                             </div>
-                            <div className='x13BottomVids'>{handleBottomImages().map((item) => item)}</div>
+                            <div className='x13BottomVids'>{handleBottomImages()?.map((item) => item)}</div>
                           </div>
                         ) : (
                           <div
@@ -719,13 +719,13 @@ function Grid(props) {
                         )}
                       </div>
                     </div>
-                    <div className='x11Right'>{handleRightImages().map((item) => item)}</div>
+                    <div className='x11Right'>{handleRightImages()?.map((item) => item)}</div>
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
                     <div className={title ? 'newMainContentHeaderBg' : 'newMainContentHeaderBgZ'}></div>
                     <div className='newMainContentMain'>
-                      <div className={`newMainContentLeft${values > 1 ? `X${values}` : ''}`}>{handleLeftImages().map((item) => item)}</div>
+                      <div className={`newMainContentLeft${values > 1 ? `X${values}` : ''}`}>{handleLeftImages()?.map((item) => item)}</div>
                       <div className={`${values > 1 ? `newMainContentMiddleX${values}` : 'newMainContentRight'}`}>
                         <div className='newMainContentRightInner'>
                           <div id='newMainContentRightInnerTextarea' className='newMainContentRightInnerTextarea'>
@@ -733,7 +733,7 @@ function Grid(props) {
                           </div>
                         </div>
                       </div>
-                      <div className={`newMainContentRightX${values}`}>{handleRightImages().map((item) => item)}</div>
+                      <div className={`newMainContentRightX${values}`}>{handleRightImages()?.map((item) => item)}</div>
                     </div>
                   </React.Fragment>
                 )}
@@ -749,7 +749,7 @@ function Grid(props) {
                 <div className='middleSectionInnerContainer'>{activeVideo}</div>
               </div>
               <div style={{ marginBottom: '10px' }} className='videoCaptureConatainer'>
-                {handleImagesForMobile().map((item) => item)}
+                {handleImagesForMobile()?.map((item) => item)}
               </div>
             </div>
           </div>

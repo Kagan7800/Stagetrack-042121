@@ -303,6 +303,7 @@ class Meeting extends Component<MeetingProps> {
     return false;
   }
   handleVideoBlockClick(video: VideoState) {
+    if (!this.handleAdminCheck()) return;
     if (this.props.whiteboardEnabled) {
       this.handleMenuWhiteboardClick();
     }
