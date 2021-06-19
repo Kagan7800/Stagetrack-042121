@@ -114,6 +114,21 @@ export default {
       SocketService.publish(this.channel(meetingId), connectionId);
     },
   },
+  
+  ActiveVideoBlockSync: {
+    channel(meetingId: string) {
+      return `/ActiveVideoBlockSync/${meetingId}`;
+    },
+    subscribe(meetingId: string, callback: (connectionId: string) => void) {
+      SocketService.subscribe(this.channel(meetingId), (connectionId: string) => callback(connectionId));
+    },
+    unsubscribe(meetingId: string) {
+      SocketService.unsubscribe(this.channel(meetingId));
+    },
+    publish(meetingId: string, connectionId: string) {
+      SocketService.publish(this.channel(meetingId), connectionId);
+    },
+  },
 
   rtpTrackReplaced: {
     channel(meetingId: string) {

@@ -31,6 +31,7 @@ import GridContainer from '../grid/grid';
 import { actions as meetingActions, selectors as meetingSelectors, VideoStateKind } from './Meeting.state';
 import store from '../../store';
 import { truncate } from 'fs';
+import { setTimeout } from 'timers';
 
 interface MeetingProps extends MeetingState, MeetingActions, RouteComponentProps {}
 
@@ -87,6 +88,7 @@ class Meeting extends Component<MeetingProps> {
     this.handleMuteforAdmin = this.handleMuteforAdmin.bind(this);
     this.handleMenuMuteforAdmin = this.handleMenuMuteforAdmin.bind(this);
     this.handleActiveVideoBlockforAdmin = this.handleActiveVideoBlockforAdmin.bind(this);
+    this.handleRemoteActiveVideoSync = this.handleRemoteActiveVideoSync.bind(this);
     // this.handleOnConnectionLost = this.handleOnConnectionLost.bind(this);
   }
 
@@ -302,19 +304,17 @@ class Meeting extends Component<MeetingProps> {
     }
     return false;
   }
+
   handleVideoBlockClick(video: VideoState) {
     if (!this.handleAdminCheck()) return;
-    if (this.props.whiteboardEnabled) {
-      this.handleMenuWhiteboardClick();
-    }
     const { id } = this.props;
+    const whiteboardEnabled = false;
+    socket.whiteboardEnabled.publish(id, whiteboardEnabled);
     socket.replaceActiveVideoBlock.publish(id, video?.id);
-    // console.log('>>>>>>>white board state >>>>>>>>>', this.props.whiteboardEnabled);
   }
 
   handleActiveVideoBlockforAdmin(meetingId: string) {
     socket.replaceActiveVideoBlock.subscribe(meetingId, (videoId) => {
-      // console.log(videoId);
       this.props.replaceVideoActive(videoId, true);
     });
   }
@@ -405,6 +405,7 @@ class Meeting extends Component<MeetingProps> {
         this.peerService.call(connectionId, localStream, (call) => {
           this.meetingService.pushCall(call);
           this.handleCallStreaming(call);
+          this.activeVideoSync(connectionId);
         });
       }
     });
@@ -435,6 +436,16 @@ class Meeting extends Component<MeetingProps> {
       }
       this.props.replaceWhiteboardDrawings(drawings);
       socket.whiteboardDrawingSync.unsubscribe(localConnectionId);
+    });
+  }
+
+  handleRemoteActiveVideoSync(localConnectionId: string) {
+    socket.ActiveVideoBlockSync.subscribe(localConnectionId, (activeVideoSync) => {
+      if (this.props.whiteboardEnabled) {
+        this.props.replaceWhiteboardEnabled(!this.props.whiteboardEnabled);
+      }
+      this.props.replaceVideoActive(activeVideoSync, true);
+      socket.ActiveVideoBlockSync.unsubscribe(localConnectionId);
     });
   }
 
@@ -475,6 +486,13 @@ class Meeting extends Component<MeetingProps> {
     socket.whiteboardDrawingSync.publish(connectionId, whiteboardSync);
   }
 
+  activeVideoSync(connectionId: string) {
+    if (this.activeVideo) {
+      console.log(this.activeVideo);
+      socket.ActiveVideoBlockSync.publish(connectionId, this.activeVideo?.id);
+    }
+  }
+
   exitMeeting() {
     this.videoService.stopUserVideo();
     this.meetingService.resetMeeting();
@@ -512,14 +530,13 @@ class Meeting extends Component<MeetingProps> {
       socket.conferenceCall.publish(meetingId, connectionId);
       this.notificationService.notifyHost(connectionId);
       this.handleCallStreaming(call);
+      setTimeout(() => {
+        this.activeVideoSync(connectionId);
+      }, 1000);
     });
   }
 
   joinMeeting(meetingId: string, localConnectionId: string, localStream: MediaStream) {
-    // if (!this.props.whiteboardEnabled && this.handleAdminCheck()) {
-    //   this.handleMenuWhiteboardClick();
-    // }
-
     if (this.meetingService.isMemberMeeting(localConnectionId)) {
       this.peerService.call(meetingId, localStream, (call) => {
         this.meetingService.pushCall(call);
@@ -541,7 +558,6 @@ class Meeting extends Component<MeetingProps> {
           this.handleMuteforAdmin(meetingId);
           this.handleActiveVideoBlockforAdmin(meetingId);
           this.handleDisconnect();
-          // this.handleOnConnectionLost();
           this.mediaService.getStream(history, (localStream) => {
             this.handleUserStream(localConnectionId, localStream);
             this.handleReceiveCall(meetingId, localStream);
@@ -552,6 +568,7 @@ class Meeting extends Component<MeetingProps> {
             this.handleRemoteWhiteboardEnabled(meetingId);
             this.handleRemoteWhiteboardDrawingAdd(meetingId);
             this.handleRemoteWhiteboardDrawingSync(localConnectionId);
+            this.handleRemoteActiveVideoSync(localConnectionId);
             this.handleRemoteWhiteboardCanvasClear(meetingId);
           });
         } else this.exitMeeting();
@@ -591,7 +608,6 @@ class Meeting extends Component<MeetingProps> {
                   inviteText={this.inviteText}
                   handleRaiseHandClick={this.handleMenuRaiseHandClick}
                   handleEndMeetingClick={this.handleMenuEndMeetingClick}
-                  handleVideoClick={this.handleVideoBlockClick}
                   handleAudioClick={this.handleMenuAudioClick}
                   handleMenuVideoClick={this.handleMenuVideoClick}
                   handleScreenShareClick={this.handleMenuScreenShareClick}

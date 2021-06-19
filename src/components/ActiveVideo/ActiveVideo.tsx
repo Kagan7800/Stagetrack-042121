@@ -35,17 +35,17 @@ export default class ActiveVideo extends Component<ActiveVideoProps> {
   }
 
   get whiteboard() {
-    // console.log('this is from active videoblock ', this.props.whiteboardEnabled);
     return (
-      // this.props.whiteboardEnabled && (
-      <Whiteboard
-        drawings={this.props.whiteboardDrawings}
-        handleCanvasClearClick={this.props.handleWhiteboardCanvasClearClick}
-        handleDrawingAdd={this.props.handleWhiteboardDrawingAdd}
-      />
+      this.props.whiteboardEnabled && (
+        <Whiteboard
+          drawings={this.props.whiteboardDrawings}
+          handleCanvasClearClick={this.props.handleWhiteboardCanvasClearClick}
+          handleDrawingAdd={this.props.handleWhiteboardDrawingAdd}
+        />
+      )
     );
-    // );
   }
+  
 
   render() {
     return (

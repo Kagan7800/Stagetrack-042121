@@ -1,43 +1,45 @@
-import { fabric } from 'fabric'
+import { fabric } from 'fabric';
 
-export type WhiteboardCanvasZoom = 'in' | 'out'
+export type WhiteboardCanvasZoom = 'in' | 'out';
 
 export default class WhiteboardCanvasService {
-  private static instance: WhiteboardCanvasService
+  private static instance: WhiteboardCanvasService;
 
-  private static canvas: fabric.Canvas
+  private static canvas: fabric.Canvas;
 
-  constructor () {
+  constructor() {
     if (!WhiteboardCanvasService.instance) {
-      WhiteboardCanvasService.instance = this
+      WhiteboardCanvasService.instance = this;
     }
-    return WhiteboardCanvasService.instance
+    return WhiteboardCanvasService.instance;
   }
 
-  initialize () {
+  initialize() {
     WhiteboardCanvasService.canvas = new fabric.Canvas('whiteboardCanvas', {
-      isDrawingMode: true
-    })
+      isDrawingMode: true,
+    });
   }
 
-  getCanvas () {
-    return WhiteboardCanvasService.canvas
+  getCanvas() {
+    return WhiteboardCanvasService.canvas;
   }
 
-  setDimensions (width: any, height: any) {
-    WhiteboardCanvasService.canvas.setDimensions({ width, height })
+  setDimensions(width:any, height:any) {
+    console.log(width, height);
+
+    WhiteboardCanvasService.canvas.setDimensions({ width, height });
   }
 
-  zoom (type: WhiteboardCanvasZoom) {
-    const existingZoom = WhiteboardCanvasService.canvas.getZoom()
+  zoom(type: WhiteboardCanvasZoom) {
+    const existingZoom = WhiteboardCanvasService.canvas.getZoom();
     if (type === 'in') {
-      WhiteboardCanvasService.canvas.setZoom(existingZoom * 1.1)
+      WhiteboardCanvasService.canvas.setZoom(existingZoom * 1.1);
     } else if (type === 'out') {
-      WhiteboardCanvasService.canvas.setZoom(existingZoom * 0.9)
+      WhiteboardCanvasService.canvas.setZoom(existingZoom * 0.9);
     }
   }
 
-  clear () {
-    WhiteboardCanvasService.canvas.clear()
+  clear() {
+    WhiteboardCanvasService.canvas.clear();
   }
 }

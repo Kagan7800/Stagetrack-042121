@@ -25,7 +25,7 @@ function Grid(props) {
     inviteText,
     handleRaiseHandClick,
     handleEndMeetingClick,
-    handleVideoClick,
+
     handleMenuVideoClick,
     handleAudioClick,
     handleScreenShareClick,
@@ -57,6 +57,8 @@ function Grid(props) {
     let elements = [<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${1}`}>{videos[0]}</div>];
     for (let i = 1; i < values; i++) {
       if (i === 3) {
+        console.log('images from left :', i);
+
         elements.push(<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${2}`}>{videos[i]}</div>);
       }
     }
@@ -74,11 +76,12 @@ function Grid(props) {
     if (values <= 1) return;
     let elements = [];
     for (let i = 1; i < values; i++) {
-      let condition1 = values >= 4 && i == 2;
-      let condition2 = values >= 13 && i >= 13;
+      let condition1 = values >= 4 && i == 3;
+      let condition2 = values > 13 && i >= 13;
 
       if (condition1 || condition2) {
       } else {
+        console.log('images from right :', i);
         elements.push(<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${i + 1}`}>{videos[i]}</div>);
       }
     }
@@ -746,7 +749,9 @@ function Grid(props) {
                 <img height='50' width='100%' src={title ? '/assets/bannerText.png' : '/assets/bannerlogo.png'} alt='' />
               </div>
               <div style={{ marginBottom: '10px' }} className='MiddleSection'>
-                <div className='middleSectionInnerContainer'>{activeVideo}</div>
+                <div id='middleSectionInnerContainer' className='middleSectionInnerContainer'>
+                  {activeVideo}
+                </div>
               </div>
               <div style={{ marginBottom: '10px' }} className='videoCaptureConatainer'>
                 {handleImagesForMobile()?.map((item) => item)}
