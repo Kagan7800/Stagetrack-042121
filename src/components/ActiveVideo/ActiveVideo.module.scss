@@ -1,4 +1,5 @@
 .activeVideo {
+<<<<<<< HEAD
   // height: 100vh;
   height: 100%;
 
@@ -11,6 +12,15 @@
   .videoBlock {
     height: 100%;
 
+=======
+  height: 100vh;
+
+  &.mobile {
+    height: calc((100vw / (16/9)));
+  }
+
+  .videoBlock {
+>>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
     &.hide {
       display: none;
     }

@@ -85,6 +85,10 @@ export default class Menu extends Component<MenuProps, MenuLocalState> {
   get menuItems () {
     return this.state.visibility &&
       <MenuItems
+<<<<<<< HEAD
+=======
+        text=""
+>>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
         position={this.props.position}
         canInviteMember={this.props.canInviteMember}
         canRaiseHand={this.props.canRaiseHand}
@@ -107,7 +111,11 @@ export default class Menu extends Component<MenuProps, MenuLocalState> {
 
   render () {
     return (
+<<<<<<< HEAD
       <div className={this.className}>
+=======
+      <div>
+>>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
         {this.menuToggle('bottom')}
         {this.menuItems}
         {this.menuToggle('top')}

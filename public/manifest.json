@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "name": "Teammeet",
   "short_name": "Teammeet",
+=======
+  "name": "Stagetrack Studio",
+  "short_name": "Stagetrack Studio",
+>>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

@@ -11,8 +11,13 @@ interface HeaderProps {
 
 export default class Header extends Component<HeaderProps> {
   get logo () {
+<<<<<<< HEAD
     const logo = this.props.invert ? 'logoInvert.svg' : 'logo.svg'
     return `/assets/logo/${logo}`
+=======
+    const logo = this.props.invert ? 'logoInvert.svg' : 'newlogo.png'
+    return `/assets/${logo}`
+>>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   }
 
   get taglineClass () {
