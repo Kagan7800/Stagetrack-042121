@@ -41,19 +41,12 @@ header {
 }
 
 #session {
-<<<<<<< HEAD
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   bottom: 60px;
-=======
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 }
 
 .session {
@@ -88,7 +81,6 @@ header {
 .sidepanel {
   width: 250px;
   height: 100%;
-<<<<<<< HEAD
   position: fixed;
   float: left;
   z-index: 999;
@@ -100,15 +92,6 @@ header {
   flex-direction: column;
   /* align-items: center; */
   row-gap: 20px;
-=======
-  position: relative;
-  float: left;
-  z-index: 1;
-  background-color: black;
-  overflow-x: hidden;
-  padding-top: 60px;
-  transition: 0.5s;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 }
 
 /* The sidepanel links */
@@ -124,7 +107,6 @@ header {
 .sidepanel a:hover {
   color: #f1f1f1;
 }
-<<<<<<< HEAD
 .menuItemSidebar {
   opacity: 0.5;
   font-family: Risque;
@@ -239,16 +221,6 @@ header {
 .sidepanel > div {
   display: block;
   cursor: pointer;
-=======
-
-/* Position and style the close button (top right corner) */
-.sidepanel .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 }
 
 /* Style the button that is used to open the sidepanel */
@@ -1330,11 +1302,7 @@ main {
       box-sizing: border-box;
       border: none;
       background-color: rgba(202, 236, 98, 1);
-<<<<<<< HEAD
     
-=======
-      padding: 5px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   
     }
   */
@@ -1400,7 +1368,6 @@ main {
 .newCaptureOrange {
   background-color: #fc9700 !important;
 }
-<<<<<<< HEAD
 .green {
   border: 5px solid #21c03b;
 }
@@ -1424,15 +1391,6 @@ main {
   align-items: center;
   padding-top: 20px;
   width: 100%;
-=======
-
-#newCaptureBorderColorsContainer {
-  position: absolute;
-  right: 0;
-  top: 40%;
-  display: flex;
-  flex-direction: column;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 }
 
 #newCaptureBorderColorsContainer button {
@@ -1762,7 +1720,6 @@ main {
 
 .newMainContentHeaderBg {
   width: 95%;
-<<<<<<< HEAD
   height: 25%;
   background-image: url('../../assets/bannerText.png');
   background-position: top;
@@ -1776,10 +1733,6 @@ main {
   width: 95%;
   height: 25%;
   background-image: url('../../assets/bannerlogo.png');
-=======
-  height: 15%;
-  background-image: url('../../assets/Rectangle3398e.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1790,7 +1743,6 @@ main {
 
 .newMainContentHeaderBgX11 {
   width: 112%;
-<<<<<<< HEAD
   height: 20%;
   background-image: url('../../assets/bannerText.png');
   background-position: top;
@@ -1803,10 +1755,6 @@ main {
   width: 112%;
   height: 20%;
   background-image: url('../../assets/bannerlogo.png');
-=======
-  height: 15%;
-  background-image: url('../../assets/Rectangle3398e.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1816,7 +1764,6 @@ main {
 
 .newMainContentHeaderBgX12 {
   width: 99%;
-<<<<<<< HEAD
   height: 20%;
   background-image: url('../../assets/bannerText.png');
   background-position: top;
@@ -1831,10 +1778,6 @@ main {
   width: 99%;
   height: 20%;
   background-image: url('../../assets/bannerlogo.png');
-=======
-  height: 15%;
-  background-image: url('../../assets/Rectangle3398e.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1846,7 +1789,6 @@ main {
 .newMainContentHeaderBgX18 {
   width: 99%;
   height: 100%;
-<<<<<<< HEAD
   background-image: url('../../assets/bannerText.png');
   background-position: top;
   background-repeat: no-repeat;
@@ -1859,9 +1801,6 @@ main {
   width: 99%;
   height: 100%;
   background-image: url('../../assets/bannerlogo.png');
-=======
-  background-image: url('../../assets/Rectangle3398e.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1872,7 +1811,6 @@ main {
 
 .newMainContentHeaderBg21 {
   width: 99%;
-<<<<<<< HEAD
   height: 20%;
   background-image: url('../../assets/bannerText.png');
   background-position: top;
@@ -1886,20 +1824,12 @@ main {
   width: 99%;
   height: 20%;
   background-image: url('../../assets/bannerlogo.png');
-=======
-  height: 15%;
-  background-image: url('../../assets/Rectangle3398e.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: 2px 0 10px 0;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-=======
-
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 }
 
 .x22Header {
@@ -1913,91 +1843,55 @@ main {
 .newMainContentHeaderBg22 {
   width: 88%;
   height: 100%;
-<<<<<<< HEAD
   background-image: url('../../assets/bannerText.png');
-=======
-  background-image: url('../../assets/Rectangle3398e.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: 2px 10px 10px 0;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-=======
-
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 }
 
 .newMainContentHeaderBg23 {
   width: 77.5%;
   height: 100%;
-<<<<<<< HEAD
   background-image: url('../../assets/bannerText.png');
-=======
-  background-image: url('../../assets/Rectangle3398e.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: 2px 0 10px 0;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-=======
-
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 }
 
 .newMainContentHeaderBg24 {
   width: 67%;
   height: 100%;
-<<<<<<< HEAD
   background-image: url('../../assets/bannerText.png');
-=======
-  background-image: url('../../assets/Rectangle3398e.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: 2px 0 10px 0;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-=======
-
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 }
 
 .newMainContentHeaderBg25 {
   width: 56%;
   height: 100%;
-<<<<<<< HEAD
   background-image: url('../../assets/bannerText.png');
-=======
-  background-image: url('../../assets/Rectangle3398e.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: 2px 0 10px 0;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-=======
-
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 }
 
 .newMainContentHeaderBg26 {
   width: 46%;
   height: 100%;
-<<<<<<< HEAD
   background-image: url('../../assets/bannerText.png');
-=======
-  background-image: url('../../assets/Rectangle3398e.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -2009,19 +1903,11 @@ main {
 .vidCapture22_22 {
   width: 10.1%;
   height: 100%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin: 2px 0 0 2px;
   object-fit: cover;
   object-position: center center;
@@ -2030,19 +1916,11 @@ main {
 .vidCapture23_23 {
   width: 10.1%;
   height: 100%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin: 2px 2px 5px 0;
   object-fit: cover;
   object-position: center center;
@@ -2051,19 +1929,11 @@ main {
 .vidCapture24_24 {
   width: 10.1%;
   height: 100%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin: 2px -2px 5px 0;
   object-fit: cover;
   object-position: center center;
@@ -2072,19 +1942,11 @@ main {
 .vidCapture25_25 {
   width: 10.1%;
   height: 100%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin: 2px 0.4% 5px 0;
   object-fit: cover;
   object-position: center center;
@@ -2093,19 +1955,11 @@ main {
 .vidCapture26_26 {
   width: 9.5%;
   height: 100%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin: 2px 0.4% 5px 0;
   object-fit: cover;
   object-position: center center;
@@ -2117,7 +1971,6 @@ main {
   display: flex;
 }
 .banner_title {
-<<<<<<< HEAD
   height: 30%;
   object-fit: cover;
   margin-top: 3.4%;
@@ -2128,12 +1981,6 @@ main {
   object-fit: cover;
   margin-top: 2.4%;
   margin-left: 22%;
-=======
-  font-size: 36px;
-  font-family: 'Ruluko';
-  color: #1745b9;
-  padding-top: 15px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 }
 .newMainContentHeaderLogo {
   width: 100%;
@@ -2295,55 +2142,34 @@ main {
 
 .vidCapture1_1 {
   width: 100%;
-<<<<<<< HEAD
   height: 50%;
 
   margin-right: -25%;
   z-index: 10;
 
-=======
-  margin-right: -25%;
-  z-index: 10;
-  background-color: #346af4;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
 
 .vidCapture2_1 {
   width: 100%;
-<<<<<<< HEAD
   height: 50%;
 
   margin-right: -15%;
   z-index: 20;
 
-=======
-  margin-right: -15%;
-  z-index: 20;
-  background-color: #346af4;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
 
 .vidCapture2_2 {
   width: 100%;
-<<<<<<< HEAD
   height: 50%;
 
   margin-left: -15%;
   z-index: 10;
   background-color: #00fcfc;
 
-=======
-  margin-left: -15%;
-  z-index: 10;
-  background-color: #00fcfc;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2351,7 +2177,6 @@ main {
 .vidCapture3_1 {
   width: 100%;
   margin-right: -17%;
-<<<<<<< HEAD
   height: 50%;
 
   z-index: 10;
@@ -2360,14 +2185,6 @@ main {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  z-index: 10;
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2375,19 +2192,11 @@ main {
 .vidCapture3_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2395,19 +2204,11 @@ main {
 .vidCapture3_3 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2415,19 +2216,11 @@ main {
 .vidCapture4_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2435,19 +2228,11 @@ main {
 .vidCapture4_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2455,19 +2240,11 @@ main {
 .vidCapture4_3 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2475,19 +2252,11 @@ main {
 .vidCapture4_4 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2495,19 +2264,11 @@ main {
 .vidCapture5_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2515,19 +2276,11 @@ main {
 .vidCapture5_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2535,19 +2288,11 @@ main {
 .vidCapture5_3 {
   width: 48%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2555,19 +2300,11 @@ main {
 .vidCapture5_4 {
   width: 48%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2575,19 +2312,11 @@ main {
 .vidCapture5_5 {
   width: 48%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2595,11 +2324,6 @@ main {
 .vidCapture5_6 {
   width: 48%;
   height: 49%;
-<<<<<<< HEAD
-
-=======
-  background-image: url('../../assets/image980.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -2608,19 +2332,11 @@ main {
 .vidCapture6_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2628,19 +2344,11 @@ main {
 .vidCapture6_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2648,19 +2356,11 @@ main {
 .vidCapture6_3 {
   width: 48%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2668,19 +2368,11 @@ main {
 .vidCapture6_4 {
   width: 48%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2688,19 +2380,11 @@ main {
 .vidCapture6_5 {
   width: 48%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2708,19 +2392,11 @@ main {
 .vidCapture6_6 {
   width: 48%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2728,19 +2404,11 @@ main {
 .vidCapture7_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2748,19 +2416,11 @@ main {
 .vidCapture7_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2768,19 +2428,11 @@ main {
 .vidCapture7_3 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2788,19 +2440,11 @@ main {
 .vidCapture7_4 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2808,19 +2452,11 @@ main {
 .vidCapture7_5 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2828,19 +2464,11 @@ main {
 .vidCapture7_6 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2848,19 +2476,11 @@ main {
 .vidCapture7_7 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2868,11 +2488,6 @@ main {
 .vidCapture7_8 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
-
-=======
-  background-image: url('../../assets/image980.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -2881,19 +2496,11 @@ main {
 .vidCapture8_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2901,19 +2508,11 @@ main {
 .vidCapture8_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2921,19 +2520,11 @@ main {
 .vidCapture8_3 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2941,19 +2532,11 @@ main {
 .vidCapture8_4 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2961,19 +2544,11 @@ main {
 .vidCapture8_5 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -2981,19 +2556,11 @@ main {
 .vidCapture8_6 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3001,19 +2568,11 @@ main {
 .vidCapture8_7 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3021,19 +2580,11 @@ main {
 .vidCapture8_8 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3041,19 +2592,11 @@ main {
 .vidCapture9_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3061,19 +2604,11 @@ main {
 .vidCapture9_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3081,19 +2616,11 @@ main {
 .vidCapture9_3 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3101,19 +2628,11 @@ main {
 .vidCapture9_4 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3121,19 +2640,11 @@ main {
 .vidCapture9_5 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3141,19 +2652,11 @@ main {
 .vidCapture9_6 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3161,19 +2664,11 @@ main {
 .vidCapture9_7 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3181,19 +2676,11 @@ main {
 .vidCapture9_8 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3201,19 +2688,11 @@ main {
 .vidCapture9_9 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3221,11 +2700,6 @@ main {
 .vidCapture9_10 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
-
-=======
-  background-image: url('../../assets/image980.png');
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -3234,19 +2708,11 @@ main {
 .vidCapture10_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3254,19 +2720,11 @@ main {
 .vidCapture10_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3274,19 +2732,11 @@ main {
 .vidCapture10_3 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3294,19 +2744,11 @@ main {
 .vidCapture10_4 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3314,19 +2756,11 @@ main {
 .vidCapture10_5 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3334,19 +2768,11 @@ main {
 .vidCapture10_6 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3354,19 +2780,11 @@ main {
 .vidCapture10_7 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3374,19 +2792,11 @@ main {
 .vidCapture10_8 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3394,19 +2804,11 @@ main {
 .vidCapture10_9 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3414,19 +2816,11 @@ main {
 .vidCapture10_10 {
   width: 48%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3434,19 +2828,11 @@ main {
 .vidCapture11_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3454,19 +2840,11 @@ main {
 .vidCapture11_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3474,19 +2852,11 @@ main {
 .vidCapture11_3 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3494,19 +2864,11 @@ main {
 .vidCapture11_4 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3514,19 +2876,11 @@ main {
 .vidCapture11_5 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3534,19 +2888,11 @@ main {
 .vidCapture11_6 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3554,19 +2900,11 @@ main {
 .vidCapture11_7 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3574,19 +2912,11 @@ main {
 .vidCapture11_8 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3594,19 +2924,11 @@ main {
 .vidCapture11_9 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3614,19 +2936,11 @@ main {
 .vidCapture11_10 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3634,19 +2948,11 @@ main {
 .vidCapture11_11 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3654,19 +2960,11 @@ main {
 .vidCapture11_12 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   visibility: hidden;
   object-fit: cover;
   object-position: center center;
@@ -3675,19 +2973,11 @@ main {
 .vidCapture12_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3695,19 +2985,11 @@ main {
 .vidCapture12_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3715,19 +2997,11 @@ main {
 .vidCapture12_3 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3735,19 +3009,11 @@ main {
 .vidCapture12_4 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3755,19 +3021,11 @@ main {
 .vidCapture12_5 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3775,19 +3033,11 @@ main {
 .vidCapture12_6 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3795,19 +3045,11 @@ main {
 .vidCapture12_7 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3815,19 +3057,11 @@ main {
 .vidCapture12_8 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3835,19 +3069,11 @@ main {
 .vidCapture12_9 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3855,19 +3081,11 @@ main {
 .vidCapture12_10 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3875,19 +3093,11 @@ main {
 .vidCapture12_11 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3895,19 +3105,11 @@ main {
 .vidCapture12_12 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3915,19 +3117,11 @@ main {
 .vidCapture13_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3935,19 +3129,11 @@ main {
 .vidCapture13_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3955,19 +3141,11 @@ main {
 .vidCapture13_3 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3975,19 +3153,11 @@ main {
 .vidCapture13_4 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -3995,19 +3165,11 @@ main {
 .vidCapture13_5 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4015,19 +3177,11 @@ main {
 .vidCapture13_6 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4035,19 +3189,11 @@ main {
 .vidCapture13_7 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4055,19 +3201,11 @@ main {
 .vidCapture13_8 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4075,19 +3213,11 @@ main {
 .vidCapture13_9 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4095,19 +3225,11 @@ main {
 .vidCapture13_10 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4115,19 +3237,11 @@ main {
 .vidCapture13_11 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4135,19 +3249,11 @@ main {
 .vidCapture13_12 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4155,19 +3261,11 @@ main {
 .vidCapture13_13 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4175,19 +3273,11 @@ main {
 .vidCapture14_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4195,19 +3285,11 @@ main {
 .vidCapture14_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4215,19 +3297,11 @@ main {
 .vidCapture14_3 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4235,19 +3309,11 @@ main {
 .vidCapture14_4 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4255,19 +3321,11 @@ main {
 .vidCapture14_5 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4275,19 +3333,11 @@ main {
 .vidCapture14_6 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4295,19 +3345,11 @@ main {
 .vidCapture14_7 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4315,19 +3357,11 @@ main {
 .vidCapture14_8 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4335,19 +3369,11 @@ main {
 .vidCapture14_9 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4355,19 +3381,11 @@ main {
 .vidCapture14_10 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4375,19 +3393,11 @@ main {
 .vidCapture14_11 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4395,19 +3405,11 @@ main {
 .vidCapture14_12 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4415,19 +3417,11 @@ main {
 .vidCapture14_13 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4435,19 +3429,11 @@ main {
 .vidCapture14_14 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -4456,19 +3442,11 @@ main {
 .vidCapture15_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4476,19 +3454,11 @@ main {
 .vidCapture15_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4496,19 +3466,11 @@ main {
 .vidCapture15_3 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4516,19 +3478,11 @@ main {
 .vidCapture15_4 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4536,19 +3490,11 @@ main {
 .vidCapture15_5 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4556,19 +3502,11 @@ main {
 .vidCapture15_6 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4576,19 +3514,11 @@ main {
 .vidCapture15_7 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4596,19 +3526,11 @@ main {
 .vidCapture15_8 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4616,19 +3538,11 @@ main {
 .vidCapture15_9 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4636,19 +3550,11 @@ main {
 .vidCapture15_10 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4656,19 +3562,11 @@ main {
 .vidCapture15_11 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4676,19 +3574,11 @@ main {
 .vidCapture15_12 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4696,19 +3586,11 @@ main {
 .vidCapture15_13 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4716,19 +3598,11 @@ main {
 .vidCapture15_14 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -4737,19 +3611,11 @@ main {
 .vidCapture15_15 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -4758,19 +3624,11 @@ main {
 .vidCapture16_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4778,19 +3636,11 @@ main {
 .vidCapture16_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4798,19 +3648,11 @@ main {
 .vidCapture16_3 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4818,19 +3660,11 @@ main {
 .vidCapture16_4 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4838,19 +3672,11 @@ main {
 .vidCapture16_5 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4858,19 +3684,11 @@ main {
 .vidCapture16_6 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4878,19 +3696,11 @@ main {
 .vidCapture16_7 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4898,19 +3708,11 @@ main {
 .vidCapture16_8 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4918,19 +3720,11 @@ main {
 .vidCapture16_9 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4938,19 +3732,11 @@ main {
 .vidCapture16_10 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4958,19 +3744,11 @@ main {
 .vidCapture16_11 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4978,19 +3756,11 @@ main {
 .vidCapture16_12 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -4998,19 +3768,11 @@ main {
 .vidCapture16_13 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5018,19 +3780,11 @@ main {
 .vidCapture16_14 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -5039,19 +3793,11 @@ main {
 .vidCapture16_15 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -5060,19 +3806,11 @@ main {
 .vidCapture16_16 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -5081,19 +3819,11 @@ main {
 .vidCapture17_1 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5101,19 +3831,11 @@ main {
 .vidCapture17_2 {
   width: 90%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5121,19 +3843,11 @@ main {
 .vidCapture17_3 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5141,19 +3855,11 @@ main {
 .vidCapture17_4 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5161,19 +3867,11 @@ main {
 .vidCapture17_5 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5181,19 +3879,11 @@ main {
 .vidCapture17_6 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5201,19 +3891,11 @@ main {
 .vidCapture17_7 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5221,19 +3903,11 @@ main {
 .vidCapture17_8 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5241,19 +3915,11 @@ main {
 .vidCapture17_9 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5261,19 +3927,11 @@ main {
 .vidCapture17_10 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5281,19 +3939,11 @@ main {
 .vidCapture17_11 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5301,19 +3951,11 @@ main {
 .vidCapture17_12 {
   width: 48%;
   height: 19%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5321,19 +3963,11 @@ main {
 .vidCapture17_13 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5341,19 +3975,11 @@ main {
 .vidCapture17_14 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -5362,19 +3988,11 @@ main {
 .vidCapture17_15 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -5383,19 +4001,11 @@ main {
 .vidCapture17_16 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -5404,19 +4014,11 @@ main {
 .vidCapture17_17 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -5425,19 +4027,11 @@ main {
 .vidCapture18_1 {
   width: 98%;
   height: 98%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5445,19 +4039,11 @@ main {
 .vidCapture18_2 {
   width: 49%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5465,19 +4051,11 @@ main {
 .vidCapture18_3 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5485,19 +4063,11 @@ main {
 .vidCapture18_4 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5505,19 +4075,11 @@ main {
 .vidCapture18_5 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5525,19 +4087,11 @@ main {
 .vidCapture18_6 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5545,19 +4099,11 @@ main {
 .vidCapture18_7 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5565,19 +4111,11 @@ main {
 .vidCapture18_8 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5585,19 +4123,11 @@ main {
 .vidCapture18_9 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5605,19 +4135,11 @@ main {
 .vidCapture18_10 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5625,19 +4147,11 @@ main {
 .vidCapture18_11 {
   width: 49%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5645,19 +4159,11 @@ main {
 .vidCapture18_12 {
   width: 49%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5665,19 +4171,11 @@ main {
 .vidCapture18_13 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5685,19 +4183,11 @@ main {
 .vidCapture18_14 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -5706,19 +4196,11 @@ main {
 .vidCapture18_15 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -5727,19 +4209,11 @@ main {
 .vidCapture18_16 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -5748,19 +4222,11 @@ main {
 .vidCapture18_17 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -5769,19 +4235,11 @@ main {
 .vidCapture18_18 {
   width: 49%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5789,19 +4247,11 @@ main {
 .vidCapture19_1 {
   width: 98%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5809,19 +4259,11 @@ main {
 .vidCapture19_2 {
   width: 98%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5829,19 +4271,11 @@ main {
 .vidCapture19_11 {
   width: 49%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5849,19 +4283,11 @@ main {
 .vidCapture19_12 {
   width: 49%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5869,19 +4295,11 @@ main {
 .vidCapture19_18 {
   width: 49%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5889,19 +4307,11 @@ main {
 .vidCapture19_19 {
   width: 49%;
   height: 49%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5909,19 +4319,11 @@ main {
 .vidCapture19_3 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5929,19 +4331,11 @@ main {
 .vidCapture19_4 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5949,19 +4343,11 @@ main {
 .vidCapture19_5 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5969,19 +4355,11 @@ main {
 .vidCapture19_6 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -5989,19 +4367,11 @@ main {
 .vidCapture19_7 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6009,19 +4379,11 @@ main {
 .vidCapture19_8 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6029,19 +4391,11 @@ main {
 .vidCapture19_9 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6049,19 +4403,11 @@ main {
 .vidCapture19_10 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6069,19 +4415,11 @@ main {
 .vidCapture19_13 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6089,19 +4427,11 @@ main {
 .vidCapture19_14 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -6110,19 +4440,11 @@ main {
 .vidCapture19_15 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -6131,19 +4453,11 @@ main {
 .vidCapture19_16 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -6152,19 +4466,11 @@ main {
 .vidCapture19_17 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -6173,19 +4479,11 @@ main {
 .vidCapture20_1 {
   width: 98%;
   height: 98%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 10px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6193,19 +4491,11 @@ main {
 .vidCapture20_2 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6213,19 +4503,11 @@ main {
 .vidCapture20_11 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6233,19 +4515,11 @@ main {
 .vidCapture20_12 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6253,19 +4527,11 @@ main {
 .vidCapture20_18 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6273,19 +4539,11 @@ main {
 .vidCapture20_19 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6293,19 +4551,11 @@ main {
 .vidCapture20_20 {
   width: 48%;
   height: 33%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6313,19 +4563,11 @@ main {
 .vidCapture20_3 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6333,19 +4575,11 @@ main {
 .vidCapture20_4 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6353,19 +4587,11 @@ main {
 .vidCapture20_5 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6373,19 +4599,11 @@ main {
 .vidCapture20_6 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6393,19 +4611,11 @@ main {
 .vidCapture20_7 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6413,19 +4623,11 @@ main {
 .vidCapture20_8 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6433,19 +4635,11 @@ main {
 .vidCapture20_9 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6453,19 +4647,11 @@ main {
 .vidCapture20_10 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6473,19 +4659,11 @@ main {
 .vidCapture20_13 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6493,19 +4671,11 @@ main {
 .vidCapture20_14 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -6514,19 +4684,11 @@ main {
 .vidCapture20_15 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -6535,19 +4697,11 @@ main {
 .vidCapture20_16 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -6556,19 +4710,11 @@ main {
 .vidCapture20_17 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -6577,19 +4723,11 @@ main {
 .vidCapture21_3 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6597,19 +4735,11 @@ main {
 .vidCapture21_4 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6617,19 +4747,11 @@ main {
 .vidCapture21_5 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6637,19 +4759,11 @@ main {
 .vidCapture21_6 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6657,19 +4771,11 @@ main {
 .vidCapture21_7 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6677,19 +4783,11 @@ main {
 .vidCapture21_8 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6697,19 +4795,11 @@ main {
 .vidCapture21_9 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6717,19 +4807,11 @@ main {
 .vidCapture21_10 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6737,19 +4819,11 @@ main {
 .vidCapture21_1 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6757,19 +4831,11 @@ main {
 .vidCapture21_2 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6777,19 +4843,11 @@ main {
 .vidCapture21_11 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6797,19 +4855,11 @@ main {
 .vidCapture21_12 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6817,19 +4867,11 @@ main {
 .vidCapture21_18 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6837,19 +4879,11 @@ main {
 .vidCapture21_19 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6857,19 +4891,11 @@ main {
 .vidCapture21_20 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6877,19 +4903,11 @@ main {
 .vidCapture21_21 {
   width: 49%;
   height: 24%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6897,19 +4915,11 @@ main {
 .vidCapture21_13 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   object-fit: cover;
   object-position: center center;
 }
@@ -6917,19 +4927,11 @@ main {
 .vidCapture21_14 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -6938,19 +4940,11 @@ main {
 .vidCapture21_15 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -6959,19 +4953,11 @@ main {
 .vidCapture21_16 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -6980,19 +4966,11 @@ main {
 .vidCapture21_17 {
   width: 19%;
   height: 94%;
-<<<<<<< HEAD
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-=======
-  background-image: url('../../assets/image980.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 3px;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   margin-right: 10px;
   object-fit: cover;
   object-position: center center;
@@ -7000,10 +4978,7 @@ main {
 
 .newMainContentRight {
   width: 73%;
-<<<<<<< HEAD
   padding: 10px;
-=======
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   height: 100%;
   background-color: #fbfcd1;
   /*  transform: skewX(-2deg); */
@@ -7270,13 +5245,8 @@ main {
 }
 
 .newMainContentRightInner {
-<<<<<<< HEAD
   width: 100%;
   height: 100%;
-=======
-  width: 95%;
-  height: 95%;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   background-color: #e3dddd;
   border-left: 8px solid #1745b9;
   border-top: 8px solid #1745b9;
@@ -7310,14 +5280,8 @@ main {
 }
 
 .newMainContentRightInnerTextarea {
-<<<<<<< HEAD
   width: 100%;
   height: 100%;
-=======
-  width: 92%;
-  height: 90%;
-  /*  transform: skewX(2deg); */
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   display: flex;
   justify-content: center;
 }
@@ -7574,7 +5538,6 @@ main {
 .newMainContentCaptureWrapperXOnsideSmallFourDiff:last-child {
   margin-bottom: 1.2%;
 }
-<<<<<<< HEAD
 .container_FM {
   display: none;
 }
@@ -7618,5 +5581,3 @@ main {
     margin: 10px;
   }
 }
-=======
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48

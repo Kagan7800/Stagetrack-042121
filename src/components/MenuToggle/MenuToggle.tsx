@@ -41,7 +41,6 @@ export default class MenuToggle extends Component<MenuToggleProps> {
 
   render () {
     return (
-<<<<<<< HEAD
       <div className={this.className}>
         <div
           className={styles.notch}
@@ -49,12 +48,6 @@ export default class MenuToggle extends Component<MenuToggleProps> {
           <IonIcon
             className={styles.icon}
             icon={this.icon} />
-=======
-      <div>
-        <div
-          onClick={this.handleClick}>
-      
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
         </div>
       </div>
     )

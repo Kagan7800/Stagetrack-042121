@@ -1,9 +1,5 @@
 :root {
-<<<<<<< HEAD
    --ion-font-family: 'Stagetrack', sans-serif;
-=======
-  --ion-font-family: 'TeamMeet', sans-serif;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 
   --ion-color-primary: #366af4;
   --ion-color-primary-rgb: 54,106,244;
@@ -51,8 +47,4 @@
   --app-menu-height: 55px;
   --app-floating-animation-height: 77px;
   --app-copyright-height: 123px;
-<<<<<<< HEAD
-
-=======
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 }

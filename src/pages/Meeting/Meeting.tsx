@@ -89,7 +89,7 @@ class Meeting extends Component<MeetingProps> {
     this.handleMenuMuteforAdmin = this.handleMenuMuteforAdmin.bind(this);
     this.handleActiveVideoBlockforAdmin = this.handleActiveVideoBlockforAdmin.bind(this);
     this.handleRemoteActiveVideoSync = this.handleRemoteActiveVideoSync.bind(this);
-    this.handleGetScreenShareVideo = this.handleGetScreenShareVideo.bind(this);
+    // this.handleGetScreenShareVideo = this.handleGetScreenShareVideo.bind(this);
 
   }
 
@@ -225,9 +225,7 @@ class Meeting extends Component<MeetingProps> {
   switchUserStreamToScreen() {
     this.screenCaptureService.getStream(() => {
       const screenStream = this.meetingService.getScreenStream();
-      const meetingId = this.meetingService.getMeetingId()   //----->>>>
-      //@ts-ignore
-     ////----->>>>>>
+      // const meetingId = this.meetingService.getMeetingId();
       this.videoService.replaceUserStream(screenStream, 'screen');
       this.rtpSenderService.replaceStream(screenStream);
       this.handleStreamStop();
@@ -403,11 +401,11 @@ class Meeting extends Component<MeetingProps> {
     });
   }
 
-  handleGetScreenShareVideo(meetingId:string) {
-    socket.shareScreenAtSameTime.subscribe(meetingId, (payload) => {
-      console.log("this is payload from >>>>>>admin in screen share>>>>>",payload);
-    })
-  }
+  // handleGetScreenShareVideo(meetingId:string) {
+  //   socket.shareScreenAtSameTime.subscribe(meetingId, (payload) => {
+  //     console.log("this is payload from >>>>>>admin in screen share>>>>>",payload);
+  //   })
+  // }
 
   handleRemoteConferenceCall(meetingId: string, localStream: MediaStream) {
     socket.conferenceCall.subscribe(meetingId, (connectionId) => {
@@ -568,7 +566,6 @@ class Meeting extends Component<MeetingProps> {
           this.handleRemoveRaiseHandforAdmin(meetingId);
           this.handleMuteforAdmin(meetingId);
           this.handleActiveVideoBlockforAdmin(meetingId);
-          this.handleGetScreenShareVideo(meetingId);
           this.handleDisconnect();
           this.mediaService.getStream(history, (localStream) => {
             this.handleUserStream(localConnectionId, localStream);

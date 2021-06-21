@@ -29,10 +29,6 @@ export interface VideoState {
 
 export interface MeetingState {
   id: string;
-<<<<<<< HEAD
-=======
-  value: Number;
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   connectionId: string;
   videos: VideoState[];
   mediaStream: MediaStream;
@@ -59,10 +55,7 @@ export interface MeetingActions {
   replaceVideoStreamMutedAudio: (connectionId: string, muted: boolean) => AnyAction;
   updateVideoRenderId: (connectionId: string) => AnyAction;
   pushVideo: (video: VideoState) => AnyAction;
-<<<<<<< HEAD
   pushVideoScreen: (video: VideoState) => AnyAction;
-=======
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   pushCall: (call: MediaConnection) => AnyAction;
   pushWhiteboardDrawing: (whiteboardDrawing: MeetingWhiteboardDrawingState) => AnyAction;
   pushMenuExpanded: (menuExpanded: MenuPosition) => AnyAction;
@@ -73,21 +66,13 @@ export interface MeetingActions {
 
 const meeting: MeetingState = {
   id: '',
-<<<<<<< HEAD
-=======
-  value: 29,
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   connectionId: '',
   videos: [],
   mediaStream: new MediaStream(),
   screenStream: new MediaStream(),
   calls: [],
   whiteboardDrawings: [],
-<<<<<<< HEAD
   whiteboardEnabled: true,
-=======
-  whiteboardEnabled: false,
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   menuExpanded: ['top', 'bottom'],
 };
 
@@ -143,12 +128,9 @@ export const actions: MeetingActions = {
   pushVideo(video) {
     return { type: 'PUSH_MEETING_VIDEO', video };
   },
-<<<<<<< HEAD
   pushVideoScreen(video) {
     return { type: 'PUSH_MEETING_VIDEO_SCREEN', video };
   },
-=======
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   pushCall(call) {
     return { type: 'PUSH_MEETING_CALL', call };
   },
@@ -224,10 +206,7 @@ export function reducers(state = meeting, action: any) {
     case 'REPLACE_MEETING_VIDEO_STREAM_MUTED_VIDEO': {
       const { connectionId: id, muted } = action.payload;
       const video = find(meeting.videos, { id });
-<<<<<<< HEAD
       console.log(video);
-=======
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
       if (video) video.streamMuted.video = muted;
       return cloneDeep(meeting);
     }
@@ -248,15 +227,12 @@ export function reducers(state = meeting, action: any) {
       if (!isExists) meeting.videos.push(action.video);
       return cloneDeep(meeting);
     }
-<<<<<<< HEAD
     // added by me
     case 'PUSH_MEETING_VIDEO_SCREEN': {
       const isExists = some(meeting.videos, { id: action.video.id, kind: action.video.kind });
       if (!isExists) meeting.videos.push(action.video);
       return cloneDeep(meeting);
     }
-=======
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
     case 'PUSH_MEETING_CALL': {
       meeting.calls.push(action.call);
       return cloneDeep(meeting);
