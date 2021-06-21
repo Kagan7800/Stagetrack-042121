@@ -7,20 +7,33 @@ $squareVideoBorder: 2px;
 
   &.full {
     width: 100%;
+<<<<<<< HEAD
     height: 100%;
     // padding-bottom: calc(100vh - (2 * #{$fullVideoBorder}));
     border: $fullVideoBorder solid var(--ion-color-primary);
 
     &.mobile {
       // padding-bottom: calc((100vw / (16/9)) - (2 * #{$fullVideoBorder}));
+=======
+    padding-bottom: calc(100vh - (2 * #{$fullVideoBorder}));
+    border: $fullVideoBorder solid var(--ion-color-primary);
+
+    &.mobile {
+      padding-bottom: calc((100vw / (16/9)) - (2 * #{$fullVideoBorder}));
+>>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
     }
   }
 
   &.square {
     width: 100%;
+<<<<<<< HEAD
     height: 100%;
     // padding-bottom: 100%;
     // border: $squareVideoBorder solid #000;
+=======
+    padding-bottom: 100%;
+    border: $squareVideoBorder solid #000;
+>>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
   }
 
   .content {

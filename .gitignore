@@ -9,7 +9,11 @@
 /coverage
 
 # production
+<<<<<<< HEAD
 
+=======
+/build
+>>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
 /.gradle
 /android/.idea
 
