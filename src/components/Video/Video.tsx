@@ -20,8 +20,10 @@ export default class Video extends Component<VideoProps, VideoLocalState> {
   }
 
   get className() {
-    const isScreen = this.props.video.kind === 'screen';
-    const filpClass = !isScreen && styles.horizontalFlip;
+    const types = ['screen', 'window', 'web-contents'];
+    const track = this.props.video.stream.getVideoTracks().find((track: any) => types.some((i) => track.label.includes(i)));
+    const filpClass = !track && styles.horizontalFlip;
+
     return `${styles.video} ${filpClass}`;
   }
 
@@ -38,7 +40,7 @@ export default class Video extends Component<VideoProps, VideoLocalState> {
 
       //   return (element.srcObject = videoClone.stream);
       // } else {
-        element.srcObject = video.stream;
+      element.srcObject = video.stream;
       // }
     }
   }

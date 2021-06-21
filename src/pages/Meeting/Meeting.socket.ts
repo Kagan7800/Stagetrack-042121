@@ -1,6 +1,6 @@
 import { call } from 'ionicons/icons';
 import SocketService from '../../services/SocketService';
-import { MeetingWhiteboardDrawingsState, MeetingWhiteboardDrawingState, VideoStateKind } from './Meeting.state';
+import { MeetingWhiteboardDrawingsState, MeetingWhiteboardDrawingState, VideoStateKind,VideoState } from './Meeting.state';
 
 interface RTPTrackReplacedPayload {
   connectionId: string;
@@ -114,7 +114,20 @@ export default {
       SocketService.publish(this.channel(meetingId), connectionId);
     },
   },
-  
+  shareScreenAtSameTime: {
+    channel(meetingId: string) {
+      return `/shareScreenAtSameTime/${meetingId}`;
+    },
+    subscribe(meetingId: string, callback: (video: VideoState) => void) {
+      SocketService.subscribe(this.channel(meetingId), (video: VideoState) => callback(video));
+    },
+    unsubscribe(meetingId: string) {
+      SocketService.unsubscribe(this.channel(meetingId));
+    },
+    publish(meetingId: string, video: VideoState) {
+      SocketService.publish(this.channel(meetingId), video);
+    },
+  },
   ActiveVideoBlockSync: {
     channel(meetingId: string) {
       return `/ActiveVideoBlockSync/${meetingId}`;

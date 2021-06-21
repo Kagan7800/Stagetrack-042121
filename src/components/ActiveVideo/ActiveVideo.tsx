@@ -36,7 +36,7 @@ export default class ActiveVideo extends Component<ActiveVideoProps> {
 
   get whiteboard() {
     return (
-      this.props.whiteboardEnabled && (
+      this.props.whiteboardEnabled && this.props.video?.kind != "screen" && (
         <Whiteboard
           drawings={this.props.whiteboardDrawings}
           handleCanvasClearClick={this.props.handleWhiteboardCanvasClearClick}

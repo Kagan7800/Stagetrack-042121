@@ -54,7 +54,7 @@ function Grid(props) {
     set2Nav(false);
   };
   const handleLeftImages = () => {
-    let elements = [<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${1}`}>{videos[0]}</div>];
+    let elements = [<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${1}`}>{getFirstVideo}</div>];
     for (let i = 1; i < values; i++) {
       if (i === 3) {
         console.log('images from left :', i);
@@ -81,7 +81,6 @@ function Grid(props) {
 
       if (condition1 || condition2) {
       } else {
-        console.log('images from right :', i);
         elements.push(<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${i + 1}`}>{videos[i]}</div>);
       }
     }

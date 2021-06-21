@@ -89,7 +89,8 @@ class Meeting extends Component<MeetingProps> {
     this.handleMenuMuteforAdmin = this.handleMenuMuteforAdmin.bind(this);
     this.handleActiveVideoBlockforAdmin = this.handleActiveVideoBlockforAdmin.bind(this);
     this.handleRemoteActiveVideoSync = this.handleRemoteActiveVideoSync.bind(this);
-    // this.handleOnConnectionLost = this.handleOnConnectionLost.bind(this);
+    this.handleGetScreenShareVideo = this.handleGetScreenShareVideo.bind(this);
+
   }
 
   get className() {
@@ -98,7 +99,9 @@ class Meeting extends Component<MeetingProps> {
   }
 
   get activeVideo() {
-    // console.log('active Videos >>>>>>>>>', find(this.props.videos, 'active'));
+    if (this.ScreenVideos) {
+      return this.ScreenVideos;
+    }
     return find(this.props.videos, 'active');
   }
 
@@ -139,9 +142,8 @@ class Meeting extends Component<MeetingProps> {
   }
 
   get videos() {
-    // const videos = filter(this.props.videos, { active: false, kind: 'media' });
+    console.log('this is videos >>>>>>>>>', this.props.videos);
     const videos = filter(this.props.videos, { kind: 'media' });
-    console.log('this is the console for videos>>>>>>>>>>>>>>>', videos);
     return videos.map((video) => this.video(video));
   }
   get ScreenVideos() {
@@ -219,9 +221,13 @@ class Meeting extends Component<MeetingProps> {
     });
   }
 
+
   switchUserStreamToScreen() {
     this.screenCaptureService.getStream(() => {
       const screenStream = this.meetingService.getScreenStream();
+      const meetingId = this.meetingService.getMeetingId()   //----->>>>
+      //@ts-ignore
+     ////----->>>>>>
       this.videoService.replaceUserStream(screenStream, 'screen');
       this.rtpSenderService.replaceStream(screenStream);
       this.handleStreamStop();
@@ -368,7 +374,6 @@ class Meeting extends Component<MeetingProps> {
       const isHostMeeting = this.meetingService.isHostMeeting(connectionId);
       if (!isHostMeeting) {
         const userVideotobeMuted = this.findUservideo(connectionId);
-        // console.log('user mute is :', userVideotobeMuted?.streamMuted.audio);
         if (userVideotobeMuted) {
           const enabled = this.mediaService.toggleAudioMute(userVideotobeMuted.stream);
           !userVideotobeMuted?.streamMuted.audio
@@ -396,6 +401,12 @@ class Meeting extends Component<MeetingProps> {
       this.props.replaceVideoKind(connectionId, kind);
       this.props.updateVideoRenderId(connectionId);
     });
+  }
+
+  handleGetScreenShareVideo(meetingId:string) {
+    socket.shareScreenAtSameTime.subscribe(meetingId, (payload) => {
+      console.log("this is payload from >>>>>>admin in screen share>>>>>",payload);
+    })
   }
 
   handleRemoteConferenceCall(meetingId: string, localStream: MediaStream) {
@@ -557,6 +568,7 @@ class Meeting extends Component<MeetingProps> {
           this.handleRemoveRaiseHandforAdmin(meetingId);
           this.handleMuteforAdmin(meetingId);
           this.handleActiveVideoBlockforAdmin(meetingId);
+          this.handleGetScreenShareVideo(meetingId);
           this.handleDisconnect();
           this.mediaService.getStream(history, (localStream) => {
             this.handleUserStream(localConnectionId, localStream);
@@ -592,7 +604,7 @@ class Meeting extends Component<MeetingProps> {
             <div className={this.className}>
               <div id='container'>
                 <GridContainer
-                  values={this.videos.length}
+                  values={this.props.videos.length}
                   videos={this.videos}
                   getFirstVideo={this.videosFirst}
                   activeVideo={this.activeVideoBlock}
