@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import './grid.css';
 import styles from '../Meeting/Meeting.module.css';
-<<<<<<< HEAD
 import { IonImg, isPlatform, IonIcon } from '@ionic/react';
 import copyToClipboard from 'copy-to-clipboard';
 import { SocialSharing } from '@ionic-native/social-sharing';
@@ -61,33 +60,6 @@ function Grid(props) {
         console.log('images from left :', i);
 
         elements.push(<div className={`changeNewBorderColor ${borderColor} vidCapture${values}_${2}`}>{videos[i]}</div>);
-=======
-
-function Grid() {
-  const [values, setValues] = useState(1);
-  const [openNav, setOpenNav] = useState(false);
-  const [title, setTitle] = useState('Music Fun with your Little One');
-
-  console.log(openNav);
-  const handleOnOpenNav = () => {
-    setOpenNav(!openNav);
-  };
-  const handleOnChange = (event) => {
-    const { value, id } = event.target;
-    if (typeof value === 'string') {
-      setValues(value ? parseInt(value) : 1);
-    } else {
-      setValues(value ? value : 1);
-    }
-  };
-
-  const handleLeftImages = () => {
-    let elements = [<img src='./assets/vidPlaceholder.png' className={`changeNewBorderColor vidCapture${values}_${1}`} />];
-
-    for (let i = 1; i <= values; i++) {
-      if (i === 4) {
-        elements.push(<img src='./assets/vidPlaceholder.png' className={`changeNewBorderColor vidCapture${values}_${2}`} />);
->>>>>>> beacc65ac23c8b29b7d0bcf1893bec4c09c3db48
       }
     }
     return elements;
